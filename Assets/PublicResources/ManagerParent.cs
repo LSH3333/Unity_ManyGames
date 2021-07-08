@@ -5,5 +5,5 @@ using UnityEngine;
 public class ManagerParent : MonoBehaviour
 {
     public int score;
-
+    public float score_float;
 }

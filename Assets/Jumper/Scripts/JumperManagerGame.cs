@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class JumperManagerGame : MonoBehaviour
+public class JumperManagerGame : ManagerParent
 {
     public static JumperManagerGame singleton;
 
@@ -17,11 +17,12 @@ public class JumperManagerGame : MonoBehaviour
     [SerializeField]
     private Text YourScoreText;
 
-    float _score = 0.0f;
+    //float _score = 0.0f;
 
     public float Score
     {
-        get { return _score; }
+        // 상속받은 ManagerParent의 score_float
+        get { return score; }
     }
 
     // Sound
@@ -59,8 +60,8 @@ public class JumperManagerGame : MonoBehaviour
         GameEnds = true;
         ResultBoard.SetActive(true);
 
-        _score = GameObject.Find("Player").GetComponent<Player>().topScore;
-        YourScoreText.text = "Your Score: " + Mathf.Round(_score).ToString();
+        score = (int)GameObject.Find("Player").GetComponent<Player>().topScore;
+        YourScoreText.text = "Your Score: " + Mathf.Round(score).ToString();
         
         gameover_audio.Play(); // GameOver sound play
 

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class FlappyBird_ManagerGame : MonoBehaviour
+public class FlappyBird_ManagerGame : ManagerParent
 {
     public static FlappyBird_ManagerGame inst;
     [HideInInspector] public bool isGameOver = false;
@@ -12,7 +12,8 @@ public class FlappyBird_ManagerGame : MonoBehaviour
 
     private GameObject _pGameOver;
     private Text _txtScore, _txtBest, _txtLife;
-    private int _score = 0, _life = 3;
+    //private int _score = 0;
+    private int _life = 3;
 
     [HideInInspector]
     public bool CheckBirdBlinking; // get from Bird class.
@@ -24,7 +25,8 @@ public class FlappyBird_ManagerGame : MonoBehaviour
 
     public int Score
     {
-        get { return _score; }
+        // 상속받은 Managerparent의 변수 
+        get { return score; }
     }
 
     private void Awake()
@@ -64,8 +66,8 @@ public class FlappyBird_ManagerGame : MonoBehaviour
     {
         // cant score when bird is blinking 
         if (CheckBirdBlinking) return;
-        _score += 10;
-        _txtScore.text = string.Format("Score : {0}", _score);
+        score += 10;
+        _txtScore.text = string.Format("Score : {0}", score);
     }
 
     // Bird 라이프 감소, UI에 표시
