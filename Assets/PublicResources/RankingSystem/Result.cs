@@ -25,6 +25,9 @@ public class Result : MonoBehaviour
     // _txtRank나 _NCBMRank 둘 중 하나만 사용해야함 
     public Text _NCMBRank;
 
+    // BestScore 표시할 텍스트 창 
+    public Text txtBest;
+
     // 각 게임들의 Manager들이 담긴다 
     ManagerParent manager;
 
@@ -32,17 +35,37 @@ public class Result : MonoBehaviour
     {
         // ManagerParent의 자식 중 하나인 클래스에 접근 
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<ManagerParent>();
+
+
     }
+
 
     private void Start()
     {
-        SetResult();
-        ManageApp.singleton.Save();
+        //SetResult();
+        //ManageApp.singleton.Save();
 
         // NCMB Database
-        SendPlayerDataToNCMB();
-        InitNCMBBoard();
+        // 현재 게임, 현재 유저, 점수 정보를 NCMB Database로 보내고
+        // 방금 보내진 유저 정보까지 포함된 랭킹 10위까지의 정보를 가져옴. 
+        //SendPlayerDataToNCMB();
+        //InitNCMBBoard();
 
+        StartCoroutine(getRank());
+
+        
+    }
+
+    // 현재 SendPlayerDataToNCMB()에서 정보 저장과, InitNCMBBoard()에서 정보 가져오는것이
+    // 병렬적으로 일어나서 현재 플레이어 정보가 다 저장이 안된상태에서 랭킹 데이터 가져와
+    // 현재 플레이어 정보가 랭킹창에 포함되지 않는 경우가 있음. 
+
+    // 따라서 데이터베이스로 데이터를 보내고 1초 대기후 데이터베이스에서 랭킹 정보 가져오도록함. 
+    IEnumerator getRank()
+    {
+        SendPlayerDataToNCMB();
+        yield return new WaitForSeconds(1f);
+        InitNCMBBoard();
     }
 
     private void SetResult()
@@ -79,6 +102,7 @@ public class Result : MonoBehaviour
         }
     }
 
+    // 현재 게임의, 현재 유저 정보를 NCMB Database로 보냄 
     public void SendPlayerDataToNCMB()
     {
         // 해당하는 게임이름의 클래스 NCMB 오브젝트 생성 
@@ -97,6 +121,7 @@ public class Result : MonoBehaviour
         });
     }
 
+    // NCMB Database에서 랭킹정보 가져와서 10위까지 띄움  
     void InitNCMBBoard()
     {
         NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>(ManageApp.singleton.gameName);
@@ -113,17 +138,22 @@ public class Result : MonoBehaviour
                 string res = "";
                 _NCMBRank.text = "";
                 int rank = 0;
-
+                int cnt = 0; // 10위 까지만 보여줌 
                 foreach (NCMBObject obj in objList)
-                {
+                {                    
                     res = string.Format("{0:D2}. ", (++rank));
                     res += obj["Name"] + ", ";
                     res += obj["Score"];
 
                     _NCMBRank.text += res + "\n";
+
+                    cnt++;
+                    if (cnt >= 10) break;
                 }
 
             }
         });
     }
+
+    
 }

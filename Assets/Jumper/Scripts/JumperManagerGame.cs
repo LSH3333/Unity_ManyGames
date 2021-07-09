@@ -41,6 +41,10 @@ public class JumperManagerGame : ManagerParent
         //ResultBoard = GameObject.Find("ResultBoard");
         ResultBoard.SetActive(false);
         PlayerRB = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+
+        // GameManager가 활성화되면 BestScore를 가져옴. 
+        _txtBest = GameObject.Find("txtBest").GetComponent<Text>();
+        GetBestScore();
     }
 
     private void Start()

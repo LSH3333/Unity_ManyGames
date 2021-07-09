@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Angry_ManagerGame : ManagerParent
 {
@@ -13,6 +14,9 @@ public class Angry_ManagerGame : ManagerParent
     private void Awake()
     {
         singleton = this;
+
+        _txtBest = GameObject.Find("txtBest").GetComponent<Text>();
+        GetBestScore();
     }
 
     // 부모 ManagerParent 클래스의 score 
@@ -34,5 +38,7 @@ public class Angry_ManagerGame : ManagerParent
         //_pGameOver.SetActive(true);
         Debug.Log("Gameover");
     }
+
+
 }
 
