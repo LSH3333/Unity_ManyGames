@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FlappyBird/03. Scenes/FlappyBird_Game.unity
     guid: 7605595be77f2664c850b88a6f780d70
+  - enabled: 1
+    path: Assets/Nightmare/01. Scene/Nightmare_Title.unity
+    guid: da6943f9aabbf574eb2483e3598d829d
+  - enabled: 1
+    path: Assets/Nightmare/01. Scene/Nightmare_Game.unity
+    guid: b7893508795cf434995726cebc0ec191
   m_configObjects: {}
