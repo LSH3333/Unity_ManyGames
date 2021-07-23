@@ -6,9 +6,11 @@ using NCMB;
 
 public class ManagerParent : MonoBehaviour
 {
+    [HideInInspector]
     public int score;
 
-    // BestScore은 부모에서 관리 
+    // BestScore은 부모에서 관리
+    [HideInInspector]
     public Text _txtBest;
 
     // 현재 게임의 "Score"를 정렬해서 가져와서 가장 높은 점수인 BestScore를 찾는다 

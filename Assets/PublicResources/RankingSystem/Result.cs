@@ -16,7 +16,7 @@ using UnityEngine;
 
     * 새로운 게임이 추가되면:
     1. 추가된 게임씬에서 Manager 스크립트를 갖고있는 게임오브젝트의 태그를 "GameManager"로 설정한다.
-    2. boardResult 게임오브젝트의 Result.cs에 Text _NCMBRank 변수를 txtRank에 연결한다 
+    2. boardResult 게임오브젝트의 Result.cs에 Text _NCMBRank 변수를 boardResult의 자식인 txtRank에 연결한다 
 */
 
 public class Result : MonoBehaviour
