@@ -15,8 +15,13 @@ public class EnemyHealth_NM : MonoBehaviour
     public bool isDead; // enemy가 죽었는지
     private bool isSinking; // enemy 가라앉고 있는 중인지
 
+    private GameManager_NM gm;
+
     private void Awake()
     {
+        // GameManager_NM 연결 
+        gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager_NM>();
+        
         // 참조 변수들 연결 처리
         anim = GetComponent<Animator>();
         enemyAudio = GetComponent<AudioSource>();
@@ -57,6 +62,10 @@ public class EnemyHealth_NM : MonoBehaviour
     void Death()
     {
         isDead = true;
+
+        // monster 죽으면 점수 상승 
+        GameManager_NM.singleton.score++;
+
         capsuleCollider.isTrigger = true; // 가라앉게 하기위해 물리효과 없엠
         anim.SetTrigger("Dead"); // 죽는 애니메이션으로 전환
         enemyAudio.clip = deathClip; // 효과음 음원 교체

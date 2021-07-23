@@ -74,5 +74,8 @@ public class PlayerHealth_NM : MonoBehaviour
         // 움직이지 못하게, 총 발사하지 못하게 스크립트 비활성화 처리
         playMovement.enabled = false;
         playShooting.enabled = false;
+
+        // Player 죽으면 게임오버, 결과창 띄움 
+        GameManager_NM.singleton.SetGameOver();
     }
 }
