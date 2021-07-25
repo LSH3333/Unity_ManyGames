@@ -541,8 +541,8 @@ MonoBehaviour:
     type: 3}
   _zombunny: {fileID: 3876309490421779922, guid: 64681af71dd054868b6c80ae96a6889d,
     type: 3}
-  minTime: 2
-  maxTime: 4
+  minTime: 1
+  maxTime: 3
   spawnPos:
   - {fileID: 888216877}
   - {fileID: 1881447985}
@@ -577,7 +577,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   _txtBest: {fileID: 0}
-  _pGameOver: {fileID: 0}
   isGameOver: 0
 --- !u!1 &888216877
 GameObject:
@@ -1645,6 +1644,11 @@ PrefabInstance:
       propertyPath: deadClip
       value: 
       objectReference: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
+    - target: {fileID: 874301111759099365, guid: 347c0231857a6413ea9aef9a5edbaf46,
+        type: 3}
+      propertyPath: startingHealth
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 874301111759490877, guid: 347c0231857a6413ea9aef9a5edbaf46,
         type: 3}
       propertyPath: m_RootOrder
@@ -1737,7 +1741,7 @@ RectTransform:
   m_GameObject: {fileID: 2690367915852255629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2690367917753686984}
   m_RootOrder: 1
@@ -2153,7 +2157,7 @@ RectTransform:
   m_GameObject: {fileID: 2690367917753686991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 2690367916235635680}
   - {fileID: 2690367915852255630}

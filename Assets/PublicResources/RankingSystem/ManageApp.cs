@@ -6,7 +6,7 @@ public class ManageApp : MonoBehaviour
     public static ManageApp singleton;
 
     private string nickName;
-    public string tempNickName;
+    public string loginNickName;
     private int bestScore;
 
     private int[] _scores = new int[10];
@@ -78,7 +78,7 @@ public class ManageApp : MonoBehaviour
     public void Save()
     {
         // 타이틀씬에서 입력받은 이름으로 
-        NickName = tempNickName;
+        NickName = loginNickName;
         // BestScore 저장 
         PlayerPrefs.SetInt(player_BestScore, bestScore);
         PlayerPrefs.SetString(player_Nickname, nickName);

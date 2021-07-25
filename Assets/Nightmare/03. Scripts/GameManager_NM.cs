@@ -4,7 +4,7 @@ public class GameManager_NM : ManagerParent
 {
     public static GameManager_NM singleton;
     // 결과창 
-    public GameObject _pGameOver;
+    private GameObject _pGameOver;
     public bool isGameOver = false;
 
     private void Awake()

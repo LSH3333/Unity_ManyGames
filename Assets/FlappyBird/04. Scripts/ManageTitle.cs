@@ -5,8 +5,9 @@ using UnityEngine.UI;
 public class ManageTitle : MonoBehaviour
 {
     public Text textName, textBscore, textBtnName, textIF;
+    
     public GameObject pInputField;
-    private bool status = false; // InputField 상태값, show/hide
+    public bool status = false; // InputField 상태값, show/hide
 
     public string onClickStart_string, onClickBack_string;
 
@@ -22,13 +23,22 @@ public class ManageTitle : MonoBehaviour
         */
         // InputField는 시작함과 동시에 안보이게 처리
         pInputField.SetActive(false);
+
+        OnMenuSceneStarted();
     }
 
     // "Name" 버튼 클릭 핸들러
     public void onClickName()
     {
-        status = !status; // InputField의 상태값 전환
-        textBtnName.text = (status) ? "Okay" : "Name"; // 상태값에 따라 버튼 문자열 변경
+        // 로그인이 된 상태라면        
+        if(ManageApp.singleton.loginNickName != "")
+        {
+            // InputFiled 안뜨도록함
+            return;
+        }
+
+        status = !status; // InputField의 상태값 전환        
+        textBtnName.text = (status) ? "Okay" : "Login"; // 상태값에 따라 버튼 문자열 변경
         pInputField.SetActive(status); // status 상태에 따라 전환
 
         // 닉네임 입력 후 버튼을 다시 클릭하면 status값이 false가 되고 InputField에 입력한
@@ -39,7 +49,7 @@ public class ManageTitle : MonoBehaviour
             ManageApp.singleton.NickName = textIF.text;
             // 씬이 바뀌면서 Load() 호출되면서 nickName이 none으로 초기화되므로 
             // ManageApp의 tempNickName에 잠시 이름 저장했다가 나중에 다시 바꿔줌 
-            ManageApp.singleton.tempNickName = textIF.text;
+            ManageApp.singleton.loginNickName = textIF.text;
 
             // UI 상의 nickname 문자열을 업데이트
             textName.text = string.Format("nickname : {0}", textIF.text);
@@ -58,5 +68,16 @@ public class ManageTitle : MonoBehaviour
         SceneManager.LoadScene(onClickBack_string);
     }
 
+    // 메뉴씬이 시작되면 로그인된 닉네임으로 textName.text가 표시되도록함 
+    public void OnMenuSceneStarted()
+    {       
+        string loggedInName = ManageApp.singleton.loginNickName;
+        textName.text = string.Format("nickname : {0}", loggedInName);
+    }
+
+    private void Update()
+    {
+        Debug.Log("status: " + status);
+    }
 
 }

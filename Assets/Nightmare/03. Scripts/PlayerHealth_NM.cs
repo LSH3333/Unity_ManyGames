@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerHealth_NM : MonoBehaviour
 {
-    private int startingHealth = 100; // 시작 hp 값
+    public int startingHealth = 100; // 시작 hp 값
     private int currentHealth; // 플레이어 현재 hp 값
     private Slider healthSlider; // 슬라이더 게이지 참조
     private Image damageImage; // 피격 효과를 위한 이미지 참조
@@ -16,9 +16,12 @@ public class PlayerHealth_NM : MonoBehaviour
     private Animator anim; // 플레이어의 죽는 애니메이션 전환을 처리
     private PlayerMovement_NM playMovement; // 죽은 후 움직이지 않게 처리 함
     private PlayerShooting_NM playShooting; // 죽은 후 총 발사 않게 함.
+   
     public bool isDead = false; // 죽음 여부에 대한 플래그
     public AudioClip deadClip; // 죽을 때의 음량 효과 클립
 
+    // 죽은 후 1인칭에서도 움직이지 않도록 
+    private PlayerMovementFristPersonView_NM playerMovement1st;
 
     private void Awake()
     {
@@ -27,7 +30,8 @@ public class PlayerHealth_NM : MonoBehaviour
         pAudio = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         playMovement = GetComponent<PlayerMovement_NM>();
-        playShooting = GetComponentInChildren<PlayerShooting_NM>(); // 자식 오브젝트까지 탐색 
+        playShooting = GetComponentInChildren<PlayerShooting_NM>(); // 자식 오브젝트까지 탐색
+        playerMovement1st = GetComponent<PlayerMovementFristPersonView_NM>();
     }
 
     private void Start()
@@ -74,6 +78,7 @@ public class PlayerHealth_NM : MonoBehaviour
         // 움직이지 못하게, 총 발사하지 못하게 스크립트 비활성화 처리
         playMovement.enabled = false;
         playShooting.enabled = false;
+        playerMovement1st.enabled = false;
 
         // Player 죽으면 게임오버, 결과창 띄움 
         GameManager_NM.singleton.SetGameOver();
