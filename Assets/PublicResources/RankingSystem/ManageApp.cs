@@ -7,6 +7,7 @@ public class ManageApp : MonoBehaviour
 
     private string nickName;
     public string loginNickName;
+
     private int bestScore;
 
     private int[] _scores = new int[10];
