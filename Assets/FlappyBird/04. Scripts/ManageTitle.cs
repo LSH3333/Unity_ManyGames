@@ -24,7 +24,7 @@ public class ManageTitle : MonoBehaviour
         // InputField는 시작함과 동시에 안보이게 처리
         pInputField.SetActive(false);
 
-        OnMenuSceneStarted();
+        //OnMenuSceneStarted();
     }
 
     // "Name" 버튼 클릭 핸들러
@@ -77,7 +77,7 @@ public class ManageTitle : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("status: " + status);
+        //Debug.Log("status: " + status);
     }
 
 }

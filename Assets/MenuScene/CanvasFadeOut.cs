@@ -25,7 +25,7 @@ public class CanvasFadeOut : MonoBehaviour
 
         while(canvasGroup.alpha > 0)
         {
-            canvasGroup.alpha -= Time.deltaTime / 2;
+            canvasGroup.alpha -= Time.deltaTime / 3;
             yield return null;
         }
         // fadeout 이후 캔버스 상의 버튼 있다면 못누르도록 
