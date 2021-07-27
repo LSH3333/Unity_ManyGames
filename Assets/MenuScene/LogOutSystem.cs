@@ -1,5 +1,6 @@
 ﻿using NCMB;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LogOutSystem : MonoBehaviour
 {
@@ -9,6 +10,13 @@ public class LogOutSystem : MonoBehaviour
     // LogOut success pannel
     public GameObject _logoutSuccessPannel;
 
+    public Text welcome;
+
+    private void Start()
+    {
+        welcome.text = "Welcome " + NCMBUser.CurrentUser.UserName;
+    }
+
     // Logout canvas에서 LogOut 버튼 눌렀을시 
     public void OnClickLogOutButton()
     {
@@ -17,7 +25,7 @@ public class LogOutSystem : MonoBehaviour
     }
 
     // 현재 로그인되어있는 계정 로그아웃 
-    void NCMBLogOut()
+    public void NCMBLogOut()
     {
         NCMBUser.LogOutAsync((NCMBException e) =>
         {

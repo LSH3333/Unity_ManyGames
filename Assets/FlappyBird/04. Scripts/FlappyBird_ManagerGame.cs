@@ -38,7 +38,6 @@ public class FlappyBird_ManagerGame : ManagerParent
         
         _txtLife = GameObject.Find("txtLife").GetComponent<Text>();
 
-        //_pGameOver = GameObject.Find("txtGameOver");
         _pGameOver = GameObject.Find("boardResult");
         _pGameOver.SetActive(false);
 

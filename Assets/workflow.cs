@@ -16,6 +16,18 @@ public class workflow : MonoBehaviour
     ---- 게임끝나고 랭킹창
     Result.cs의 SetResult() 함수
     
+    ____________________________________
+    이 위로 모두 폐기됨. 
+    NCMB Database 사용함에 따라 PlayerPref 사용하는 랭킹시스템 모두 폐기. 
+    ____________________________________
+
+    1. 메뉴씬에서 로그인
+    2. 로그인 하지 않으면 게임버튼 누를수 없음
+    3. 로그인후 게임버튼 누르면 SceneControl.cs의 ChangeScene() 함수에의해 singleton인 ManageApp.cs에 loginNickname 저장됨.
+    4. 게임 종료후 Result.cs 에서 현재 로그인된 닉네임을 포함해서 NCMB Database에 정보 보냄.
+       (여기서 정보는 UserManageMent와 상관없이 DataStore로 보내짐)
+        즉 로그인 정보는 UserManageMent에 저장되지만 랭킹시스템에 출력되는 모든 정보들은 DataStore에 따로 관리.
+    5. BestScore는 ManagerParent.cs에서 관리. 각 GameManager들은 ManagerParent를 상속받음 
 
 
     -------- NCMB Database 관련

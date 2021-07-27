@@ -16,6 +16,9 @@ public class SignUpSystem : MonoBehaviour
     public GameObject SignUpSuccessPanel;
     public LogInSystem _loginSys;
 
+    public GameObject signUpFailPannel;
+
+    // signup canvas의 SignUp 버튼 누를시 
     public void OnClickSignUpButton()
     {
         // 아이디와 비밀번호가 입력이 됐다면 
@@ -35,9 +38,12 @@ public class SignUpSystem : MonoBehaviour
 
         user.SignUpAsync((NCMBException e) =>
         {
-            if (e != null)
+            if (e != null) // signup 실패 
+            {
                 print("NCMB SignUp Failed, " + e.ErrorMessage);
-            else
+                signUpFailPannel.GetComponent<CanvasFadeOut>().PanelFadeOut();
+            }                
+            else // signup 성공 
             {
                 print("NCMB SignUp Success" + '\n' + "UserName: " + name + '\n' + "PW: " + pw);
                 // signup 성공 알리는 panel 

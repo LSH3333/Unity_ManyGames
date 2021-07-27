@@ -7,11 +7,11 @@ public class CanvasFadeOut : MonoBehaviour
 {
     private CanvasGroup canvasGroup;
 
-    private void Start()
+    private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();        
     }
-
+    
     public void PanelFadeOut()
     {
         StartCoroutine(DoFade());
