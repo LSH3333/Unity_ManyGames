@@ -51,7 +51,7 @@ public class ObstaclsGenerator : MonoBehaviour
     {
         time += Time.deltaTime; // 시간 가는중...
         hor_time += Time.deltaTime;
-        Debug.Log("hor_spawnTime:: " + hor_spawnTime);
+        //Debug.Log("hor_spawnTime:: " + hor_spawnTime);
 
         if (hor_time >= hor_spawnTime && !JumperManagerGame.singleton.GameEnds)
         {

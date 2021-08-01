@@ -23,6 +23,9 @@ public class LogInSystem : MonoBehaviour
 
     public LogOutSystem scriptLogOutSystem;
 
+    // Slide Gameobject
+    public GameObject slideGameObject;
+
     private void Awake()
     {
         // 최초에는 login canvas가 활성화되어야함 
@@ -94,6 +97,7 @@ public class LogInSystem : MonoBehaviour
                 print("NCMB LogIn Success, " + name);
                 cvLogIn.SetActive(false); // login canvas 비활성화
                 cvLogOut.SetActive(true); // logout canvas 활성화
+                slideGameObject.SetActive(true); // slide 활성화
                 welcome.text = "Welcome " + NCMBUser.CurrentUser.UserName;
             }
         });

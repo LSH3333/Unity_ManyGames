@@ -13,17 +13,19 @@ public class SceneControl : MonoBehaviour
         {
             //print("CurrentUser: " + NCMBUser.CurrentUser.UserName);
             // Please enter nickname panel   
-            GameObject.Find("NoNicknamePanel").GetComponent<CanvasFadeOut>().PanelFadeOut();
+            GameObject.Find("NoNicknamePanel").GetComponent<CanvasFadeOut>().PanelFadeOut();           
         }
         else
         {
             print("CurrentUser: " + NCMBUser.CurrentUser.UserName);
             SceneManager.LoadScene(_scenename);
+
+            // 게임버튼 클릭할때 현재 로그인된 유저정보 ManageApp에 전달됨 
+            ManageApp.singleton.NickName = NCMBUser.CurrentUser.UserName;
+            ManageApp.singleton.loginNickName = NCMBUser.CurrentUser.UserName;
         }
 
-        // 게임버튼 클릭할때 현재 로그인된 유저정보 ManageApp에 전달됨 
-        ManageApp.singleton.NickName = NCMBUser.CurrentUser.UserName;
-        ManageApp.singleton.loginNickName = NCMBUser.CurrentUser.UserName;
+        
     }
 
     // 해당 버튼의 OnClick에 저장된 string (게임이름)을 ManagerApp 클래스의 selectGame 함수에 전달 

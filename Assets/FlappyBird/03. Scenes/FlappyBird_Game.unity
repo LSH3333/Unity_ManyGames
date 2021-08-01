@@ -1132,6 +1132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  _txtBest: {fileID: 0}
   isGameOver: 0
   gameMode: 0
   CheckBirdBlinking: 0

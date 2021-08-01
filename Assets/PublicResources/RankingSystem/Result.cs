@@ -100,7 +100,7 @@ public class Result : MonoBehaviour
         {
             if (e != null)
             {
-                Debug.Log("NCMB Get Data Failed");
+                Debug.Log("NCMB Get Data Failed" + e.ErrorMessage);
             }
             else
             {
@@ -111,6 +111,7 @@ public class Result : MonoBehaviour
                 foreach (NCMBObject obj in objList)
                 {                    
                     res = string.Format("{0:D2}. ", (++rank));
+                    res += "          ";
                     res += obj["Name"] + ", ";
                     res += obj["Score"];
 
