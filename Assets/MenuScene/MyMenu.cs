@@ -15,7 +15,9 @@ public class MyMenu : MonoBehaviour
             "Assets/Jumper",
             "Assets/MenuScene",
             "Assets/NCMB",
+            "Assets/Nightmare",
             "Assets/PublicResources",
+            "Assets/TextMesh Pro",
             "Assets/workflow",
             "ProjectSettings/TagManager.asset",
             "ProjectSettings/EditorBuildSettings.asset"
