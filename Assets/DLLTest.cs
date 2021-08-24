@@ -6,17 +6,19 @@ using MyEngine;
 
 public class DLLTest : MonoBehaviour
 {
-    private MyEngine.CameraFollow cf;
+    private MyEngine.CameraFollow cf;    
     public Transform target;
+    private Vector3 offset;
 
     private void Start()
     {
         cf = new MyEngine.CameraFollow();
-        
+        offset = transform.position - target.position;
     }
 
     private void FixedUpdate()
-    {
-        cf.CameraFollowTarget(target, gameObject.transform, 5f, transform.position - target.position);
+    {        
+        transform.position = cf.CameraFollowTarget(target, gameObject, 5f, offset);
+        
     }
 }

@@ -4853,18 +4853,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1345156226}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1345578249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8053771636996221075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e01cfc374f0942869f0afb8731c5b2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1357674772
 GameObject:
   m_ObjectHideFlags: 0
@@ -6614,6 +6602,87 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1680975336
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3360869468946763332, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneFadeSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 908ea8919df3fef4da1cc5c591a50aed, type: 3}
+--- !u!114 &1680975337 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3360869468946763385, guid: 908ea8919df3fef4da1cc5c591a50aed,
+    type: 3}
+  m_PrefabInstance: {fileID: 1680975336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004b1b8bf9430c748aedb6e3716233f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1738117843
 GameObject:
   m_ObjectHideFlags: 0
@@ -8455,7 +8524,7 @@ GameObject:
   - component: {fileID: 8053771636996221087}
   - component: {fileID: 8053771636996221084}
   - component: {fileID: 8053771636996221085}
-  - component: {fileID: 1345578249}
+  - component: {fileID: 8053771636996221076}
   m_Layer: 5
   m_Name: btnReplay
   m_TagString: Untagged
@@ -8463,6 +8532,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8053771636996221076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053771636996221075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d7b74bd7b494b8fb9cf194ac64358f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneFadeSys: {fileID: 1680975337}
 --- !u!114 &8053771636996221084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8535,8 +8617,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1345578249}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 8053771636996221076}
+        m_MethodName: NextScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8907,15 +8989,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1345578249}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 8053771636996221076}
+        m_MethodName: NextScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: AngryBird_Title
+          m_StringArgument: MenuScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &8053771638122972480

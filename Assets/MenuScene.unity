@@ -513,6 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d204eaeb6de384b0a9df292dc6d3c2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneFadeSys: {fileID: 344389889}
 --- !u!114 &98812365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,6 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d204eaeb6de384b0a9df292dc6d3c2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneFadeSys: {fileID: 344389889}
 --- !u!114 &150280593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -899,6 +901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d204eaeb6de384b0a9df292dc6d3c2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneFadeSys: {fileID: 344389889}
 --- !u!114 &244715791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1433,6 +1436,87 @@ Transform:
   m_Father: {fileID: 23401195}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1001 &344389888
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3360869468946763332, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneFadeSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360869468946763386, guid: 908ea8919df3fef4da1cc5c591a50aed,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 908ea8919df3fef4da1cc5c591a50aed, type: 3}
+--- !u!114 &344389889 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3360869468946763385, guid: 908ea8919df3fef4da1cc5c591a50aed,
+    type: 3}
+  m_PrefabInstance: {fileID: 344389888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004b1b8bf9430c748aedb6e3716233f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &383074553
 GameObject:
   m_ObjectHideFlags: 0
@@ -7399,6 +7483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d204eaeb6de384b0a9df292dc6d3c2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneFadeSys: {fileID: 344389889}
 --- !u!114 &1979447486
 MonoBehaviour:
   m_ObjectHideFlags: 0
