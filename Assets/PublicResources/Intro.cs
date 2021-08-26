@@ -30,7 +30,7 @@ public class Intro : MonoBehaviour
             LetStart.SendMessage("IntroEnds");
             
 
-            Destroy(gameObject);
+            Destroy(gameObject);            
         }
     }
 
