@@ -2621,6 +2621,7 @@ GameObject:
   - component: {fileID: 2690367917753686985}
   - component: {fileID: 6441900448954362258}
   - component: {fileID: 2690367917753686992}
+  - component: {fileID: 2690367917753686993}
   m_Layer: 5
   m_Name: boardResult
   m_TagString: boardResult
@@ -2641,6 +2642,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFadeSys: {fileID: 985337374}
+--- !u!95 &2690367917753686993
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690367917753686991}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39c31609b8567134f9d456ab2a41ebcd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!222 &2690367917909417360
 CanvasRenderer:
   m_ObjectHideFlags: 0

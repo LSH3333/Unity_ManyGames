@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 8053771636779540549}
   - component: {fileID: 8053771636779540550}
   - component: {fileID: 1437949742638567965}
+  - component: {fileID: 7416728516963917722}
   m_Layer: 5
   m_Name: boardResult
   m_TagString: boardResult
@@ -222,6 +223,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _NCMBRank: {fileID: 0}
+  txtBest: {fileID: 0}
+--- !u!95 &7416728516963917722
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053771636779540544}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39c31609b8567134f9d456ab2a41ebcd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8053771637472733538
 GameObject:
   m_ObjectHideFlags: 0

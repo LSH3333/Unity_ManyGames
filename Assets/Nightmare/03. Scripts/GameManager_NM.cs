@@ -32,4 +32,6 @@ public class GameManager_NM : ManagerParent
         isGameOver = true;
         _pGameOver.SetActive(true);
     }
+
+    
 }

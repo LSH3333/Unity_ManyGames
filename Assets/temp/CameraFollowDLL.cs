@@ -4,7 +4,7 @@ using UnityEngine;
 using MyEngine;
 
 
-public class DLLTest : MonoBehaviour
+public class CameraFollowDLL : MonoBehaviour
 {
     private MyEngine.CameraFollow cf;    
     public Transform target;

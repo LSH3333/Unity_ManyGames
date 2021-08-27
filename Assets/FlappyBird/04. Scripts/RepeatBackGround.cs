@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using HorzTools;
+using MyEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class RepeatBackGround : HRepeat
