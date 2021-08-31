@@ -45,7 +45,7 @@ public class CameraFollowBomb : MonoBehaviour {
         GameObject.Find("Canvas").transform.GetChild(CurTargetIdx).gameObject.SetActive(false);
         
         CurTargetIdx = (++CurTargetIdx) % 3;
-        Debug.Log("CurTargetidx: " + CurTargetIdx);
+        //Debug.Log("CurTargetidx: " + CurTargetIdx);
         // 카메라 초기 위치로 이동
         transform.position = new Vector3(
             0f, 0f, transform.position.z);

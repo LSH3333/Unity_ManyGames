@@ -9,9 +9,13 @@ public class angry_Bird : MonoBehaviour {
 
     public static int EnemiesAlive = 0;
 
-	void Start()
+    public AB_MapSpawnManager spawnManager;
+    private int maxCnt = 0;
+
+    void Start()
     {
 		_anims = GetComponent<Animator>();
+        spawnManager = GameObject.Find("GameManager").GetComponent<AB_MapSpawnManager>();
 
         EnemiesAlive++; // 현재 있는 모든 적들의 각각의 script에서 1씩 증가
     }
@@ -23,18 +27,26 @@ public class angry_Bird : MonoBehaviour {
         //Debug.Log(other.relativeVelocity.magnitude); 
 
         if(other.relativeVelocity.magnitude > health)
-        {
-            //_anim.SetTrigger("SetCollision");
-            Die();
+        {            
+            Die();            
         }
 	}
 
     public void Die()
-    {
+    {        
         Instantiate(EffectDie, transform.position, Quaternion.identity);
+        if(maxCnt < 1)
+        {
+            maxCnt++;
+            spawnManager.enemiesDead++;
+        }
+        
         Destroy(gameObject);
+
         EnemiesAlive--;
         GameObject.Find("GameManager").GetComponent<Angry_ManagerGame>().score++;
+
+        
     }
 	
 }

@@ -20,8 +20,10 @@ public class Bomb : MonoBehaviour
     public GameObject nextBomb; // 다음으로 날릴 Bomb
     public TrailRenderer _trail; // Child의 Trail renderer
 
-    // SpawnMap script 
-    public AB_SpawnMap spawnMap;
+    // SpawnMap script     
+    public AB_MapSpawnManager spawnWood;
+    // Bomb Prefab 
+    public GameObject preBomb;
 
     public bool SpringDestroy
     {
@@ -105,7 +107,7 @@ public class Bomb : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (ColliderTrigger) return; // OnCollisionEnter2D가 이미 한번 호출된 상태면 더이상 호출되지않음
-
+        Debug.Log("Collision Enter");
         ColliderTrigger = true;
         StartCoroutine(DestroyBomb());
     }
@@ -115,6 +117,13 @@ public class Bomb : MonoBehaviour
         yield return new WaitForSeconds(5f);
         //gameObject.SetActive(false); // 현재 Bomb disable
         
+        // 3마리의 EnemyBird를 다 맞췄고 현재 마지막 Bomb이었다면 
+        // 새로운 Bomb를 소환한후 nextBomb에 연결 
+        if(spawnWood.enemiesDead == 3 && nextBomb == null)
+        {
+            GameObject nextBombObject = Instantiate(preBomb, preBomb.transform.position, Quaternion.identity) as GameObject;
+            nextBomb = nextBombObject;
+        }
 
         if(nextBomb != null) {  // nextBomb이 있을때만
         nextBomb.SetActive(true); // 다음 Bomb active
@@ -130,9 +139,16 @@ public class Bomb : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<GameOverFunction>().setGameOver();
         }
 
-        Destroy(gameObject); // 현재 Bomb 파괴
+        Debug.Log("dead: " + spawnWood.enemiesDead);
+        spawnWood.enemiesDead = 0;
 
-        spawnMap.InitFloors();
+        Destroy(gameObject); // 현재 Bomb 파괴
+        Destroy(GameObject.Find("WoodStructure(Clone)")); // 생성된 WoodStructure 파괴 
+
+        
+
+        // 새로운 WoodStructure 생성 
+        spawnWood.SpawnWoodStructure();
     }
    
     
