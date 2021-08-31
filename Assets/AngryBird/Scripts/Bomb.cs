@@ -20,6 +20,9 @@ public class Bomb : MonoBehaviour
     public GameObject nextBomb; // 다음으로 날릴 Bomb
     public TrailRenderer _trail; // Child의 Trail renderer
 
+    // SpawnMap script 
+    public AB_SpawnMap spawnMap;
+
     public bool SpringDestroy
     {
         get { return _springDestroy;  }
@@ -128,6 +131,8 @@ public class Bomb : MonoBehaviour
         }
 
         Destroy(gameObject); // 현재 Bomb 파괴
+
+        spawnMap.InitFloors();
     }
    
     
