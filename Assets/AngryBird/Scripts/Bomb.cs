@@ -31,7 +31,11 @@ public class Bomb : MonoBehaviour
     }
 
     void Start()
-    {        
+    {
+        preBomb = Resources.Load("Bomb") as GameObject;
+        spawnWood = GameObject.FindGameObjectWithTag("GameManager").GetComponent<AB_MapSpawnManager>();
+        _trail = gameObject.transform.GetChild(0).GetComponent<TrailRenderer>();
+        _zeroPoint = GameObject.Find("CatapultPosition").GetComponent<Transform>();
         // _zeroPoint에서 Vector3.zero(0,0,0)으로의 Ray 생성
         _rayToCatapult = new Ray(_zeroPoint.position, Vector3.zero);
 
@@ -117,15 +121,17 @@ public class Bomb : MonoBehaviour
         yield return new WaitForSeconds(5f);
         //gameObject.SetActive(false); // 현재 Bomb disable
         
-        // 3마리의 EnemyBird를 다 맞췄고 현재 마지막 Bomb이었다면 
+        // 현재 마지막 Bomb이었다면 
         // 새로운 Bomb를 소환한후 nextBomb에 연결 
-        if(spawnWood.enemiesDead == 3 && nextBomb == null)
+        if(nextBomb == null)
         {
+            //Vector3 pos = new Vector3(-13.95f, -0.49f, 0f);
             GameObject nextBombObject = Instantiate(preBomb, preBomb.transform.position, Quaternion.identity) as GameObject;
             nextBomb = nextBombObject;
         }
 
-        if(nextBomb != null) {  // nextBomb이 있을때만
+        if(nextBomb != null) // nextBomb이 있을때만
+        {  
         nextBomb.SetActive(true); // 다음 Bomb active
 
         // 카메라도 다음 Bomb로 이동
