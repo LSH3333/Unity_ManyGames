@@ -111,7 +111,7 @@ public class Bomb : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (ColliderTrigger) return; // OnCollisionEnter2D가 이미 한번 호출된 상태면 더이상 호출되지않음
-        Debug.Log("Collision Enter");
+
         ColliderTrigger = true;
         StartCoroutine(DestroyBomb());
     }
@@ -145,7 +145,7 @@ public class Bomb : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<GameOverFunction>().setGameOver();
         }
 
-        Debug.Log("dead: " + spawnWood.enemiesDead);
+
         spawnWood.enemiesDead = 0;
 
         Destroy(gameObject); // 현재 Bomb 파괴

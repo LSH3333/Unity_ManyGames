@@ -35,7 +35,7 @@ public class CameraFollowBomb : MonoBehaviour {
         if (CurTargetIdx >= 3)
         {
             GameObject newBomb = GameObject.Find("Bomb(Clone)");
-            Debug.Log("FollowFound: " + newBomb);
+            
             if (newBomb.GetComponent<Bomb>().SpringDestroy)
             {
                 transform.position = new Vector3(
@@ -58,11 +58,14 @@ public class CameraFollowBomb : MonoBehaviour {
     // 현재 Bomb의로 카메라 일시적으로 이동
     public void SwitchBomb()
     {
-        // 다음 Bomb으로 넘어갈때마다 Canvas의 Bomb_left를 disable.
-        //GameObject.Find("Canvas").transform.GetChild(CurTargetIdx).gameObject.SetActive(false);
+
+        // 잡은 마리당 10점의 점수 추가 
+        Angry_ManagerGame.singleton.score += spawnWood.enemiesDead * 10;
+        // 현재점수판 업데이트
+        Angry_ManagerGame.singleton.UpdateCurScore();
 
         // bombLeftIdx >= 3이라면 3개의 목숨을 다 썼다는 의미 
-        if(bombLeftIdx >= 3 && spawnWood.enemiesDead != 3)
+        if (bombLeftIdx >= 3 && spawnWood.enemiesDead != 3)
         {
             GameObject.Find("GameManager").GetComponent<GameOverFunction>().setGameOver();
         }
