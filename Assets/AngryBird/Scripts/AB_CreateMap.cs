@@ -13,12 +13,21 @@ public class AB_CreateMap : MonoBehaviour
     // 판자의 긴부분, 짧은부분 길이 
     private float PlankLongSide = 1.66f, PlankShortSide = 0.4f;
     // 소환할 프리펩 
-    public GameObject column, roof, bird; 
-    
+    public GameObject column, roof, bird;
+
+    // 해당 게임오브젝트의 자식으로 소환 
+    public GameObject SpawnedObjects;
+
+    public int enemiesDead = 0;
 
     private int max = 7;
 
     private void Start()
+    {
+        StartSpawn();
+    }
+
+    public void StartSpawn()
     {
         // 중앙 좌측 판자 
         flagLeft = new Vector3(14.98f, -1.22f, 0f);
@@ -37,12 +46,13 @@ public class AB_CreateMap : MonoBehaviour
         SpawnRandomColumn();
         // 3rd floor 
         SpawnRandomColumn();
+
     }
 
     void SpawnRandomColumn()
     {
         // 가운데 두개의 기둥 
-        Instantiate(column, flagLeft, column.transform.rotation);
+        Instantiate(column, flagLeft, column.transform.rotation);        
         Instantiate(column, flagRight, column.transform.rotation);
         // 가운데 지붕 
         Instantiate(roof, flagRoof, roof.transform.rotation);
@@ -65,22 +75,25 @@ public class AB_CreateMap : MonoBehaviour
             {
                 // column 
                 leftPos.x -= PlankLongSide;
-                Instantiate(column, leftPos, column.transform.rotation);
+                Instantiate(column, leftPos, column.transform.rotation);            
 
                 // roof 
                 leftRoofPos.x -= PlankLongSide;
                 Instantiate(roof, leftRoofPos, roof.transform.rotation);
-                Debug.Log("leftPos:" + i + " " + leftPos.x + "," + leftPos.y);
+                
+                //Debug.Log("leftPos:" + i + " " + leftPos.x + "," + leftPos.y);
             }
             // 우측소환 
             else
             {
                 rightPos.x += PlankLongSide;
                 Instantiate(column, rightPos, column.transform.rotation);
+                
 
                 rightRoofPos.x += PlankLongSide;
                 Instantiate(roof, rightRoofPos, roof.transform.rotation);
-                Debug.Log("rightPos:" + i + " " + rightPos.x + "," + rightPos.y);
+               
+                //Debug.Log("rightPos:" + i + " " + rightPos.x + "," + rightPos.y);
             }
         }
 
@@ -96,7 +109,7 @@ public class AB_CreateMap : MonoBehaviour
             birdPos.x += (birdCnt / 2) * PlankLongSide;
         }
         Instantiate(bird, birdPos, bird.transform.rotation);
-
+        
 
         // 판자들 y값 상승 (1층 위로) 
         flagLeft.y += PlankLongSide + PlankShortSide;

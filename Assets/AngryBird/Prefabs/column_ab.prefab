@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2873433326404698183}
   m_Layer: 0
   m_Name: column_ab
-  m_TagString: Untagged
+  m_TagString: AB_SpawnedObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

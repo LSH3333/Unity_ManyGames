@@ -5,9 +5,8 @@ public class CameraFollowBomb : MonoBehaviour {
     public int num_target = 3; // target Bomb의 갯수
     //public GameObject[] targetToFollow;
     public GameObject[] targetToFollow; // Camera가 따라갈 target
-
-    // SpawnMap script     
-    public AB_MapSpawnManager spawnWood;
+    
+    private AB_CreateMap createMap;
     public GameObject[] bombLeft;
     public int bombLeftIdx = 0;
 
@@ -15,7 +14,7 @@ public class CameraFollowBomb : MonoBehaviour {
 
     void Start()
     {
-        
+        createMap = GameObject.FindGameObjectWithTag("GameManager").GetComponent<AB_CreateMap>();
     }
 
     void Update()
@@ -58,20 +57,20 @@ public class CameraFollowBomb : MonoBehaviour {
     // 현재 Bomb의로 카메라 일시적으로 이동
     public void SwitchBomb()
     {
-
+        Debug.Log("CHECK: " + createMap.enemiesDead);
         // 잡은 마리당 10점의 점수 추가 
-        Angry_ManagerGame.singleton.score += spawnWood.enemiesDead * 10;
+        Angry_ManagerGame.singleton.score += createMap.enemiesDead * 10;
         // 현재점수판 업데이트
         Angry_ManagerGame.singleton.UpdateCurScore();
 
         // bombLeftIdx >= 3이라면 3개의 목숨을 다 썼다는 의미 
-        if (bombLeftIdx >= 3 && spawnWood.enemiesDead != 3)
+        if (bombLeftIdx >= 3 && createMap.enemiesDead != 3)
         {
             GameObject.Find("GameManager").GetComponent<GameOverFunction>().setGameOver();
         }
 
         // 3마리 다 잡지 못했다면 목숨 감소
-        if(spawnWood.enemiesDead != 3 && bombLeftIdx < 3)
+        if(createMap.enemiesDead != 3 && bombLeftIdx < 3)
         {
             bombLeft[bombLeftIdx++].SetActive(false);
         }

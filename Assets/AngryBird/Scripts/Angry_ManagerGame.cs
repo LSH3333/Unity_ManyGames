@@ -9,9 +9,6 @@ public class Angry_ManagerGame : ManagerParent
     // 0: intro, 1: game play, 2: game result
     [HideInInspector] public int gameMode = 0;
 
-    public GameObject EnemyBird;
-    //public int killedBirds = 0;
-
     public Text txtCurScore;
 
     private void Awake()
