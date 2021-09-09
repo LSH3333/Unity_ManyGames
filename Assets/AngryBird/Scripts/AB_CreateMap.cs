@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class AB_CreateMap : MonoBehaviour
 {
+    // 기준, 중앙 좌측 판자, 우측 판자 
     private Vector3 flagLeft, flagRight;
+    // 기준, 중앙 지붕 판자 
     private Vector3 flagRoof;
+    // 기준, 중앙 Bird 위치 
+    private Vector3 flagBird;
+    // 판자의 긴부분, 짧은부분 길이 
     private float PlankLongSide = 1.66f, PlankShortSide = 0.4f;
-    public GameObject column, roof;
+    // 소환할 프리펩 
+    public GameObject column, roof, bird; 
+    
 
     private int max = 7;
 
@@ -18,7 +25,9 @@ public class AB_CreateMap : MonoBehaviour
         // 중앙 우측 판자 
         flagRight = new Vector3(16.64f, -1.22f, 0f);
         // 중앙 지붕 
-        flagRoof = new Vector3(15.81f, -0.19f, 0f);        
+        flagRoof = new Vector3(15.81f, -0.19f, 0f);
+        // 중앙 Bird 
+        flagBird = new Vector3(15.81f, -1.715f, 0f);
 
         // 1층 최대 7칸 
         max = 7;
@@ -42,7 +51,7 @@ public class AB_CreateMap : MonoBehaviour
         int cnt = Random.Range(2, max);
         // 위층이 아래층 보다 작은 값 나오도록 
         max = cnt;
-
+        
         // column 
         Vector3 leftPos = flagLeft;
         Vector3 rightPos = flagRight;
@@ -75,9 +84,26 @@ public class AB_CreateMap : MonoBehaviour
             }
         }
 
+        // Bird 
+        Vector3 birdPos = flagBird;
+        int birdCnt = Random.Range(0, cnt + 1);
+        if (birdCnt % 2 != 0)
+        {
+            birdPos.x -= (birdCnt/2+1) * PlankLongSide;
+        }
+        else
+        {
+            birdPos.x += (birdCnt / 2) * PlankLongSide;
+        }
+        Instantiate(bird, birdPos, bird.transform.rotation);
+
+
+        // 판자들 y값 상승 (1층 위로) 
         flagLeft.y += PlankLongSide + PlankShortSide;
         flagRight.y += PlankLongSide + PlankShortSide;
         flagRoof.y += PlankLongSide + PlankShortSide;
+        // Bird y값 상승 (1층 위로)
+        flagBird.y += PlankLongSide + PlankShortSide;
     }
 
 }

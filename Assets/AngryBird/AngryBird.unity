@@ -1112,7 +1112,6 @@ GameObject:
   - component: {fileID: 406688440}
   - component: {fileID: 406688439}
   - component: {fileID: 406688442}
-  - component: {fileID: 406688443}
   - component: {fileID: 406688444}
   m_Layer: 0
   m_Name: GameManager
@@ -1180,21 +1179,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pGameOver: {fileID: 8053771638122972486}
---- !u!114 &406688443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 406688438}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e718c8a319b614e29b9c9c3f528c2fe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  woodStructurePrefab: {fileID: 5404946525610060826, guid: 62ff25139e8394e6998596c8e74b3058,
-    type: 3}
-  enemiesDead: 0
 --- !u!114 &406688444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1209,6 +1193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   column: {fileID: 2873433326404698182, guid: 28cb9caf604202c439caa30fb7f31a30, type: 3}
   roof: {fileID: 5145004337770400683, guid: ec9c3e680cfe4af4da771adfd1bcc2bd, type: 3}
+  bird: {fileID: 2847150051138798838, guid: 07e40208dc525c646a03d463feacda56, type: 3}
 --- !u!1 &486537031
 GameObject:
   m_ObjectHideFlags: 0
@@ -7092,7 +7077,7 @@ MonoBehaviour:
   - {fileID: 1212553275724772}
   - {fileID: 1212553633850254}
   - {fileID: 1212554923430891}
-  spawnWood: {fileID: 406688443}
+  spawnWood: {fileID: 0}
   bombLeft:
   - {fileID: 403200979}
   - {fileID: 195889521}
@@ -7106,7 +7091,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098226359}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f08e25e778710347b38649364472544, type: 3}
   m_Name: 
@@ -7162,7 +7147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098226359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.55, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7446,7 +7431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1212553633850254
 GameObject:
   m_ObjectHideFlags: 0
@@ -7497,7 +7482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212553275724772}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.95, y: -0.49, z: 0}
+  m_LocalPosition: {x: -4.23, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1370839580}
@@ -7512,7 +7497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212553633850254}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.95, y: -0.49, z: 0}
+  m_LocalPosition: {x: -4.23, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 111873179}
@@ -7527,7 +7512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212554923430891}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.95, y: -0.49, z: 0}
+  m_LocalPosition: {x: -4.23, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 742085621}
@@ -7666,7 +7651,7 @@ MonoBehaviour:
   _zeroPoint: {fileID: 0}
   nextBomb: {fileID: 0}
   _trail: {fileID: 742085620}
-  spawnWood: {fileID: 406688443}
+  spawnWood: {fileID: 0}
   preBomb: {fileID: 1212553550949182, guid: 796914a7954e61840bf3a3f26f4c3f88, type: 3}
 --- !u!114 &114077942814320188
 MonoBehaviour:
@@ -7683,7 +7668,7 @@ MonoBehaviour:
   _zeroPoint: {fileID: 0}
   nextBomb: {fileID: 1212554923430891}
   _trail: {fileID: 111873178}
-  spawnWood: {fileID: 406688443}
+  spawnWood: {fileID: 0}
   preBomb: {fileID: 1212553550949182, guid: 796914a7954e61840bf3a3f26f4c3f88, type: 3}
 --- !u!114 &114077943214315094
 MonoBehaviour:
@@ -7697,10 +7682,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb6e527b2194164ead47f004800d415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zeroPoint: {fileID: 0}
+  _zeroPoint: {fileID: 4086156767256652}
   nextBomb: {fileID: 1212553633850254}
   _trail: {fileID: 1370839579}
-  spawnWood: {fileID: 406688443}
+  spawnWood: {fileID: 0}
   preBomb: {fileID: 1212553550949182, guid: 796914a7954e61840bf3a3f26f4c3f88, type: 3}
 --- !u!212 &212644230279076324
 SpriteRenderer:
@@ -7867,7 +7852,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -13.95, y: -0.49}
+  m_ConnectedAnchor: {x: -4.23, y: -0.49}
   m_AutoConfigureDistance: 0
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -7887,7 +7872,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -13.95, y: -0.49}
+  m_ConnectedAnchor: {x: -4.23, y: -0.49}
   m_AutoConfigureDistance: 0
   m_Distance: 0.005
   m_DampingRatio: 0
@@ -7907,7 +7892,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -13.95, y: -0.49}
+  m_ConnectedAnchor: {x: -4.23, y: -0.49}
   m_AutoConfigureDistance: 0
   m_Distance: 0.005
   m_DampingRatio: 0
