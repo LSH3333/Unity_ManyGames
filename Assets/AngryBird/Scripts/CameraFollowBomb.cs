@@ -11,10 +11,12 @@ public class CameraFollowBomb : MonoBehaviour {
     public int bombLeftIdx = 0;
 
     public int CurTargetIdx = 0; // Current Bomb Index
+    private AB_CameraMoveTo cameraMoveTo;
 
     void Start()
     {
         createMap = GameObject.FindGameObjectWithTag("GameManager").GetComponent<AB_CreateMap>();
+        cameraMoveTo = Camera.main.transform.GetComponent<AB_CameraMoveTo>();
     }
 
     void Update()
@@ -78,10 +80,18 @@ public class CameraFollowBomb : MonoBehaviour {
         //CurTargetIdx = (++CurTargetIdx) % 3;
         CurTargetIdx = ++CurTargetIdx;
         //Debug.Log("CurTargetidx: " + CurTargetIdx);
+
         // 카메라 초기 위치로 이동
         transform.position = new Vector3(
             0f, 0f, transform.position.z);
 
-        
+        cameraMoveTo.updateTrigger = true;
+        cameraMoveTo.toInit = false;
+        cameraMoveTo.trigger = false;
+
+        Debug.Log("updateTrigger: " + cameraMoveTo.updateTrigger);
+
+
+
     }
 }

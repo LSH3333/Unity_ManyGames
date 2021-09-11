@@ -6,9 +6,9 @@ public class AB_CameraMoveTo : MonoBehaviour
 {
     private Vector3 initCamPos;
     private Vector3 nextCamPos;
-    private bool toInit = false;
-    private bool trigger = false;
-    private bool updateTrigger = false;
+    public bool toInit = false;
+    public bool trigger = false;
+    public bool updateTrigger = false;
 
     // Start is called before the first frame update
     void Start()
