@@ -21,7 +21,7 @@ public class Bomb : MonoBehaviour
     public TrailRenderer _trail; // Child의 Trail renderer
 
     // SpawnMap script     
-    public AB_MapSpawnManager spawnWood;
+    public AB_CreateMap createMap;
     // Bomb Prefab 
     public GameObject preBomb;
 
@@ -32,8 +32,8 @@ public class Bomb : MonoBehaviour
 
     void Start()
     {
-        preBomb = Resources.Load("Bomb") as GameObject;
-        spawnWood = GameObject.FindGameObjectWithTag("GameManager").GetComponent<AB_MapSpawnManager>();
+        preBomb = Resources.Load("Bomb") as GameObject;        
+        createMap = GameObject.FindGameObjectWithTag("GameManager").GetComponent<AB_CreateMap>();
         _trail = gameObject.transform.GetChild(0).GetComponent<TrailRenderer>();
         _zeroPoint = GameObject.Find("CatapultPosition").GetComponent<Transform>();
         // _zeroPoint에서 Vector3.zero(0,0,0)으로의 Ray 생성
@@ -146,15 +146,19 @@ public class Bomb : MonoBehaviour
         }
 
 
-        spawnWood.enemiesDead = 0;
+        createMap.enemiesDead = 0;
+
+        // 소환한 woodStructure, bird 모두 파괴 
+        GameObject[] destroyObjects = GameObject.FindGameObjectsWithTag("AB_SpawnedObject");
+        foreach (GameObject x in destroyObjects)
+            Destroy(x);
 
         Destroy(gameObject); // 현재 Bomb 파괴
-        Destroy(GameObject.Find("WoodStructure(Clone)")); // 생성된 WoodStructure 파괴 
-
         
 
-        // 새로운 WoodStructure 생성 
-        spawnWood.SpawnWoodStructure();
+
+        // 새로운 WoodStructure 생성         
+        createMap.StartSpawn();
     }
    
     

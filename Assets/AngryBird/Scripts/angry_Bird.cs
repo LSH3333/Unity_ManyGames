@@ -7,15 +7,14 @@ public class angry_Bird : MonoBehaviour {
     public float health = 4f;
     public GameObject EffectDie;
 
-
-    public AB_MapSpawnManager spawnManager;
+    
+    private AB_CreateMap createMap;
     private int maxCnt = 0;
 
     void Start()
     {
 		_anims = GetComponent<Animator>();
-        spawnManager = GameObject.Find("GameManager").GetComponent<AB_MapSpawnManager>();
-
+        createMap = GameObject.Find("GameManager").GetComponent<AB_CreateMap>();        
     }
      
 	private void OnCollisionEnter2D(Collision2D other)
@@ -36,7 +35,8 @@ public class angry_Bird : MonoBehaviour {
         if(maxCnt < 1)
         {
             maxCnt++;
-            spawnManager.enemiesDead++;
+            createMap.enemiesDead++;
+            Debug.Log("DIE!!");
         }
         
         Destroy(gameObject);
