@@ -1,0 +1,680 @@
+fileFormatVersion: 2
+guid: b3249d610db0c4d1f89e1f2e86df2d03
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8620991401517524089
+    second: Wooden Banners_0
+  - first:
+      213: -7329511894504528817
+    second: Wooden Banners_1
+  - first:
+      213: -2790037384203616619
+    second: Wooden Banners_2
+  - first:
+      213: -8109603123234361193
+    second: Wooden Banners_3
+  - first:
+      213: 2030498119551134226
+    second: Wooden Banners_4
+  - first:
+      213: 4323054017988633439
+    second: Wooden Banners_5
+  - first:
+      213: 451732207968352968
+    second: Wooden Banners_6
+  - first:
+      213: -983043029104867369
+    second: Wooden Banners_7
+  - first:
+      213: 3292541974561484493
+    second: Wooden Banners_8
+  - first:
+      213: -3690487168381792507
+    second: Wooden Banners_9
+  - first:
+      213: 641052157485394594
+    second: Wooden Banners_10
+  - first:
+      213: -3039721673113817946
+    second: Wooden Banners_11
+  - first:
+      213: -6578023919039541891
+    second: Wooden Banners_12
+  - first:
+      213: 67636783301047380
+    second: Wooden Banners_13
+  - first:
+      213: 7604943182009931514
+    second: Wooden Banners_14
+  - first:
+      213: 4421731844994766528
+    second: Wooden Banners_15
+  - first:
+      213: 8669867309854374193
+    second: Wooden Banners_16
+  - first:
+      213: -7358811025387975757
+    second: Wooden Banners_17
+  - first:
+      213: 6143261225601137516
+    second: Wooden Banners_18
+  - first:
+      213: -5387327895513262701
+    second: Wooden Banners_19
+  - first:
+      213: 3568227385549860715
+    second: Wooden Banners_20
+  - first:
+      213: -6414207784194226421
+    second: Wooden Banners_21
+  - first:
+      213: -6429125363748778361
+    second: Wooden Banners_22
+  - first:
+      213: -7168758910786904459
+    second: Wooden Banners_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wooden Banners_0
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 1959
+        width: 2069
+        height: 1526
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9742623f00ae3a770800000000000000
+      internalID: 8620991401517524089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_1
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 3482
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f44ae0fe3c7584a90800000000000000
+      internalID: -7329511894504528817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_2
+      rect:
+        serializedVersion: 2
+        x: 2978
+        y: 2794
+        width: 670
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ebb7408cbc749d0800000000000000
+      internalID: -2790037384203616619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2794
+        width: 658
+        height: 654
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 790b73a0de6e47f80800000000000000
+      internalID: -8109603123234361193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2024
+        width: 638
+        height: 654
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21aa1fc1847cd2c10800000000000000
+      internalID: 2030498119551134226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_5
+      rect:
+        serializedVersion: 2
+        x: 2985
+        y: 2024
+        width: 633
+        height: 654
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53a90f89b29efb30800000000000000
+      internalID: 4323054017988633439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_6
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1242
+        width: 1665
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca7e8dbc00e44600800000000000000
+      internalID: 451732207968352968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_7
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 1850
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d7c74bc2978b52f0800000000000000
+      internalID: -983043029104867369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_8
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 1242
+        width: 1657
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dceecc13b7571bd20800000000000000
+      internalID: 3292541974561484493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_9
+      rect:
+        serializedVersion: 2
+        x: 2362
+        y: 1850
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f47703971c8ccc0800000000000000
+      internalID: -3690487168381792507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_10
+      rect:
+        serializedVersion: 2
+        x: 2474
+        y: 542
+        width: 664
+        height: 654
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa2a617a8975e800800000000000000
+      internalID: 641052157485394594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_11
+      rect:
+        serializedVersion: 2
+        x: 2722
+        y: 1194
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6acaef15e3db0d5d0800000000000000
+      internalID: -3039721673113817946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_12
+      rect:
+        serializedVersion: 2
+        x: 3193
+        y: 712
+        width: 451
+        height: 468
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d00a5f81a26b4a0800000000000000
+      internalID: -6578023919039541891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_13
+      rect:
+        serializedVersion: 2
+        x: 3290
+        y: 1178
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454b86acb4b40f000800000000000000
+      internalID: 67636783301047380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_14
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 978
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af61bb4088f2a8960800000000000000
+      internalID: 7604943182009931514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_15
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 772
+        width: 2418
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c612f88fa52d5d30800000000000000
+      internalID: 4421731844994766528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 283
+        width: 2439
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13934a5226e815870800000000000000
+      internalID: 8669867309854374193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_17
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 689
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb858e6c5040e990800000000000000
+      internalID: -7358811025387975757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_18
+      rect:
+        serializedVersion: 2
+        x: 3017
+        y: 522
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6bf26a498f314550800000000000000
+      internalID: 6143261225601137516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_19
+      rect:
+        serializedVersion: 2
+        x: 3020
+        y: 0
+        width: 628
+        height: 654
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 395116382dd5c35b0800000000000000
+      internalID: -5387327895513262701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_20
+      rect:
+        serializedVersion: 2
+        x: 2504
+        y: 30
+        width: 452
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f2581e6e3e48130800000000000000
+      internalID: 3568227385549860715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_21
+      rect:
+        serializedVersion: 2
+        x: 3017
+        y: 402
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07ce8311082cf6a0800000000000000
+      internalID: -6414207784194226421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_22
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 56
+        width: 2421
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ecc4d6b8827c6a0800000000000000
+      internalID: -6429125363748778361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Banners_23
+      rect:
+        serializedVersion: 2
+        x: 3017
+        y: 290
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e512a90c3738c90800000000000000
+      internalID: -7168758910786904459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

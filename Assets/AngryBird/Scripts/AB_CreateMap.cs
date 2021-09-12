@@ -13,7 +13,7 @@ public class AB_CreateMap : MonoBehaviour
     // 판자의 긴부분, 짧은부분 길이 
     private float PlankLongSide = 1.66f, PlankShortSide = 0.4f;
     // 소환할 프리펩 
-    public GameObject column, roof, bird;
+    public GameObject column, bird;
 
     // 해당 게임오브젝트의 자식으로 소환 
     public GameObject SpawnedObjects;
@@ -24,6 +24,7 @@ public class AB_CreateMap : MonoBehaviour
 
     private void Start()
     {
+        //roof.transform.eulerAngles = new Vector3(0f, 0f, 90f);
         StartSpawn();
     }
 
@@ -36,7 +37,8 @@ public class AB_CreateMap : MonoBehaviour
         // 중앙 지붕 
         flagRoof = new Vector3(15.81f, -0.19f, 0f);
         // 중앙 Bird 
-        flagBird = new Vector3(15.81f, -1.715f, 0f);
+        //flagBird = new Vector3(15.81f, -1.715f, 0f);
+        flagBird = new Vector3(15.81f, -1.825f, 0f);
 
         // 1층 최대 7칸 
         max = 7;
@@ -47,6 +49,7 @@ public class AB_CreateMap : MonoBehaviour
         // 3rd floor 
         SpawnRandomColumn();
 
+
     }
 
     void SpawnRandomColumn()
@@ -55,7 +58,8 @@ public class AB_CreateMap : MonoBehaviour
         Instantiate(column, flagLeft, column.transform.rotation);        
         Instantiate(column, flagRight, column.transform.rotation);
         // 가운데 지붕 
-        Instantiate(roof, flagRoof, roof.transform.rotation);
+        Instantiate(column, flagRoof, Quaternion.Euler(0f,0f,0f));
+
 
         // 2~6개의 기둥 랜덤 소환 
         int cnt = Random.Range(2, max);
@@ -79,7 +83,7 @@ public class AB_CreateMap : MonoBehaviour
 
                 // roof 
                 leftRoofPos.x -= PlankLongSide;
-                Instantiate(roof, leftRoofPos, roof.transform.rotation);
+                Instantiate(column, leftRoofPos, Quaternion.Euler(0f,0f,0f));
                 
                 //Debug.Log("leftPos:" + i + " " + leftPos.x + "," + leftPos.y);
             }
@@ -91,7 +95,7 @@ public class AB_CreateMap : MonoBehaviour
                 
 
                 rightRoofPos.x += PlankLongSide;
-                Instantiate(roof, rightRoofPos, roof.transform.rotation);
+                Instantiate(column, rightRoofPos, Quaternion.Euler(0f,0f,0f));
                
                 //Debug.Log("rightPos:" + i + " " + rightPos.x + "," + rightPos.y);
             }

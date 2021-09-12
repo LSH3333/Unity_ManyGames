@@ -25,10 +25,15 @@ public class Bomb : MonoBehaviour
     // Bomb Prefab 
     public GameObject preBomb;
 
+    // Catapult Line
+    private LineRenderer _lineblack, _lineforce; // stone 뒤,앞 라인 
+    private bool _isShowLine = true; // line 보이기 여부 
+
     public bool SpringDestroy
     {
         get { return _springDestroy;  }
     }
+
 
     void Start()
     {
@@ -42,6 +47,12 @@ public class Bomb : MonoBehaviour
         _rb2d = GetComponent<Rigidbody2D>();
         _spring = GetComponent<SpringJoint2D>();
         _springDestroy = false;
+
+
+        // catapult line
+        _lineblack = GameObject.Find("LineBlack").GetComponent<LineRenderer>();
+        _lineforce = GameObject.Find("LineForce").GetComponent<LineRenderer>();
+        createLine();
     }
 
     private void Update()
@@ -76,20 +87,17 @@ public class Bomb : MonoBehaviour
                 Destroy(_spring); // spring 제거
                 _springDestroy = true;
                 _rb2d.velocity = _prev_velocity; // 마지막 속력값을 지정.
+                deleteLine(); // catapult line 제거 
             }
             if (clickedOnBomb == false) _prev_velocity = _rb2d.velocity;
         }
-        
+
+        // catapult line
+        UpdateLine();
         
     }
-    /*
-    void OnDisable()
-    {
-        
-        _trail.autodestruct = true;
-    }
-    */
-    
+
+
     // Bomb이 파괴될때 child와 parent 분리 (trail renderer 유지 위해서)
     void OnDestroy()
     {
@@ -160,8 +168,31 @@ public class Bomb : MonoBehaviour
         // 새로운 WoodStructure 생성         
         createMap.StartSpawn();
     }
-   
-    
 
+    // catapult line 
+    void UpdateLine()
+    {
+        if (!_isShowLine) return;
+        
+        // 라인의 2번째 지점을 Stone 위치로 계속 갱신
+        _lineblack.SetPosition(1, transform.position);
+        _lineforce.SetPosition(1, transform.position);
+    }
+
+    // 돌이 catapult 떠나면 line 제거
+    void deleteLine()
+    {
+        _isShowLine = false;        
+        _lineblack.enabled = false;       
+        _lineforce.enabled = false;
+    }
+    // 새로운 폭탄 활성화시 cataplut line도 다시 활성화 
+    void createLine()
+    {
+        _isShowLine = true;
+        _lineblack.enabled = true;
+        _lineforce.enabled = true;
+    }
+    
 
 }

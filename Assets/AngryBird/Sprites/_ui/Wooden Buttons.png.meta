@@ -1,0 +1,1208 @@
+fileFormatVersion: 2
+guid: 7aeaa0e5032e64eb4be41897a6576c4e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8433460866511658571
+    second: Wooden Buttons_0
+  - first:
+      213: -5570913829276328506
+    second: Wooden Buttons_1
+  - first:
+      213: -4842010571231110041
+    second: Wooden Buttons_2
+  - first:
+      213: 412393203030294750
+    second: Wooden Buttons_3
+  - first:
+      213: 7748019921267604725
+    second: Wooden Buttons_4
+  - first:
+      213: 8942702927965016050
+    second: Wooden Buttons_5
+  - first:
+      213: -3007403165718308727
+    second: Wooden Buttons_6
+  - first:
+      213: 8406463083809465171
+    second: Wooden Buttons_7
+  - first:
+      213: -7197649639361682946
+    second: Wooden Buttons_8
+  - first:
+      213: -3652043358593004283
+    second: Wooden Buttons_9
+  - first:
+      213: -334786407698304897
+    second: Wooden Buttons_10
+  - first:
+      213: 74386089557486429
+    second: Wooden Buttons_11
+  - first:
+      213: 5829473650860605783
+    second: Wooden Buttons_12
+  - first:
+      213: -4960228263985142012
+    second: Wooden Buttons_13
+  - first:
+      213: 2395673360042505264
+    second: Wooden Buttons_14
+  - first:
+      213: 4884862659000324966
+    second: Wooden Buttons_15
+  - first:
+      213: -1274459103133964752
+    second: Wooden Buttons_16
+  - first:
+      213: -7742869335280955126
+    second: Wooden Buttons_17
+  - first:
+      213: -7784919879042557889
+    second: Wooden Buttons_18
+  - first:
+      213: 4621732056783489013
+    second: Wooden Buttons_19
+  - first:
+      213: 521288716328775807
+    second: Wooden Buttons_20
+  - first:
+      213: -8519768824466531240
+    second: Wooden Buttons_21
+  - first:
+      213: -8010131723265340792
+    second: Wooden Buttons_22
+  - first:
+      213: 3339912466148283677
+    second: Wooden Buttons_23
+  - first:
+      213: 7259868668419508756
+    second: Wooden Buttons_24
+  - first:
+      213: -4009964101715324680
+    second: Wooden Buttons_25
+  - first:
+      213: -6177259427417625755
+    second: Wooden Buttons_26
+  - first:
+      213: -498437693442265762
+    second: Wooden Buttons_27
+  - first:
+      213: 3558551147067779587
+    second: Wooden Buttons_28
+  - first:
+      213: 6049571586723891288
+    second: Wooden Buttons_29
+  - first:
+      213: 4155296219034665356
+    second: Wooden Buttons_30
+  - first:
+      213: -8737090196993563566
+    second: Wooden Buttons_31
+  - first:
+      213: 2324274817917854839
+    second: Wooden Buttons_32
+  - first:
+      213: 8939680516530698122
+    second: Wooden Buttons_33
+  - first:
+      213: -2252465143946119567
+    second: Wooden Buttons_34
+  - first:
+      213: -7191442476863393278
+    second: Wooden Buttons_35
+  - first:
+      213: -2828601841226328567
+    second: Wooden Buttons_36
+  - first:
+      213: -7381282937323018876
+    second: Wooden Buttons_37
+  - first:
+      213: -8899505475485872385
+    second: Wooden Buttons_38
+  - first:
+      213: -2209855700589903139
+    second: Wooden Buttons_39
+  - first:
+      213: 5597658650317448378
+    second: Wooden Buttons_40
+  - first:
+      213: 485695865607725059
+    second: Wooden Buttons_41
+  - first:
+      213: -2020666968788920093
+    second: Wooden Buttons_42
+  - first:
+      213: 5538625128525132856
+    second: Wooden Buttons_43
+  - first:
+      213: -2512562911433739727
+    second: Wooden Buttons_44
+  - first:
+      213: 4213206331129906367
+    second: Wooden Buttons_45
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wooden Buttons_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2894
+        width: 1830
+        height: 596
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ed597c9fba90570800000000000000
+      internalID: 8433460866511658571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3205
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd5ca3636320b2b0800000000000000
+      internalID: -5570913829276328506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_2
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 2914
+        width: 1610
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c551f1a09bdccb0800000000000000
+      internalID: -4842010571231110041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_3
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 2354
+        width: 441
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed00866ee6d19b500800000000000000
+      internalID: 412393203030294750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_4
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 2805
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc3ecf411f768b60800000000000000
+      internalID: 7748019921267604725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_5
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 2354
+        width: 441
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff4339beecda1c70800000000000000
+      internalID: 8942702927965016050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_6
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 2354
+        width: 440
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98899f231ce8346d0800000000000000
+      internalID: -3007403165718308727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_7
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 2806
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353e5e7a2a1c9a470800000000000000
+      internalID: 8406463083809465171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_8
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 2354
+        width: 444
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef1e02ca9cfcc1c90800000000000000
+      internalID: -7197649639361682946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_9
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 2806
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d4dba2ae5515dc0800000000000000
+      internalID: -3652043358593004283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_10
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2354
+        width: 442
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f70738539899a5bf0800000000000000
+      internalID: -334786407698304897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_11
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 2806
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5bed4c11c5480100800000000000000
+      internalID: 74386089557486429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_12
+      rect:
+        serializedVersion: 2
+        x: 2574
+        y: 2354
+        width: 442
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751cb0b466376e050800000000000000
+      internalID: 5829473650860605783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_13
+      rect:
+        serializedVersion: 2
+        x: 3096
+        y: 2354
+        width: 442
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4072050acaab92bb0800000000000000
+      internalID: -4960228263985142012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_14
+      rect:
+        serializedVersion: 2
+        x: 3096
+        y: 2726
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03433376a342f3120800000000000000
+      internalID: 2395673360042505264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_15
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 2630
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663d84e05b48ac340800000000000000
+      internalID: 4884862659000324966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_16
+      rect:
+        serializedVersion: 2
+        x: 3096
+        y: 2550
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036efe4b236305ee0800000000000000
+      internalID: -1274459103133964752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_17
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1784
+        width: 466
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a015050fc5dcb8490800000000000000
+      internalID: -7742869335280955126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_18
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1784
+        width: 470
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f389ac4cd9866f390800000000000000
+      internalID: -7784919879042557889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_19
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1784
+        width: 466
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f78d9391d0b32040800000000000000
+      internalID: 4621732056783489013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_20
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1784
+        width: 466
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f70323a535dfb3700800000000000000
+      internalID: 521288716328775807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_21
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 1784
+        width: 465
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c9931d463b3c980800000000000000
+      internalID: -8519768824466531240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_22
+      rect:
+        serializedVersion: 2
+        x: 2558
+        y: 1784
+        width: 466
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a8eae13ab46d090800000000000000
+      internalID: -8010131723265340792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_23
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2046
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15daad31b0c95e20800000000000000
+      internalID: 3339912466148283677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_24
+      rect:
+        serializedVersion: 2
+        x: 3074
+        y: 1784
+        width: 464
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a0229e61c30c460800000000000000
+      internalID: 7259868668419508756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_25
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 2037
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0903b25eeb958c0800000000000000
+      internalID: -4009964101715324680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_26
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 2037
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56be65f7747f54aa0800000000000000
+      internalID: -6177259427417625755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_27
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1252
+        width: 532
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d65b30f813519f0800000000000000
+      internalID: -498437693442265762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_28
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1252
+        width: 533
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30aa80c0a63826130800000000000000
+      internalID: 3558551147067779587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_29
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 1252
+        width: 534
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85849fd5e4564f350800000000000000
+      internalID: 6049571586723891288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_30
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 1766
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81c51045e39aa930800000000000000
+      internalID: 4155296219034665356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_31
+      rect:
+        serializedVersion: 2
+        x: 2608
+        y: 1702
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254a6a5c1ce9fb680800000000000000
+      internalID: -8737090196993563566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_32
+      rect:
+        serializedVersion: 2
+        x: 3094
+        y: 1246
+        width: 437
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7742162e1ab714020800000000000000
+      internalID: 2324274817917854839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_33
+      rect:
+        serializedVersion: 2
+        x: 2168
+        y: 1694
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a87fa49b010201c70800000000000000
+      internalID: 8939680516530698122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_34
+      rect:
+        serializedVersion: 2
+        x: 2536
+        y: 1246
+        width: 442
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176742ab2e2adb0e0800000000000000
+      internalID: -2252465143946119567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_35
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1557
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202f6ef4b2dd23c90800000000000000
+      internalID: -7191442476863393278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_36
+      rect:
+        serializedVersion: 2
+        x: 2036
+        y: 1232
+        width: 402
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90650baac99ceb8d0800000000000000
+      internalID: -2828601841226328567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 905
+        width: 1880
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 485a536b64a609990800000000000000
+      internalID: -7381282937323018876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_38
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 705
+        width: 389
+        height: 465
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe4501fbea9e7480800000000000000
+      internalID: -8899505475485872385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_39
+      rect:
+        serializedVersion: 2
+        x: 2521
+        y: 682
+        width: 469
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd28779d2f30551e0800000000000000
+      internalID: -2209855700589903139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_40
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 682
+        width: 465
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4601282e0eead40800000000000000
+      internalID: 5597658650317448378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 604
+        width: 1880
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300ac6201d98db600800000000000000
+      internalID: 485695865607725059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 486
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e898fb091625f3e0800000000000000
+      internalID: -2020666968788920093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_43
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 304
+        width: 1877
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 834fac1a5362ddc40800000000000000
+      internalID: 5538625128525132856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_44
+      rect:
+        serializedVersion: 2
+        x: 1948
+        y: 0
+        width: 1611
+        height: 588
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132bb2c1855912dd0800000000000000
+      internalID: -2512562911433739727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Buttons_45
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 4
+        width: 1871
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb4cc6ce5d0587a30800000000000000
+      internalID: 4213206331129906367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

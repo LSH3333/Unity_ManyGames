@@ -20,19 +20,14 @@ public class CameraFollowBomb : MonoBehaviour {
     }
 
     void Update()
-    {   /*
-        // Bomb의 Spring이 Destroy됐다 = 공이 날라가기 시작함
-        if(GameObject.Find("Bomb").GetComponent<Bomb>().SpringDestroy)
+    {
+        if (transform.position.x > 16)
         {
-            // 카메라가 target을 따라감.
-            transform.position = new Vector3(
-                targetToFollow.transform.position.x,
-                targetToFollow.transform.position.y,
-                transform.position.z);
+            return;            
         }
-        */
+            
+
         // spring이 파괴되면
-        //if (targetToFollow[CurTargetIdx] == null) return;
         if (CurTargetIdx >= 3)
         {
             GameObject newBomb = GameObject.Find("Bomb(Clone)");
@@ -53,6 +48,7 @@ public class CameraFollowBomb : MonoBehaviour {
                 transform.position.z);
         }
 
+        
         
     }
 
