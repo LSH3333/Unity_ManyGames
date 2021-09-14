@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+
+// 스크립트 폐기 (사용안함)
+
 // 층 별로 1개~7개 woodSet 소환 
 public class AB_WoodRandomSpawn : MonoBehaviour
 {

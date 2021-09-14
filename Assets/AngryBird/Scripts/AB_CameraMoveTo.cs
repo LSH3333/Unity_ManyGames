@@ -20,7 +20,7 @@ public class AB_CameraMoveTo : MonoBehaviour
 
     private void Update()
     {
-        if (!updateTrigger) return;
+        if (!updateTrigger || Angry_ManagerGame.singleton.gameMode == 2) return;
 
         if (transform.position.x >= 15.5f && !trigger)
         {

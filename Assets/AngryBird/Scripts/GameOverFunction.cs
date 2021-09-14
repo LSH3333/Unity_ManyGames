@@ -14,7 +14,6 @@ public class GameOverFunction : MonoBehaviour
     public void setGameOver()
     {
         //Angry_ManagerGame.singleton.gameMode = 2;
-        _pGameOver.SetActive(true);
-        //Debug.Log("Gameover");
+        _pGameOver.SetActive(true);        
     }
 }

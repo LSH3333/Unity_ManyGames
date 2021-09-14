@@ -140,33 +140,37 @@ public class Bomb : MonoBehaviour
 
         if(nextBomb != null) // nextBomb이 있을때만
         {  
-        nextBomb.SetActive(true); // 다음 Bomb active
+            nextBomb.SetActive(true); // 다음 Bomb active
 
-        // 카메라도 다음 Bomb로 이동
-        Camera.main.GetComponent<CameraFollowBomb>().SwitchBomb();
+            // 카메라도 다음 Bomb로 이동
+            Camera.main.GetComponent<CameraFollowBomb>().SwitchBomb();
+
+            //
+            if(Angry_ManagerGame.singleton.gameMode != 2)
+            {
+                createMap.enemiesDead = 0;
+
+                // 소환한 woodStructure, bird 모두 파괴 
+                GameObject[] destroyObjects = GameObject.FindGameObjectsWithTag("AB_SpawnedObject");
+                foreach (GameObject x in destroyObjects)
+                    Destroy(x);
+
+                // 새로운 WoodStructure 생성         
+                createMap.StartSpawn();
+
+            }
+            
         }
         else // this is when game is over
-        {
-            // Level Restart
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            //Angry_ManagerGame.singleton.setGameOver();
-            GameObject.Find("GameManager").GetComponent<GameOverFunction>().setGameOver();
+        {            
+            GameObject.Find("GameManager").GetComponent<GameOverFunction>().setGameOver();            
         }
 
 
-        createMap.enemiesDead = 0;
-
-        // 소환한 woodStructure, bird 모두 파괴 
-        GameObject[] destroyObjects = GameObject.FindGameObjectsWithTag("AB_SpawnedObject");
-        foreach (GameObject x in destroyObjects)
-            Destroy(x);
-
-        Destroy(gameObject); // 현재 Bomb 파괴
         
 
-
-        // 새로운 WoodStructure 생성         
-        createMap.StartSpawn();
+        Destroy(gameObject); // 현재 Bomb 파괴
+               
     }
 
     // catapult line 

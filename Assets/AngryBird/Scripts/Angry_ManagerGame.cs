@@ -28,18 +28,6 @@ public class Angry_ManagerGame : ManagerParent
     }
 
 
-    private void Update()
-    {
-        //Debug.Log(killedBirds);
-    }
-
-    public void setGameOver()
-    {
-        //Angry_ManagerGame.singleton.gameMode = 2;
-        //_pGameOver.SetActive(true);
-        Debug.Log("Gameover");
-    }
-
     public void UpdateCurScore()
     {
         txtCurScore.text = "Score: " + Convert.ToString(Angry_ManagerGame.singleton.score);

@@ -48,8 +48,6 @@ public class AB_CreateMap : MonoBehaviour
         SpawnRandomColumn();
         // 3rd floor 
         SpawnRandomColumn();
-
-
     }
 
     void SpawnRandomColumn()
@@ -57,7 +55,7 @@ public class AB_CreateMap : MonoBehaviour
         // 가운데 두개의 기둥 
         Instantiate(column, flagLeft, column.transform.rotation);        
         Instantiate(column, flagRight, column.transform.rotation);
-        // 가운데 지붕 
+        // 가운데 지붕 (column을 90도돌려서 지붕으로 소환)
         Instantiate(column, flagRoof, Quaternion.Euler(0f,0f,0f));
 
 

@@ -7,14 +7,14 @@ public class SceneFading : MonoBehaviour
     // Fade 완료후 전환할 씬이름 
     private string sceneToLoad;
 
- 
+
     public void FadeToScene(string sceneName)
     {
         sceneToLoad = sceneName;
         animator.SetTrigger("SceneFadeOut");
     }
 
-    // Fade가 완료된후 scene load 
+    // Fade가 완료된후 scene load (animation에서 함수 호출) 
     public void OnFadeComplete()
     {
         SceneManager.LoadScene(sceneToLoad);

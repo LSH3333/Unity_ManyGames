@@ -28,7 +28,7 @@ public class Result : MonoBehaviour
     public Text _NCMBRank;
 
     // BestScore 표시할 텍스트 창 
-    public Text txtBest;
+    //public Text txtBest;
 
     // 각 게임들의 Manager들이 담긴다 
     ManagerParent manager;

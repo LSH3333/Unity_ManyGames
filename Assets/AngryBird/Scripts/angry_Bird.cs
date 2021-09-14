@@ -35,8 +35,7 @@ public class angry_Bird : MonoBehaviour {
         if(maxCnt < 1)
         {
             maxCnt++;
-            createMap.enemiesDead++;
-            Debug.Log("DIE!!");
+            createMap.enemiesDead++;            
         }
         
         Destroy(gameObject);

@@ -64,7 +64,9 @@ public class CameraFollowBomb : MonoBehaviour {
         // bombLeftIdx >= 3이라면 3개의 목숨을 다 썼다는 의미 
         if (bombLeftIdx >= 3 && createMap.enemiesDead != 3)
         {
-            GameObject.Find("GameManager").GetComponent<GameOverFunction>().setGameOver();
+            //GameObject.Find("GameManager").GetComponent<GameOverFunction>().setGameOver();
+            GameObject.Find("PublicResourcesManager").GetComponent<PublicResourcesManager>().SetGameOver();
+            Angry_ManagerGame.singleton.gameMode = 2; // game result 
         }
 
         // 3마리 다 잡지 못했다면 목숨 감소

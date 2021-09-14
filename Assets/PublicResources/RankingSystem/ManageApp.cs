@@ -39,8 +39,7 @@ public class ManageApp : MonoBehaviour
         // singleton
         if(singleton == null)
         {
-            singleton = this;
-            //Load();
+            singleton = this;            
             DontDestroyOnLoad(gameObject);
         }
         else if(singleton != this)
