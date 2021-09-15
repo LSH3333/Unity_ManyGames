@@ -3003,11 +3003,11 @@ MonoBehaviour:
   levelWidth: 10
   minY: 0.5
   maxY: 1.2
-  Plat_black: {fileID: 3556358994602919602, guid: 6fc839ab9aaa40d4896a2e4bbbf0ef47,
+  Plat_black: {fileID: 3556358994602919602, guid: 1a3dc0e57522c8f4f9e0ada872d3f395,
     type: 3}
-  Plat_red: {fileID: 2750722635464429172, guid: 4f0c8894881305b4e8509656c8fdf64e,
+  Plat_red: {fileID: 2750722635464429172, guid: 881f4faa9df64bf47a13870e4797375f,
     type: 3}
-  Plat_blue: {fileID: 6335354043279859811, guid: d8b0ced81eb7c944682414c379415cf0,
+  Plat_blue: {fileID: 6335354043279859811, guid: ae17212af18655b4b9a38c44f2048a07,
     type: 3}
 --- !u!4 &2096801304
 Transform:

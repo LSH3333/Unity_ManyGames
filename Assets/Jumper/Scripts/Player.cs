@@ -40,19 +40,19 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         // GameEnds가 false인 상태, 즉 게임이 진행중에만 이동가능
-        if(!JumperManagerGame.singleton.GameEnds)
+        if(JumperManagerGame.singleton.gameMode == 1)
         {
             // 이동
             moveInput = Input.GetAxis("Horizontal");
             _rb2d.velocity = new Vector2(moveInput * MovePower, _rb2d.velocity.y);
-        }
-
-        
+        }        
     }
 
 
     private void Update()
     {
+        if (JumperManagerGame.singleton.gameMode != 1) return;
+
         // 캐릭터가 이동하는 방향을 바라보게함
         if(moveInput < 0) // move left
         {
@@ -136,14 +136,7 @@ public class Player : MonoBehaviour
     }
 
 
-    // Called after Intro Ends
-    public void IntroEnds()
-    {
-        // 게임 시작하면서 Player의 Rigidbody 활성 
-        _rb2d.bodyType = RigidbodyType2D.Dynamic;
-        // Fireball 소환 시작.
-        GameObject.Find("GameManager").GetComponent<ObstaclsGenerator>().enabled = true;
-    }
+ 
 
    
 

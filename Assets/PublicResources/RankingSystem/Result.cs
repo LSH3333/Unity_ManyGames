@@ -33,12 +33,19 @@ public class Result : MonoBehaviour
     // 각 게임들의 Manager들이 담긴다 
     ManagerParent manager;
 
+    // 씬 전환시 Fading 
+    private SceneFading sceneFadeSys;
+
+    private Button replayButton, mainButton;
+    private PublicResourcesManager publicResourcesManager;
+
     private void Awake()
     {
         // ManagerParent의 자식 중 하나인 클래스에 접근 
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<ManagerParent>();
-
-
+        sceneFadeSys = GameObject.Find("SceneFadeSystem").GetComponent<SceneFading>();
+        publicResourcesManager = GameObject.Find("PublicResourcesManager").GetComponent<PublicResourcesManager>();
+        SetButton();
     }
 
 
@@ -125,5 +132,20 @@ public class Result : MonoBehaviour
         });
     }
 
+    // ResultBoard의 child인 Button에 OnClick 이벤트 할당 
+    private void SetButton()
+    {
+        replayButton = gameObject.transform.GetChild(2).GetComponent<Button>();
+        mainButton = gameObject.transform.GetChild(3).GetComponent<Button>();
+
+        string replaySceneName = publicResourcesManager.currentSceneName;
+        string mainSceneName = publicResourcesManager.mainSceneName;
+
+        // 람다식 
+        replayButton.onClick.AddListener(() => { sceneFadeSys.FadeToScene(replaySceneName); });
+        mainButton.onClick.AddListener(() => { sceneFadeSys.FadeToScene(mainSceneName); });
+    }
+
+    
     
 }

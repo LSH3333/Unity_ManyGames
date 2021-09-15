@@ -21,10 +21,10 @@ EditorBuildSettings:
     path: Assets/Jumper/Scenes/Jumper.unity
     guid: f1d8981af4d31437f85c710fe9b6f111
   - enabled: 1
-    path: Assets/FlappyBird/03. Scenes/FlappyBird_Title.unity
+    path: Assets/FlappyBird/Scenes/FlappyBird_Title.unity
     guid: a4280e7513daeef4b93caa89ab3836b1
   - enabled: 1
-    path: Assets/FlappyBird/03. Scenes/FlappyBird_Game.unity
+    path: Assets/FlappyBird/Scenes/FlappyBird_Game.unity
     guid: 7605595be77f2664c850b88a6f780d70
   - enabled: 1
     path: Assets/Nightmare/01. Scene/Nightmare_Title.unity

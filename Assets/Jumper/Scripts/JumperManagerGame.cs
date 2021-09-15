@@ -7,7 +7,9 @@ public class JumperManagerGame : ManagerParent
 
     [HideInInspector]
     public bool GameEnds;
-
+    // 0: intro, 1: game play, 2: game result
+    [HideInInspector]
+    public int gameMode = 0;
 
     [SerializeField]
     public GameObject ResultBoard;
@@ -38,12 +40,11 @@ public class JumperManagerGame : ManagerParent
         Screen.SetResolution(1080, 1920, false);
 
         GameEnds = false;
-        //ResultBoard = GameObject.Find("ResultBoard");
-        ResultBoard.SetActive(false);
+
         PlayerRB = GameObject.Find("Player").GetComponent<Rigidbody2D>();
 
         // GameManager가 활성화되면 BestScore를 가져옴. 
-        _txtBest = GameObject.Find("txtBest").GetComponent<Text>();
+        //_txtBest = GameObject.Find("txtBest").GetComponent<Text>();
         GetBestScore();
     }
 
@@ -62,10 +63,11 @@ public class JumperManagerGame : ManagerParent
         if (GameEnds) return; // GameEnds가 true면 함수실행x
 
         GameEnds = true;
-        ResultBoard.SetActive(true);
 
-        score = (int)GameObject.Find("Player").GetComponent<Player>().topScore;
-        YourScoreText.text = "Your Score: " + Mathf.Round(score).ToString();
+        GameObject.Find("PublicResourcesManager").GetComponent<PublicResourcesManager>().SetGameOver();
+
+        //score = (int)GameObject.Find("Player").GetComponent<Player>().topScore;
+        //YourScoreText.text = "Your Score: " + Mathf.Round(score).ToString();
         
         gameover_audio.Play(); // GameOver sound play
 

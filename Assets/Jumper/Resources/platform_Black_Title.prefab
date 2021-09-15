@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8933309290843292478}
   - component: {fileID: 356679768672702713}
   - component: {fileID: 3381285183955364517}
-  - component: {fileID: 6696638280630806453}
-  - component: {fileID: 1135160926193058262}
+  - component: {fileID: 515963704828855581}
+  - component: {fileID: 7123963088892947546}
   m_Layer: 0
-  m_Name: platform_Black
+  m_Name: platform_Black_Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +130,7 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &6696638280630806453
+--- !u!114 &515963704828855581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,13 +139,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8428552522338193350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fc402af8606d4a42beddb64214d6550, type: 3}
+  m_Script: {fileID: 11500000, guid: 9dc3cfa626f20d848903cc0e9c3775ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 0}
   MyColIdx: 3
   MovingPercentage: 0
---- !u!50 &1135160926193058262
+--- !u!50 &7123963088892947546
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

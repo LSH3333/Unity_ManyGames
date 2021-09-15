@@ -38,9 +38,6 @@ public class FlappyBird_ManagerGame : ManagerParent
         
         _txtLife = GameObject.Find("txtLife").GetComponent<Text>();
 
-        _pGameOver = GameObject.Find("boardResult");
-        _pGameOver.SetActive(false);
-
         // BestScore 오브젝트는 부모에 선언되있음. (모든 게임들에서 쓰일것이기 때문에)
         // 게임매니저가 활성화되면 즉 게임이 시작되면 데이터베이스에서 bestscore를 가져옴. 
         // 새로운 게임을 추가하면, 
@@ -64,10 +61,11 @@ public class FlappyBird_ManagerGame : ManagerParent
 
     public void SetGameOver()
     {
+        Debug.Log("PUBLIC SETGAMEOVER");
         FlappyBird_ManagerGame.inst.gameMode = 2; // 결과창모드로 전환
         gameMode = 2;
         isGameOver = true;
-        _pGameOver.SetActive(true);
+        GameObject.Find("PublicResourcesManager").GetComponent<PublicResourcesManager>().SetGameOver();
     }
 
     // 점수 추가, UI에 표시

@@ -47,14 +47,11 @@ public class Bird : MonoBehaviour
         BirdBlink(); // 매 프레임마다 껌뻑껌뻑 랜더링 상태를 확인 및 처리.
     }
 
-    void GameStart()
-    {
-        _rb2d.bodyType = RigidbodyType2D.Dynamic;
-    }
-
     // Bird가 다른 Obstacle과 충돌했을때, 이때는 이미 Bird의 life는 모두 소진된 상태임
     private void OnCollisionEnter2D(Collision2D other)
     {
+        // 마지막 충돌시 gameMode=2(game Result)로 바뀌고 이후에는 충돌 무시됨 
+        if (FlappyBird_ManagerGame.inst.gameMode == 2) return;
         _anim.SetTrigger("SetDie");
         FlappyBird_ManagerGame.inst.SetGameOver();
     }

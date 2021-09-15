@@ -3,8 +3,8 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 
-[RequireComponent(typeof(Rigidbody2D))] 
-public class Bounce : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+public class Bounce_Title : MonoBehaviour
 {
 
     private float jumpPower = 0f;
@@ -12,7 +12,7 @@ public class Bounce : MonoBehaviour
     private float JumpPowerRate = 500f;
 
     public SpriteRenderer _renderer;
-    
+
     private int MaxColorIndex = 3;
     public int MyColIdx = 3;
     //  Black: 0, Red: 1, Blue: 2, 
@@ -36,7 +36,7 @@ public class Bounce : MonoBehaviour
 
     private void Start()
     {
-        jumpPower = JumpPowerRate; 
+        jumpPower = JumpPowerRate;
         myColIndex();
 
         MovingPercentage = Random.Range(0, 10);
@@ -47,11 +47,11 @@ public class Bounce : MonoBehaviour
     {
         // 첫 발판은 움직이지 않도록
         if (gameObject.name == "Platform_primary") return;
-        if (JumperManagerGame.singleton.gameMode != 1) return;
+        
         // 확률로 인해 어떤 발판들은 움직이도록
         if (MovingPercentage == 1)
         {
-            MovingPlatforms();            
+            MovingPlatforms();
         }
     }
 
@@ -60,7 +60,7 @@ public class Bounce : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Jumper_Title") return;
 
         // Game종료면 발판의 Collider2D 비활성.
-        if(JumperManagerGame.singleton.GameEnds)
+        if (JumperManagerGame.singleton.GameEnds)
         {
             _col.enabled = false;
         }
@@ -82,7 +82,7 @@ public class Bounce : MonoBehaviour
         {
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpPower));
         }
-       
+
     }
 
     // 이 발판의 색이 무엇인가. MyColIdx에 저장.
@@ -104,7 +104,7 @@ public class Bounce : MonoBehaviour
         // 화면 양쪽 끝 도달시 방향 반대
         if (transform.position.x >= 10f || transform.position.x <= -10f) dir *= -1;
         _rb2d.velocity = new Vector2(dir, 0); // 발판 우측으로 이동.
-        
+
     }
 
     // 잠시 대기
