@@ -37,14 +37,14 @@ public class JumperManagerGame : ManagerParent
         singleton = this;
 
         // set resolution
-        Screen.SetResolution(1080, 1920, false);
+        //Screen.SetResolution(1080, 1920, false);
 
         GameEnds = false;
 
         PlayerRB = GameObject.Find("Player").GetComponent<Rigidbody2D>();
 
         // GameManager가 활성화되면 BestScore를 가져옴. 
-        //_txtBest = GameObject.Find("txtBest").GetComponent<Text>();
+        _txtBest = GameObject.Find("txtBest").GetComponent<Text>();
         GetBestScore();
     }
 

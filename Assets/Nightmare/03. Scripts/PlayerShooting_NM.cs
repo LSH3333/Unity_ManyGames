@@ -32,6 +32,8 @@ public class PlayerShooting_NM : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager_NM.singleton.gameMode != 1) return;
+
         timer += Time.deltaTime;
 
         // 마우스 좌클릭 && 공격이 가능한 시간 간격이 되었나 

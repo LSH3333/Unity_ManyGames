@@ -19,6 +19,8 @@ public class PlayerMovement_NM : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (GameManager_NM.singleton.gameMode != 1) return;
+
         // GetAxisRaw : -1, 0, 1 중 하나 리턴, 즉각적인 움직임에 적합
         // GetAix : -1.0f ~ 1.0f 사이의 값 리턴, 부드러운 움직임에 적합 
         float h = Input.GetAxisRaw("Horizontal"); // 좌:-1, 우:1 
