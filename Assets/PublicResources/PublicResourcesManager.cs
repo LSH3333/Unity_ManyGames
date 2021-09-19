@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 이 스크립트를 PublicResourcesManager 프리팹에 부착.
-// 각 게임  씬에서 Intro, ResultBoard, FadeSystem을 프리팹 하나로 관리.
+// 각 게임 씬에서 Intro, ResultBoard, FadeSystem을 프리팹 하나로 관리.
 // PublicResourcesManager 프리팹을 각 게임씬의 메모리에 올리고 
 // currentSceneName, mainSceneName만 수정해주면 된다.
 public class PublicResourcesManager : MonoBehaviour
@@ -24,6 +24,7 @@ public class PublicResourcesManager : MonoBehaviour
         InstantiateIntro();
     }
 
+    // Fadein FadeOut System 
     private void InstantiateFadeSystem()
     {
         GameObject fadeSys = Instantiate(FadeSystem, transform.position, Quaternion.identity);
