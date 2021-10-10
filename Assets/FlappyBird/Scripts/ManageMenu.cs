@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Management;
 
-public class ManageTitle : MonoBehaviour
+public class ManageMenu : Manage
 {
     public Text textName, textBscore, textBtnName, textIF;
     
@@ -10,6 +11,12 @@ public class ManageTitle : MonoBehaviour
     public bool status = false; // InputField 상태값, show/hide
 
     public string onClickStart_string, onClickBack_string;
+
+    // fade 
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 
     private void Start()
     {
@@ -80,4 +87,8 @@ public class ManageTitle : MonoBehaviour
         //Debug.Log("status: " + status);
     }
 
+    // 게임시작 아니므로 body만 구현 
+    public override void SetStart()
+    {        
+    }
 }

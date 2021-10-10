@@ -4,13 +4,7 @@ using NCMB;
 
 public class SceneControl : MonoBehaviour
 {
-    // 씬 전환시 Fading 
-    public SceneFading sceneFadeSys;
 
-    private void Start()
-    {
-        sceneFadeSys = GameObject.Find("SceneFadeSystem").GetComponent<SceneFading>();
-    }
 
     // "AngryBird_Button", "Jumper Button" ... 등 OnClick에 연결 
     // 해당 버튼의 OnClick에 저장된 string (씬이름)에 따라 씬 변경  
@@ -26,8 +20,9 @@ public class SceneControl : MonoBehaviour
         else
         {
             print("CurrentUser: " + NCMBUser.CurrentUser.UserName);
-            
-            sceneFadeSys.FadeToScene(_scenename);
+
+            //sceneFadeSys.FadeToScene(_scenename);
+            GameObject.FindGameObjectWithTag("GameManager").SendMessage("SetFadeout", _scenename);
 
             // 게임버튼 클릭할때 현재 로그인된 유저정보 ManageApp에 전달됨 
             ManageApp.singleton.NickName = NCMBUser.CurrentUser.UserName;
