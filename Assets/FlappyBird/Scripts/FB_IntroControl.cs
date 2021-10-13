@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FB_IntroControl : MonoBehaviour
+public class FB_IntroControl_removed : MonoBehaviour
 {
     public GameObject bird;
     public ObstaclePool obstaclePool;

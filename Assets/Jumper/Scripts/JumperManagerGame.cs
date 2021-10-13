@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
-public class JumperManagerGame : ManagerParent
+using Management;
+public class JumperManagerGame : Manage
 {
     public static JumperManagerGame singleton;
 
@@ -32,14 +32,13 @@ public class JumperManagerGame : ManagerParent
 
     public GameObject Player;
 
-    private void Awake()
+    protected override void Awake()
     {
         singleton = this;
+        base.Awake();
+        Invoke("SetIntro", 1f);
 
-        // set resolution
-        //Screen.SetResolution(1080, 1920, false);
-
-        GameEnds = false;
+        //GameEnds = false;
 
         PlayerRB = GameObject.Find("Player").GetComponent<Rigidbody2D>();
 
@@ -48,32 +47,37 @@ public class JumperManagerGame : ManagerParent
         GetBestScore();
     }
 
-    private void Start()
+    public override void SetStart()
     {
-        
-    }
-
-    private void Update()
-    {
+        GameEnds = false;
+        JumperManagerGame.singleton.gameMode = 1;
+        // 게임 시작하면서 Player의 Rigidbody 활성 
+        GameObject.Find("Player").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        // Fireball 소환 시작.
+        GameObject.Find("GameManager").GetComponent<ObstaclsGenerator>().enabled = true;
     }
 
     // 게임종료, Result보드 표시
     public void setGameOver()
     {
         if (GameEnds) return; // GameEnds가 true면 함수실행x
-
+        JumperManagerGame.singleton.gameMode = 2;
         GameEnds = true;
-
-        GameObject.Find("PublicResourcesManager").GetComponent<PublicResourcesManager>().SetGameOver();
 
         //score = (int)GameObject.Find("Player").GetComponent<Player>().topScore;
         //YourScoreText.text = "Your Score: " + Mathf.Round(score).ToString();
         
         gameover_audio.Play(); // GameOver sound play
-
+        InstantiateUI("boardResult", "Canvas", false);
         Destroy(Player, 10f);
         //PlayerRB.bodyType = RigidbodyType2D.Kinematic; // Rigidbody 무력화
     }
 
+    private void SetIntro()
+    {
+        InstantiateUI("Intro", "Canvas", false);
+    }
+
+    
 }
 

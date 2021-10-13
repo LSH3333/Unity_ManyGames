@@ -23,13 +23,8 @@ public class Intro : MonoBehaviour
             // 따라서 Intro 실행 후 실행해야할 함수가 있는 GameObject에 Intro 태그를 달고, 
             // tag가 Intro인 GameObject 찾아서 IntroEnds 함수 실행
 
-            // GameObject with "Intro" tags:
-            // Jumper : Player
-            // AngryBird : IntroControl
-            GameObject LetStart = GameObject.FindGameObjectWithTag("Intro");        
-            LetStart.SendMessage("IntroEnds");
+            GameObject.Find("GameManager").SendMessage("SetStart");
             
-
             Destroy(gameObject);            
         }
     }

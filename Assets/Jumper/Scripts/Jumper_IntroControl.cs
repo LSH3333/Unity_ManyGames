@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jumper_IntroControl : MonoBehaviour
+public class Jumper_IntroControl_removed : MonoBehaviour
 {
     public GameObject player;
 

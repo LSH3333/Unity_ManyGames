@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/AngryBird/AngryBird_Title.unity
     guid: 8c3689817aad54f54bd4a831a7815e8b
   - enabled: 1
-    path: Assets/AngryBird/AngryBird.unity
+    path: Assets/AngryBird/AngryBird_Game.unity
     guid: 318fed4ec785f8645bc942046079f844
   - enabled: 1
     path: Assets/Jumper/Scenes/Jumper_Title.unity
     guid: 609a9587a34694f61a1511a3d61e4cc0
   - enabled: 1
-    path: Assets/Jumper/Scenes/Jumper.unity
+    path: Assets/Jumper/Scenes/Jumper_Game.unity
     guid: f1d8981af4d31437f85c710fe9b6f111
   - enabled: 1
     path: Assets/FlappyBird/Scenes/FlappyBird_Title.unity

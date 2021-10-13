@@ -163,7 +163,7 @@ public class Bomb : MonoBehaviour
         }
         else // this is when game is over
         {            
-            GameObject.Find("GameManager").GetComponent<GameOverFunction>().setGameOver();            
+            //GameObject.Find("GameManager").GetComponent<GameOverFunction>().setGameOver();            
         }
 
 

@@ -14,15 +14,12 @@ public class PublicResourcesManager : Manage
     public GameObject Intro;
     public GameObject ResultBoard;
     public GameObject FadeSystem;
-    private GameObject Canvas;
+    //private GameObject Canvas;
 
-    protected override void Awake()
+    private new void Awake()
     {
-        // fade 
-        base.Awake();
-
-        Canvas = GameObject.Find("Canvas");
-        InstantiateIntro();
+        //Canvas = GameObject.Find("Canvas");
+        //InstantiateIntro();
     }
 
     // Fadein FadeOut System 
@@ -43,7 +40,7 @@ public class PublicResourcesManager : Manage
     public void SetGameOver()
     {        
         // ResultBoard 소환 
-        InstantiateUI("boardResult", "Canvas", true);
+        InstantiateUI("boardResult", "Canvas", false);
     }
 
     public override void SetStart()
