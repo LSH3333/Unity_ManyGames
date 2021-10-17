@@ -5,7 +5,7 @@ using Management;
 // 각 게임 씬에서 Intro, ResultBoard, FadeSystem을 프리팹 하나로 관리.
 // PublicResourcesManager 프리팹을 각 게임씬의 메모리에 올리고 
 // currentSceneName, mainSceneName만 수정해주면 된다.
-public class PublicResourcesManager : Manage
+public class PublicResourcesManager_removed : Manage
 {
     // 현재 씬, 메인씬 이름. 하이라키에서 입력 
     // ResultBoard의 button에 전달 
