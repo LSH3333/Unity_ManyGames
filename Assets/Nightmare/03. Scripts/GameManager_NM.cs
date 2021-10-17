@@ -21,7 +21,7 @@ public class GameManager_NM : Manage
 
         // GameManager가 활성화되면 BestScore를 가져옴. 
         _txtBest = GameObject.Find("txtBest").GetComponent<Text>();
-        GetBestScore();
+        GetBestScore(ManageApp.singleton.gameName);
     }
 
     public override void SetStart()

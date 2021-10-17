@@ -60,10 +60,10 @@ namespace Management
 
 
         // 현재 게임의 "Score"를 정렬해서 가져와서 가장 높은 점수인 BestScore를 찾는다 
-        public void GetBestScore()
+        public void GetBestScore(string gameName)
         {
 
-            NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>(ManageApp.singleton.gameName);
+            NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>(gameName);
             query.AddDescendingOrder("Score");
 
             query.FindAsync((List<NCMBObject> objList, NCMBException e) =>

@@ -19,7 +19,7 @@ public class Angry_ManagerGame : Manage
         Invoke("SetIntro", 1f);
 
         _txtBest = GameObject.Find("txtBest").GetComponent<Text>();
-        GetBestScore();
+        GetBestScore(ManageApp.singleton.gameName);
         
     }
 
