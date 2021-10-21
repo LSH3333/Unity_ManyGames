@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using NCMB;
 using UnityEngine;
-using Management;
+using MyEngine;
+using NCMB;
 
 /*
     기존과 다르게
@@ -22,7 +22,7 @@ using Management;
     *각 게임의 매니저는 게임 종료시 결과창을 띄우는 SetGameOver() 함수를 포함해야한다. 
 */
 
-public class Result : Manage
+public class Result : MyEngine.Manage
 {
     // NCMB 데이터베이스에서 정보가져와 랭크창 표시.
     // _txtRank나 _NCBMRank 둘 중 하나만 사용해야함 

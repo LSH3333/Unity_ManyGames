@@ -37,8 +37,9 @@ public class AB_CreateMap : MonoBehaviour
         // 중앙 지붕 
         flagRoof = new Vector3(15.81f, -0.19f, 0f);
         // 중앙 Bird 
-        //flagBird = new Vector3(15.81f, -1.715f, 0f);
-        flagBird = new Vector3(15.81f, -1.825f, 0f);
+        flagBird = new Vector3(15.81f, -1.715f, 0f);
+        //flagBird = new Vector3(15.81f, 4f, 0f);
+        //flagBird = new Vector3(15.81f, -1.825f, 0f);
 
         // 1층 최대 7칸 
         max = 7;

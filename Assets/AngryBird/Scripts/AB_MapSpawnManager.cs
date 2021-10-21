@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AB_MapSpawnManager : MonoBehaviour
+public class AB_MapSpawnManager_removed : MonoBehaviour
 {
     // 소환할 WoodStructure 
     public GameObject woodStructurePrefab;

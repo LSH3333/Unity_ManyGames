@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using Management;
 
-public class FlappyBird_ManagerGame : Manage
+public class FlappyBird_ManagerGame : Management.Manage
 {
     public static FlappyBird_ManagerGame inst;
     [HideInInspector] public bool isGameOver = false;

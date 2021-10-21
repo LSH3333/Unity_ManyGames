@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Management;
 
-public class ManageMenu : Manage
+public class ManageMenu : Management.Manage
 {
     public Text textName, textBscore, textBtnName, textIF;
     

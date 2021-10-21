@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using Management;
 
-public class GameManager_NM : Manage
+public class GameManager_NM : Management.Manage
 {
     public static GameManager_NM singleton;
     public SpawnMoster_NM spawnMonster;

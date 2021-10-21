@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Management;
-public class JumperManagerGame : Manage
+
+public class JumperManagerGame : Management.Manage
 {
     public static JumperManagerGame singleton;
 

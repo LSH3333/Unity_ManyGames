@@ -1,28 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
+using MyEngine;
 
-public class Fade : MonoBehaviour
+public class Fade : MyEngine.Fade
 {
-    private string _nextScene = "MenuScene";
 
-
-    public void endFadeIn()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void endFadeOut()
-    {
-        SceneManager.LoadScene(_nextScene);
-    }
-
-    public void setFadeOut()
-    {
-        GetComponent<Animator>().SetTrigger("SetFadeout");
-    }
-
-    public void setNextScene(string nextScene)
-    {
-        _nextScene = nextScene;
-    }
 }

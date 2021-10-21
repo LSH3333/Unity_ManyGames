@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Management;
+using MyEngine;
 
 // 이 스크립트를 PublicResourcesManager 프리팹에 부착.
 // 각 게임 씬에서 Intro, ResultBoard, FadeSystem을 프리팹 하나로 관리.

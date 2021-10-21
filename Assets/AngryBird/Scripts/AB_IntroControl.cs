@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class AB_IntroControl : MonoBehaviour
+public class AB_IntroControl_removed : MonoBehaviour
 {
     public GameObject FirstBomb;
 

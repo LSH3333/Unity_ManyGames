@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System;
 using Management;
 
-public class Angry_ManagerGame : Manage
+public class Angry_ManagerGame : Management.Manage
 {
     public static Angry_ManagerGame singleton;
 

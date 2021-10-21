@@ -4,7 +4,7 @@
 // 스크립트 폐기 (사용안함)
 
 // 층 별로 1개~7개 woodSet 소환 
-public class AB_WoodRandomSpawn : MonoBehaviour
+public class AB_WoodRandomSpawn_removed : MonoBehaviour
 {
     // WoodStructure 
     public GameObject[] woodFloor1, woodFloor2, woodFloor3;    

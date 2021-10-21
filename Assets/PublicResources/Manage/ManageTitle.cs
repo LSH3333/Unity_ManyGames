@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Management;
 
-public class ManageTitle : Manage
+public class ManageTitle : Management.Manage
 {
     protected override void Awake()
     {
