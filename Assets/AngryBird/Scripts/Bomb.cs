@@ -26,7 +26,7 @@ public class Bomb : MonoBehaviour
     public GameObject preBomb;
 
     // Catapult Line
-    private LineRenderer _lineblack, _lineforce; // stone 뒤,앞 라인 
+    private LineRenderer _lineback, _linefore; // stone 뒤,앞 라인 
     private bool _isShowLine = true; // line 보이기 여부 
 
     public bool SpringDestroy
@@ -50,8 +50,8 @@ public class Bomb : MonoBehaviour
 
 
         // catapult line
-        _lineblack = GameObject.Find("LineBlack").GetComponent<LineRenderer>();
-        _lineforce = GameObject.Find("LineForce").GetComponent<LineRenderer>();
+        _lineback = GameObject.Find("LineBack").GetComponent<LineRenderer>();
+        _linefore = GameObject.Find("LineFore").GetComponent<LineRenderer>();
         createLine();
     }
 
@@ -179,23 +179,23 @@ public class Bomb : MonoBehaviour
         if (!_isShowLine) return;
         
         // 라인의 2번째 지점을 Stone 위치로 계속 갱신
-        _lineblack.SetPosition(1, transform.position);
-        _lineforce.SetPosition(1, transform.position);
+        _lineback.SetPosition(1, transform.position);
+        _linefore.SetPosition(1, transform.position);
     }
 
     // 돌이 catapult 떠나면 line 제거
     void deleteLine()
     {
         _isShowLine = false;        
-        _lineblack.enabled = false;       
-        _lineforce.enabled = false;
+        _lineback.enabled = false;       
+        _linefore.enabled = false;
     }
     // 새로운 폭탄 활성화시 cataplut line도 다시 활성화 
     void createLine()
     {
         _isShowLine = true;
-        _lineblack.enabled = true;
-        _lineforce.enabled = true;
+        _lineback.enabled = true;
+        _linefore.enabled = true;
     }
     
 
