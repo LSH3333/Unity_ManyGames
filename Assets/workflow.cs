@@ -51,5 +51,8 @@ public class workflow : MonoBehaviour
     MainMenu, Title Scene들에서 버튼들은 SceneControl을 통해.
     (ManageApp 관련때문에)
 
+
+    -------------------------------------------- 
+    이제부터 모든 publicResources는 Manage 클래스에서 관리하고 상속받아서 사용.
     */
 }
