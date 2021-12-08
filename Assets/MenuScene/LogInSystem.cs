@@ -8,8 +8,8 @@ public class LogInSystem : MonoBehaviour
 {
     // login canvas 
     public GameObject cvLogIn;
-    public Text ifID;
-    public Text ifPW;
+    public Text ifID;    
+    public InputField ifPW;
 
     // logout canvas 
     public GameObject cvLogOut;
@@ -56,7 +56,7 @@ public class LogInSystem : MonoBehaviour
     
 
     public void OnClickLogIn()
-    {
+    {        
         // 아이디와 비밀번호가 입력이 됐다면 
         if (ifID.text != "" && ifPW.text != "")
         {
