@@ -39,5 +39,8 @@ public class SceneControl : MonoBehaviour
         GameObject.Find("AppManager").GetComponent<ManageApp>().selectGame(gamename);        
     }
 
-
+    public void OnClickButtonAnimationTrigger()
+    {
+        GetComponent<Animator>().SetTrigger("OnClick");
+    }
 }
