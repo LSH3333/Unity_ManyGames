@@ -26,12 +26,16 @@ public class LogInSystem : MonoBehaviour
     // Slide Gameobject
     public GameObject slideGameObject;
 
+    public GameObject AdminObj;
+
     private void Awake()
     {
         // 최초에는 login canvas가 활성화되어야함 
         //cvLogIn.SetActive(true);        
         //cvLogOut.SetActive(false);
         //cvSignUp.SetActive(false);
+
+        //Testncmb();
     }
 
     private void Start()
@@ -51,6 +55,8 @@ public class LogInSystem : MonoBehaviour
             cvLogOut.SetActive(false);
             cvSignUp.SetActive(false);
         }
+
+        
     }
 
     
@@ -94,6 +100,12 @@ public class LogInSystem : MonoBehaviour
             }                
             else // login 성공
             {
+                // login한 계정이 운영자라면 
+                if(name == "Admin")
+                {
+                    AdminObj.SetActive(true);
+                }
+
                 print("NCMB LogIn Success, " + name);
                 cvLogIn.SetActive(false); // login canvas 비활성화
                 cvLogOut.SetActive(true); // logout canvas 활성화

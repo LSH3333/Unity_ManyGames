@@ -83,6 +83,8 @@ public class Result : Manage
         });
     }
 
+    
+
 
     // NCMB Database에서 랭킹정보 가져와서 10위까지 띄움  
     void InitNCMBBoard()
