@@ -6,6 +6,7 @@ public class ShowRankingBox : MonoBehaviour
 {
     public void OnClickBack()
     {
-        Destroy(gameObject);
+        GetComponent<Animator>().SetTrigger("popout");        
+        Destroy(gameObject, 1f);
     }
 }

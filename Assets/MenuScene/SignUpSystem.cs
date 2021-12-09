@@ -11,7 +11,8 @@ public class SignUpSystem : MonoBehaviour
 
     // SignUp 진행할 ID,PW InputField 
     public Text ifID;
-    public Text ifPW;
+    //public Text ifPW;
+    public InputField ifPW;
 
     public GameObject SignUpSuccessPanel;
     public LogInSystem _loginSys;
