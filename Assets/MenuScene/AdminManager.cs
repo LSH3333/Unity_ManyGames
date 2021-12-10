@@ -153,7 +153,5 @@ public class AdminManager : MonoBehaviour
         selectNum = _selectNum;
         // 해당 NCMB 오브젝트 지우고 
         DeleteNCMBObject();
-        // 업데이트 된 NCMB 데이타 다시 랜더링 
-        //InitAdminBoard();
     }
 }
