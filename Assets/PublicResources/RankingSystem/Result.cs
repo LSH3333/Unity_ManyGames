@@ -110,15 +110,14 @@ public class Result : Manage
                     res += "          ";
                     res += obj["Name"] + ", ";
                     res += obj["Score"];
-
-                    _NCMBRank.text += res + "\n";
-
+                    
+                    _NCMBRank.text += res + "\n";                    
                     cnt++;
                     if (cnt >= 10) break;
                 }
 
             }
-        });
+        });        
     }
 
     // ResultBoard의 child인 Button에 OnClick 이벤트 할당 

@@ -33,7 +33,7 @@ public class SignUpSystem : MonoBehaviour
 
     void NCMBSignUp(string name, string pw)
     {
-        NCMBUser user = new NCMBUser();
+        NCMBUser user = new NCMBUser();        
 
         user.UserName = name;
         user.Password = pw;
