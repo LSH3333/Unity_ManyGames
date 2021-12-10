@@ -99,7 +99,7 @@ public class AdminManager : MonoBehaviour
                                 NCMBUser.CurrentUser.DeleteAsync((NCMBException de) =>
                                 {
                                     if(de != null) { Debug.Log("UserManageMent Delete Fail"); }
-                                    else { Debug.Log("UserManageMent Delete Success"); }
+                                    else { Debug.Log("UserManageMent Delete Success"); LogInAsAdmin(); }
                                 });
                             }
 
@@ -124,6 +124,22 @@ public class AdminManager : MonoBehaviour
                 }
 
             }
+        });
+    }
+
+    // 삭제할 유저 선택할때 해당 유저로 로그인해야 하는데 이 과정에서 Admin 계정이 자동 로그아웃.
+    // 따라서 다시 Admin 계정으로 로그인해줄 필요가 있다. 
+    private void LogInAsAdmin()
+    {
+        // 해당 유저로 로그인 
+        NCMBUser.LogInAsync("Admin", "Admin", (NCMBException exx) =>
+        {
+            if (exx != null) { Debug.Log("Admin re-login Failed"); }
+            else // 해당 유저로 로그인 성공 
+            {
+                Debug.Log("Admin re-login Success: " + NCMBUser.CurrentUser.UserName);
+            }
+
         });
     }
 
