@@ -10,6 +10,8 @@ public class ShowRank : MonoBehaviour
 
     private Text noTxt, usernameTxt, scoreTxt;
 
+    
+
     public void ClickBtn(string _gameName)
     {
         gamename = _gameName;

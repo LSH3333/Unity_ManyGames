@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using NCMB;
 using System;
 using System.Collections.Generic;
+using System.Collections;
 
 public class AdminManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class AdminManager : MonoBehaviour
     public Text No, UserName, UserPw, CreateDate;
 
     private int selectNum;
+    // User 제거 클릭 시 확인하는 박스 
+    public GameObject areYouSureBoxObj;
+    public InputField deleteUserIF;
 
     public void Awake()
     {
@@ -155,12 +159,41 @@ public class AdminManager : MonoBehaviour
     public void OnClickBack()
     {
         GetComponent<Animator>().SetTrigger("popout");
+        Destroy(gameObject, 1f);
     }
 
     public void OnClickSelect(int _selectNum)
     {
         selectNum = _selectNum;
+        ActivateAreYouSureBox();
         // 해당 NCMB 오브젝트 지우고 
-        DeleteNCMBObject();
+        //DeleteNCMBObject();
+    }
+
+    public void ActivateAreYouSureBox()
+    {
+        areYouSureBoxObj.SetActive(true);
+    }
+
+    public void OnClickRemove()
+    {
+        if (deleteUserIF.text == "delete")
+        {
+            // 해당 NCMB 오브젝트 지우고 
+            DeleteNCMBObject();
+            areYouSureBoxObj.GetComponent<Animator>().SetTrigger("popout");
+            deleteUserIF.text = "";
+            StartCoroutine(UnactiveBox());
+        }
+        else
+        {            
+        }
+    }
+
+    private IEnumerator UnactiveBox()
+    {
+        yield return new WaitForSeconds(1f);
+        areYouSureBoxObj.SetActive(false);
+        yield return null;
     }
 }

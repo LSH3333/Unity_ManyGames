@@ -28,6 +28,9 @@ public class SignUpSystem : MonoBehaviour
         {
             // sign up 
             NCMBSignUp(ifID.text, ifPW.text);
+            ifID.GetComponentInParent<InputField>().text = "";
+            ifID.text = "";
+            ifPW.text = "";
         }
     }
 
