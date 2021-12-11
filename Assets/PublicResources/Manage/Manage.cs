@@ -37,13 +37,14 @@ namespace Management
             obj.transform.SetParent(GameObject.Find(cn).transform);
 
             if (isfull)
+            {
                 ((RectTransform)obj.transform).offsetMax = new Vector2(0, 0);
+            }                
             else
             {
-                ((RectTransform)obj.transform).anchoredPosition = new Vector2(0, 0);
-                ((RectTransform)obj.transform).localScale = new Vector2(1f, 1f);
+                ((RectTransform)obj.transform).anchoredPosition = new Vector2(0, 0);                
             }
-                
+            ((RectTransform)obj.transform).localScale = new Vector2(1f, 1f);
 
             if (!pn.Equals("Fade")) obj.transform.SetSiblingIndex(_fadeSiblingIndex);
 
@@ -83,7 +84,7 @@ namespace Management
                     // "Score"를 정렬해서 가져왔으므로 첫 원소가 가장 높은 점수 즉 BestScore이다.    
                     foreach (NCMBObject obj in objList)
                     {
-                        _txtBest.text += obj["Score"];
+                        _txtBest.text += obj["Score"].ToString();
                         cnt++;
 
                         if (cnt >= 1) break;
