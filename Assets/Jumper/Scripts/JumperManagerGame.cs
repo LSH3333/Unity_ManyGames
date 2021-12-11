@@ -21,11 +21,11 @@ public class JumperManagerGame : Manage
 
     //float _score = 0.0f;
 
-    public float Score
-    {
-        // 상속받은 ManagerParent의 score_float
-        get { return score; }
-    }
+    //public float Score
+    //{
+    //    // 상속받은 ManagerParent의 score_float
+    //    get { return score; }
+    //}
 
     // Sound
     public AudioSource gameover_audio;
@@ -64,7 +64,7 @@ public class JumperManagerGame : Manage
         JumperManagerGame.singleton.gameMode = 2;
         GameEnds = true;
 
-        //score = (int)GameObject.Find("Player").GetComponent<Player>().topScore;
+        score = (int)GameObject.Find("Player").GetComponent<Player>().topScore;
         //YourScoreText.text = "Your Score: " + Mathf.Round(score).ToString();
         
         gameover_audio.Play(); // GameOver sound play

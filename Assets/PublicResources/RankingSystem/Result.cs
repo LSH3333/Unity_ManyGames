@@ -35,6 +35,9 @@ public class Result : Manage
     // 게임에 대한 정보(점수 등)은 GameManager클래스의 부모인 Manage에 담겨있음 
     private GameObject gameManagerObj;
 
+    // For InitNCMBBoard()
+    private Text noTxt, usernameTxt, scoreTxt;
+
     private new void Awake()
     {
         gameManagerObj = GameObject.Find("GameManager");
@@ -47,9 +50,16 @@ public class Result : Manage
         // 현재 게임, 현재 유저, 점수 정보를 NCMB Database로 보내고
         // 방금 보내진 유저 정보까지 포함된 랭킹 10위까지의 정보를 가져옴. 
 
-        StartCoroutine(getRank());
+        StartCoroutine(getRank());        
+    }
 
-        
+    // InitNCMBBoard를 위한 변수들의 레퍼런스 설정 
+    private void InitNCMBBoardVar()
+    {
+        GameObject NCMBRankObj = transform.GetChild(1).gameObject;
+        noTxt = NCMBRankObj.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+        usernameTxt = NCMBRankObj.transform.GetChild(1).GetChild(0).GetComponent<Text>();
+        scoreTxt = NCMBRankObj.transform.GetChild(2).GetChild(0).GetComponent<Text>();
     }
 
     // 현재 SendPlayerDataToNCMB()에서 정보 저장과, InitNCMBBoard()에서 정보 가져오는것이
@@ -61,6 +71,7 @@ public class Result : Manage
     {
         SendPlayerDataToNCMB();
         yield return new WaitForSeconds(1f);
+        InitNCMBBoardVar();
         InitNCMBBoard();
     }
 
@@ -83,42 +94,79 @@ public class Result : Manage
         });
     }
 
-    
-
-
-    // NCMB Database에서 랭킹정보 가져와서 10위까지 띄움  
-    void InitNCMBBoard()
+    // 점수순으로 유저 데이터 불러옴 
+    private void InitNCMBBoard()
     {
         NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>(ManageApp.singleton.gameName);
+        // 계정 생성 순 정렬 
         query.AddDescendingOrder("Score");
+
+        // Board Init 전에 초기화 
+        noTxt.text = "";
+        usernameTxt.text = "";
+        scoreTxt.text = "";
 
         query.FindAsync((List<NCMBObject> objList, NCMBException e) =>
         {
             if (e != null)
             {
-                Debug.Log("NCMB Get Data Failed" + e.ErrorMessage);
+                Debug.Log("NCMB Get Score Data Failed" + e.ErrorMessage);
             }
             else
             {
                 string res = "";
-                _NCMBRank.text = "";
+                //privateDataTxt.text = "";
                 int rank = 0;
-                int cnt = 0; // 10위 까지만 보여줌 
+                int cnt = 0; // 10위 까지만 보여줌
+
                 foreach (NCMBObject obj in objList)
-                {                    
-                    res = string.Format("{0:D2}. ", (++rank));
-                    res += "          ";
-                    res += obj["Name"] + ", ";
-                    res += obj["Score"];
-                    
-                    _NCMBRank.text += res + "\n";                    
+                {
+                    noTxt.text += string.Format("{0:D2}. ", (++rank)) + "\n";
+                    usernameTxt.text += obj["Name"] + "\n";
+                    scoreTxt.text += obj["Score"] + "\n";
+
                     cnt++;
                     if (cnt >= 10) break;
                 }
 
             }
-        });        
+        });
     }
+
+
+    //// NCMB Database에서 랭킹정보 가져와서 10위까지 띄움  
+    //void InitNCMBBoard()
+    //{
+    //    NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>(ManageApp.singleton.gameName);
+    //    query.AddDescendingOrder("Score");
+
+    //    query.FindAsync((List<NCMBObject> objList, NCMBException e) =>
+    //    {
+    //        if (e != null)
+    //        {
+    //            Debug.Log("NCMB Get Data Failed" + e.ErrorMessage);
+    //        }
+    //        else
+    //        {
+    //            string res = "";
+    //            _NCMBRank.text = "";
+    //            int rank = 0;
+    //            int cnt = 0; // 10위 까지만 보여줌 
+    //            foreach (NCMBObject obj in objList)
+    //            {                    
+    //                res = string.Format("{0:D2}. ", (++rank));
+    //                res += "          ";
+    //                res += obj["Name"] + ", ";
+    //                res += obj["Score"];
+                    
+    //                _NCMBRank.text += res + "\n";                    
+    //                cnt++;
+    //                if (cnt >= 10) break;
+    //            }
+
+    //        }
+    //    });        
+    //}
 
     // ResultBoard의 child인 Button에 OnClick 이벤트 할당 
     private void SetButton()
