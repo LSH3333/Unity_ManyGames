@@ -39,7 +39,11 @@ namespace Management
             if (isfull)
                 ((RectTransform)obj.transform).offsetMax = new Vector2(0, 0);
             else
+            {
                 ((RectTransform)obj.transform).anchoredPosition = new Vector2(0, 0);
+                ((RectTransform)obj.transform).localScale = new Vector2(1f, 1f);
+            }
+                
 
             if (!pn.Equals("Fade")) obj.transform.SetSiblingIndex(_fadeSiblingIndex);
 

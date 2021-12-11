@@ -172,7 +172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5acbb642ea4e454d914393a7d761d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _NCMBRank: {fileID: 0}
   gamename: 
 --- !u!114 &11870734
 MonoBehaviour:
@@ -6745,7 +6744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5acbb642ea4e454d914393a7d761d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _NCMBRank: {fileID: 0}
   gamename: 
 --- !u!114 &1487318304
 MonoBehaviour:
@@ -7921,7 +7919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5acbb642ea4e454d914393a7d761d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _NCMBRank: {fileID: 0}
   gamename: 
 --- !u!1 &1751741909
 GameObject:
@@ -8687,7 +8684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5acbb642ea4e454d914393a7d761d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _NCMBRank: {fileID: 0}
   gamename: 
 --- !u!114 &1964078620
 MonoBehaviour:

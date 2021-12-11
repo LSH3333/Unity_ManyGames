@@ -6,16 +6,15 @@ using UnityEngine;
 
 public class ShowRank : MonoBehaviour
 {
-    // NCMB 데이터베이스에서 정보가져와 랭크창 표시.
-    // _txtRank나 _NCBMRank 둘 중 하나만 사용해야함 
-    public Text _NCMBRank;
     public string gamename;
+
+    private Text noTxt, usernameTxt, scoreTxt;
 
     public void ClickBtn(string _gameName)
     {
         gamename = _gameName;
-        InitNCMBBoard();
         InstaniateRankingPanel();
+        InitNCMBBoard();        
     }
 
     private void InstaniateRankingPanel()
@@ -23,38 +22,46 @@ public class ShowRank : MonoBehaviour
         GameObject resource = (GameObject)Resources.Load("ShowRanking");
         GameObject obj = Instantiate(resource, Vector3.zero, Quaternion.identity);
         obj.transform.SetParent(GameObject.Find("Canvas").transform);
-        _NCMBRank = obj.transform.GetChild(1).GetComponent<Text>();
-        
         ((RectTransform)obj.transform).anchoredPosition = new Vector2(0, 0);
-        
+
+        GameObject NCMBRankObj = obj.transform.GetChild(1).gameObject;                
+        noTxt = NCMBRankObj.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+        usernameTxt = NCMBRankObj.transform.GetChild(1).GetChild(0).GetComponent<Text>();
+        scoreTxt = NCMBRankObj.transform.GetChild(2).GetChild(0).GetComponent <Text>();
     }
 
-    // NCMB Database에서 랭킹정보 가져와서 10위까지 띄움  
-    void InitNCMBBoard()
+
+    
+    // 점수순으로 유저 데이터 불러옴 
+    private void InitNCMBBoard()
     {
         NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>(gamename);
+        // 계정 생성 순 정렬 
         query.AddDescendingOrder("Score");
+
+        // Board Init 전에 초기화 
+        noTxt.text = "";
+        usernameTxt.text = "";
+        scoreTxt.text = "";
 
         query.FindAsync((List<NCMBObject> objList, NCMBException e) =>
         {
             if (e != null)
             {
-                Debug.Log("NCMB Get Data Failed" + e.ErrorMessage);
+                Debug.Log("NCMB Get Score Data Failed" + e.ErrorMessage);
             }
             else
             {
                 string res = "";
-                _NCMBRank.text = "";
+                //privateDataTxt.text = "";
                 int rank = 0;
-                int cnt = 0; // 10위 까지만 보여줌 
+                int cnt = 0; // 10위 까지만 보여줌
+
                 foreach (NCMBObject obj in objList)
                 {
-                    res = string.Format("{0:D2}. ", (++rank));
-                    res += "                        ";
-                    res += obj["Name"] + "          ";
-                    res += obj["Score"];
-
-                    _NCMBRank.text += res + "\n";
+                    noTxt.text += string.Format("{0:D2}. ", (++rank)) + "\n";
+                    usernameTxt.text += obj["Name"] + "\n";
+                    scoreTxt.text += obj["Score"] + "\n";
 
                     cnt++;
                     if (cnt >= 10) break;
@@ -64,6 +71,6 @@ public class ShowRank : MonoBehaviour
         });
     }
 
-    
+
 
 }
