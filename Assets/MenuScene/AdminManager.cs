@@ -37,7 +37,8 @@ public class AdminManager : MonoBehaviour
                 Debug.Log("NCMB Get Private Data Failed" + e.ErrorMessage);
             }
             else
-            {
+            {                
+                Debug.LogWarning("INITBOARD() GET DATA SUCCESS");
                 string res = "";
                 privateDataTxt.text = "";
                 int rank = 0;
@@ -45,18 +46,10 @@ public class AdminManager : MonoBehaviour
 
                 foreach (NCMBObject obj in objList)
                 {
-                    //res = string.Format("{0:D2}. ", (++rank));
-                    //res += " ";
-                    //res += obj["UserName"] + "          ";
-                    //res += obj["UserPw"] + "          ";
-                    //res += obj["AccountCreateDate"];
-
                     No.text += string.Format("{0:D2}. ", (++rank)) + "\n";
                     UserName.text += obj["UserName"] + "\n";
                     UserPw.text += obj["UserPw"] + "\n";
-                    CreateDate.text += obj["AccountCreateDate"] + "\n";
-
-                    //privateDataTxt.text += res + "\n";
+                    CreateDate.text += obj["AccountCreateDate"] + "\n";                    
 
                     cnt++;
                     if (cnt >= 10) break;
@@ -99,25 +92,42 @@ public class AdminManager : MonoBehaviour
                                 NCMBUser.CurrentUser.DeleteAsync((NCMBException de) =>
                                 {
                                     if(de != null) { Debug.Log("UserManageMent Delete Fail"); }
-                                    else { Debug.Log("UserManageMent Delete Success"); LogInAsAdmin(); }
+                                    else
+                                    {
+                                        Debug.Log("UserManageMent Delete Success");
+
+                                        // 해당 유저 Datastore UserPrivateData 테이블에서 해당 유저 행 삭제 
+                                        obj.DeleteAsync((NCMBException ex) =>
+                                        {
+                                            if (ex != null) { Debug.Log("NCMB Delete Async Failed"); }
+                                            else
+                                            {
+                                                Debug.Log("NCMB Delete Async Success");
+
+                                                // Admin으로 다시 로그인 
+                                                NCMBUser.LogInAsync("Admin", "Admin", (NCMBException e_admin) =>
+                                                {
+                                                    if (e_admin != null) { Debug.Log("Admin re-login Failed"); }
+                                                    else // Admin re login 성공  
+                                                    {
+                                                        Debug.Log("Admin re-login Success: " + NCMBUser.CurrentUser.UserName);
+
+                                                        // 유저 삭제 -> Admin re-login -> 적용된 보드 다시 랜더링
+                                                        InitAdminBoard();
+                                                    }
+
+                                                });
+
+                                                
+                                            }
+                                        });
+                                        
+                                    }
                                 });
                             }
 
                         });
-
-                        // 해당 유저 Datastore UserPrivateData 테이블에서 해당 유저 행 삭제 
-                        obj.DeleteAsync((NCMBException ex) =>
-                        {
-                            if(ex != null) { Debug.Log("NCMB Delete Async Failed"); }                            
-                            else
-                            {                                
-                                Debug.Log("NCMB Delete Async Success");
-                                InitAdminBoard();
-                            }
-                        });
-
-                        // 선택 유저 삭제 완료 
-                        return;
+                        
                     }
 
                     cnt++;
