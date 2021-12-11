@@ -9061,18 +9061,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: -1
   m_TargetDisplay: 0
---- !u!114 &2056797775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3891582238157297657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38fb2e130ad17554094de0360b315fee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2094734544
 GameObject:
   m_ObjectHideFlags: 0
@@ -9519,7 +9507,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3891582238157297663}
   - component: {fileID: 3891582238157297656}
-  - component: {fileID: 2056797775}
   - component: {fileID: 3891582238157297659}
   - component: {fileID: 3891582238157297658}
   - component: {fileID: 3891582238157297660}

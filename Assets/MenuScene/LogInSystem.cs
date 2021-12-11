@@ -65,10 +65,12 @@ public class LogInSystem : MonoBehaviour
     {        
         // 아이디와 비밀번호가 입력이 됐다면 
         if (ifID.text != "" && ifPW.text != "")
-        {
-            
+        {            
             // NCMB LogIn 
-            NCMBLogIn(ifID.text, ifPW.text);            
+            NCMBLogIn(ifID.text, ifPW.text);
+
+            ifID.GetComponentInParent<InputField>().text = "";
+            ifPW.text = "";
         }
     }
 
