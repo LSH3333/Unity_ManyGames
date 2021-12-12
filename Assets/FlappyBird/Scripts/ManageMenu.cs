@@ -85,6 +85,12 @@ public class ManageMenu : Manage
     }
 
 
+    // Game Quit 
+    public void OnClickQuit()
+    {        
+        Application.Quit();
+    }
+
     // 게임시작 아니므로 body만 구현 
     public override void SetStart()
     {        

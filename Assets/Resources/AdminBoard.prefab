@@ -361,7 +361,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: enter user name to <color= red>delete</color> user data
+  m_Text: enter <color=red>"delete"</color> to <color=red>delete</color> user data
 --- !u!1 &866315347552228823
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +517,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter UserName...
+  m_Text: Enter delete...
 --- !u!1 &2271846592491804638
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +879,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BEST SCORE RANKING
+  m_Text: User private data
 --- !u!1 &3320295744895440443
 GameObject:
   m_ObjectHideFlags: 0

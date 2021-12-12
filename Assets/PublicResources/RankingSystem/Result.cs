@@ -98,7 +98,7 @@ public class Result : Manage
     private void InitNCMBBoard()
     {
         NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>(ManageApp.singleton.gameName);
-        // 계정 생성 순 정렬 
+        // 점수 내림차순 정렬  
         query.AddDescendingOrder("Score");
 
         // Board Init 전에 초기화 
@@ -115,7 +115,6 @@ public class Result : Manage
             else
             {
                 string res = "";
-                //privateDataTxt.text = "";
                 int rank = 0;
                 int cnt = 0; // 10위 까지만 보여줌
 
