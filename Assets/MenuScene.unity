@@ -9186,8 +9186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2105e3b274a35453f89279fbef307f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  applicationKey: 04155cabfc6a968b978eccb71ff488276c60870a11c60a84c9f924fcde4c13b2
-  clientKey: 9ae78ed4edd11aa41e714e5149de0e2fcd09c964a0739d7089632f0dde6dbaf6
+  applicationKey: 0c4ce2dc81ab6cec7086f0b9cdd2663280b105eed3fa68b5dd7729fcf1f59589
+  clientKey: d9ce227b64ddf1acf25acdb45c06554cea07c9f89384226fc632faefe2461788
   usePush: 0
   useAnalytics: 0
   responseValidation: 0
