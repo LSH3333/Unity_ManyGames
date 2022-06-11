@@ -18,6 +18,8 @@ public class ManageMenu : Manage
         base.Awake();
     }
 
+    
+
     private void Start()
     {
         /*  랭킹시스템 메인메뉴씬으로 빼는경우 필요없음.
@@ -82,9 +84,11 @@ public class ManageMenu : Manage
         textName.text = string.Format("nickname : {0}", loggedInName);
     }
 
-    private void Update()
-    {
-        //Debug.Log("status: " + status);
+
+    // Game Quit 
+    public void OnClickQuit()
+    {        
+        Application.Quit();
     }
 
     // 게임시작 아니므로 body만 구현 

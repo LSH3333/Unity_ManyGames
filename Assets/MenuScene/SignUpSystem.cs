@@ -28,12 +28,15 @@ public class SignUpSystem : MonoBehaviour
         {
             // sign up 
             NCMBSignUp(ifID.text, ifPW.text);
+            ifID.GetComponentInParent<InputField>().text = "";
+            ifID.text = "";
+            ifPW.text = "";
         }
     }
 
     void NCMBSignUp(string name, string pw)
     {
-        NCMBUser user = new NCMBUser();
+        NCMBUser user = new NCMBUser();        
 
         user.UserName = name;
         user.Password = pw;
