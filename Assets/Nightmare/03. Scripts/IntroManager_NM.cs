@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IntroManager_NM : MonoBehaviour
+public class IntroManager_NM_removed : MonoBehaviour
 {
     public SpawnMoster_NM spawnMonster;
 

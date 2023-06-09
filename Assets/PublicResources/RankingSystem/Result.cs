@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using NCMB;
 using UnityEngine;
+using Management;
 
 /*
     기존과 다르게
@@ -21,7 +22,7 @@ using UnityEngine;
     *각 게임의 매니저는 게임 종료시 결과창을 띄우는 SetGameOver() 함수를 포함해야한다. 
 */
 
-public class Result : MonoBehaviour
+public class Result : Manage
 {
     // NCMB 데이터베이스에서 정보가져와 랭크창 표시.
     // _txtRank나 _NCBMRank 둘 중 하나만 사용해야함 
@@ -30,39 +31,35 @@ public class Result : MonoBehaviour
     // BestScore 표시할 텍스트 창 
     //public Text txtBest;
 
-    // 각 게임들의 Manager들이 담긴다 
-    ManagerParent manager;
-
-    // 씬 전환시 Fading 
-    private SceneFading sceneFadeSys;
-
     private Button replayButton, mainButton;
-    private PublicResourcesManager publicResourcesManager;
+    // 게임에 대한 정보(점수 등)은 GameManager클래스의 부모인 Manage에 담겨있음 
+    private GameObject gameManagerObj;
 
-    private void Awake()
+    // For InitNCMBBoard()
+    private Text noTxt, usernameTxt, scoreTxt;
+
+    private new void Awake()
     {
-        // ManagerParent의 자식 중 하나인 클래스에 접근 
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<ManagerParent>();
-        sceneFadeSys = GameObject.Find("SceneFadeSystem").GetComponent<SceneFading>();
-        publicResourcesManager = GameObject.Find("PublicResourcesManager").GetComponent<PublicResourcesManager>();
+        gameManagerObj = GameObject.Find("GameManager");
         SetButton();
     }
 
 
     private void Start()
     {
-        //SetResult();
-        //ManageApp.singleton.Save();
-
-        // NCMB Database
         // 현재 게임, 현재 유저, 점수 정보를 NCMB Database로 보내고
         // 방금 보내진 유저 정보까지 포함된 랭킹 10위까지의 정보를 가져옴. 
-        //SendPlayerDataToNCMB();
-        //InitNCMBBoard();
 
-        StartCoroutine(getRank());
+        StartCoroutine(getRank());        
+    }
 
-        
+    // InitNCMBBoard를 위한 변수들의 레퍼런스 설정 
+    private void InitNCMBBoardVar()
+    {
+        GameObject NCMBRankObj = transform.GetChild(1).gameObject;
+        noTxt = NCMBRankObj.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+        usernameTxt = NCMBRankObj.transform.GetChild(1).GetChild(0).GetComponent<Text>();
+        scoreTxt = NCMBRankObj.transform.GetChild(2).GetChild(0).GetComponent<Text>();
     }
 
     // 현재 SendPlayerDataToNCMB()에서 정보 저장과, InitNCMBBoard()에서 정보 가져오는것이
@@ -74,6 +71,7 @@ public class Result : MonoBehaviour
     {
         SendPlayerDataToNCMB();
         yield return new WaitForSeconds(1f);
+        InitNCMBBoardVar();
         InitNCMBBoard();
     }
 
@@ -85,7 +83,7 @@ public class Result : MonoBehaviour
 
         // 이름과 점수 데이터베이스에 저장 
         obj.Add("Name", ManageApp.singleton.NickName);
-        obj.Add("Score", manager.score);
+        obj.Add("Score", gameManagerObj.GetComponent<Manage>().score);
 
         obj.SaveAsync((NCMBException e) =>
         {
@@ -96,33 +94,35 @@ public class Result : MonoBehaviour
         });
     }
 
-
-    // NCMB Database에서 랭킹정보 가져와서 10위까지 띄움  
-    void InitNCMBBoard()
+    // 점수순으로 유저 데이터 불러옴 
+    private void InitNCMBBoard()
     {
         NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>(ManageApp.singleton.gameName);
+        // 점수 내림차순 정렬  
         query.AddDescendingOrder("Score");
+
+        // Board Init 전에 초기화 
+        noTxt.text = "";
+        usernameTxt.text = "";
+        scoreTxt.text = "";
 
         query.FindAsync((List<NCMBObject> objList, NCMBException e) =>
         {
             if (e != null)
             {
-                Debug.Log("NCMB Get Data Failed" + e.ErrorMessage);
+                Debug.Log("NCMB Get Score Data Failed" + e.ErrorMessage);
             }
             else
             {
                 string res = "";
-                _NCMBRank.text = "";
                 int rank = 0;
-                int cnt = 0; // 10위 까지만 보여줌 
-                foreach (NCMBObject obj in objList)
-                {                    
-                    res = string.Format("{0:D2}. ", (++rank));
-                    res += "          ";
-                    res += obj["Name"] + ", ";
-                    res += obj["Score"];
+                int cnt = 0; // 10위 까지만 보여줌
 
-                    _NCMBRank.text += res + "\n";
+                foreach (NCMBObject obj in objList)
+                {
+                    noTxt.text += string.Format("{0:D2}. ", (++rank)) + "\n";
+                    usernameTxt.text += obj["Name"] + "\n";
+                    scoreTxt.text += obj["Score"] + "\n";
 
                     cnt++;
                     if (cnt >= 10) break;
@@ -132,20 +132,63 @@ public class Result : MonoBehaviour
         });
     }
 
+
+    //// NCMB Database에서 랭킹정보 가져와서 10위까지 띄움  
+    //void InitNCMBBoard()
+    //{
+    //    NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>(ManageApp.singleton.gameName);
+    //    query.AddDescendingOrder("Score");
+
+    //    query.FindAsync((List<NCMBObject> objList, NCMBException e) =>
+    //    {
+    //        if (e != null)
+    //        {
+    //            Debug.Log("NCMB Get Data Failed" + e.ErrorMessage);
+    //        }
+    //        else
+    //        {
+    //            string res = "";
+    //            _NCMBRank.text = "";
+    //            int rank = 0;
+    //            int cnt = 0; // 10위 까지만 보여줌 
+    //            foreach (NCMBObject obj in objList)
+    //            {                    
+    //                res = string.Format("{0:D2}. ", (++rank));
+    //                res += "          ";
+    //                res += obj["Name"] + ", ";
+    //                res += obj["Score"];
+                    
+    //                _NCMBRank.text += res + "\n";                    
+    //                cnt++;
+    //                if (cnt >= 10) break;
+    //            }
+
+    //        }
+    //    });        
+    //}
+
     // ResultBoard의 child인 Button에 OnClick 이벤트 할당 
     private void SetButton()
     {
         replayButton = gameObject.transform.GetChild(2).GetComponent<Button>();
         mainButton = gameObject.transform.GetChild(3).GetComponent<Button>();
 
-        string replaySceneName = publicResourcesManager.currentSceneName;
-        string mainSceneName = publicResourcesManager.mainSceneName;
+        // ManageApp에서 게임이름 가져옴 
+        string replaySceneName = ManageApp.singleton.gameName + "_Game";
+        string mainSceneName = ManageApp.singleton.gameName + "_Title";
 
         // 람다식 
-        replayButton.onClick.AddListener(() => { sceneFadeSys.FadeToScene(replaySceneName); });
-        mainButton.onClick.AddListener(() => { sceneFadeSys.FadeToScene(mainSceneName); });
+        // 현재 클래스도 Manage 클래스를 상속받지만, 지금 메모리에 올라가있는 fade 오브젝트는 
+        // Manage를 상속받는 GameManager 클래스가 Awake()로 소환한것이므로 GameManager의 레퍼런스를 불러와야함 
+        GameObject _fadeobj = GameObject.Find("GameManager");
+        replayButton.onClick.AddListener(() => { _fadeobj.GetComponent<Manage>().SetFadeout(replaySceneName); });
+        mainButton.onClick.AddListener(() => { _fadeobj.GetComponent<Manage>().SetFadeout(mainSceneName); });
+       
     }
 
-    
-    
+
+    public override void SetStart()
+    {        
+    }
+
 }

@@ -14,7 +14,7 @@ public class AB_CameraMoveTo : MonoBehaviour
     void Start()
     {
         initCamPos = new Vector3(0, 0, -10);
-        nextCamPos = new Vector3(16, 0, -10);
+        nextCamPos = new Vector3(20.48f, 0, -10);
         updateTrigger = true;
     }
 
@@ -22,7 +22,7 @@ public class AB_CameraMoveTo : MonoBehaviour
     {
         if (!updateTrigger || Angry_ManagerGame.singleton.gameMode == 2) return;
 
-        if (transform.position.x >= 15.5f && !trigger)
+        if (transform.position.x >= nextCamPos.x-0.5f && !trigger)
         {
             trigger = true;
             toInit = true;

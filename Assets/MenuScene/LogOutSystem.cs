@@ -15,6 +15,8 @@ public class LogOutSystem : MonoBehaviour
     // Slide Gameobject
     public GameObject slideGameObject;
 
+    public GameObject AdminObj;
+
     private void Awake()
     {
         SetSlideActive();
@@ -39,7 +41,8 @@ public class LogOutSystem : MonoBehaviour
     public void OnClickLogOutButton()
     {
         NCMBLogOut();
-        
+        // Admin obj unactive 
+        AdminObj.SetActive(false);
     }
 
     // 현재 로그인되어있는 계정 로그아웃 

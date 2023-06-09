@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Management;
 
-public class Angry_ManagerGame : ManagerParent
+public class Angry_ManagerGame : Manage
 {
     public static Angry_ManagerGame singleton;
 
@@ -11,12 +12,14 @@ public class Angry_ManagerGame : ManagerParent
 
     public Text txtCurScore;
 
-    private void Awake()
+    protected override void Awake()
     {
         singleton = this;
+        base.Awake();
+        Invoke("SetIntro", 1f);
 
         _txtBest = GameObject.Find("txtBest").GetComponent<Text>();
-        GetBestScore();
+        GetBestScore(ManageApp.singleton.gameName);
         
     }
 
@@ -33,5 +36,20 @@ public class Angry_ManagerGame : ManagerParent
         txtCurScore.text = "Score: " + Convert.ToString(Angry_ManagerGame.singleton.score);
     }
 
+    private void SetIntro()
+    {
+        InstantiateUI("Intro", "Canvas", false);
+    }
+
+    public override void SetStart()
+    {
+        Angry_ManagerGame.singleton.gameMode = 1;
+    }
+
+    public void SetGameOver()
+    {
+        Angry_ManagerGame.singleton.gameMode = 2;
+        InstantiateUI("boardResult", "Canvas", false);
+    }
 }
 

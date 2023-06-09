@@ -10,6 +10,6 @@ public class LogOutButton : MonoBehaviour
         ManageApp.singleton.loginNickName = "";
         textName.text = string.Format("nickname : {0}", ManageApp.singleton.loginNickName);
 
-        GameObject.Find("TitleManager").GetComponent<ManageTitle>().status = false; 
+        GameObject.Find("TitleManager").GetComponent<ManageMenu>().status = false; 
     }
 }

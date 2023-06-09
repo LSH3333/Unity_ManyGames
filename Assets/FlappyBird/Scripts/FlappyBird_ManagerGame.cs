@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System.Collections.Generic;
-using NCMB;
+using Management;
 
-public class FlappyBird_ManagerGame : ManagerParent
+public class FlappyBird_ManagerGame : Manage
 {
     public static FlappyBird_ManagerGame inst;
     [HideInInspector] public bool isGameOver = false;
@@ -12,7 +10,6 @@ public class FlappyBird_ManagerGame : ManagerParent
     // 0: intro, 1: game play, 2: game result
     [HideInInspector] public int gameMode = 0;
 
-    private GameObject _pGameOver;
     private Text _txtScore, _txtLife;
     //private int _score = 0;
     private int _life = 3;
@@ -31,12 +28,15 @@ public class FlappyBird_ManagerGame : ManagerParent
         get { return score; }
     }
 
-    private void Awake()
+    protected override void Awake()
     {
         inst = this;
-        _txtScore = GameObject.Find("txtScore").GetComponent<Text>();
-        
+        _txtScore = GameObject.Find("txtScore").GetComponent<Text>();        
         _txtLife = GameObject.Find("txtLife").GetComponent<Text>();
+
+        // fade 
+        base.Awake();
+        Invoke("SetIntro", 1f);
 
         // BestScore 오브젝트는 부모에 선언되있음. (모든 게임들에서 쓰일것이기 때문에)
         // 게임매니저가 활성화되면 즉 게임이 시작되면 데이터베이스에서 bestscore를 가져옴. 
@@ -46,26 +46,36 @@ public class FlappyBird_ManagerGame : ManagerParent
 
         // GameManager가 활성화되면 BestScore를 가져옴. 
         _txtBest = GameObject.Find("txtBest").GetComponent<Text>();
-        GetBestScore();
+        GetBestScore(ManageApp.singleton.gameName);
         
     }
 
-
-
-
-    private void Update()
+    // Intro 클래스에서 sendmessage로 호출됨 
+    public override void SetStart()
     {
-        //Debug.Log(CheckBirdBlinking);
-    }
+        // Game Play Mode로 변경
+        FlappyBird_ManagerGame.inst.gameMode = 1;
+        // Bird 움직임 시작 
+        GameObject.Find("Bird").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        // 장애물 생성 시작 
+        GameObject.Find("GameManager").GetComponent<ObstaclePool>().InitColumnCreate();        
 
+        // tag가 HorzScroll인 모든 게임오브젝트 찾음
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("HorzScroll");
+        foreach (var o in objs) // 횡스크롤 시작
+            o.SendMessage("GameStart");
+    }
 
     public void SetGameOver()
     {
-        Debug.Log("PUBLIC SETGAMEOVER");
         FlappyBird_ManagerGame.inst.gameMode = 2; // 결과창모드로 전환
-        gameMode = 2;
-        isGameOver = true;
-        GameObject.Find("PublicResourcesManager").GetComponent<PublicResourcesManager>().SetGameOver();
+        isGameOver = true;        
+        InstantiateUI("boardResult", "Canvas", false);
+    }
+
+    private void SetIntro()
+    {
+        InstantiateUI("Intro", "Canvas", false);
     }
 
     // 점수 추가, UI에 표시
@@ -84,36 +94,4 @@ public class FlappyBird_ManagerGame : ManagerParent
         _txtLife.text = string.Format("Life : {0}", _life);
     }
 
-    // 씬 전환
-    public void NextScene(string _name)
-    {
-        SceneManager.LoadScene(_name);
-    }
-    
-    /*// 현재 게임의 "Score"를 정렬해서 가져와서 가장 높은 점수인 BestScore를 찾는다 
-    void GetBestScore()
-    {        
-        NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>(ManageApp.singleton.gameName);
-        query.AddDescendingOrder("Score");
-
-        query.FindAsync((List<NCMBObject> objList, NCMBException e) =>
-        {
-            if (e != null)
-            {
-                Debug.Log("NCMB get BestScore Failed");
-            }
-            else
-            {
-                _txtBest.text = "BestScore: ";
-                int cnt = 0;
-                // "Score"를 정렬해서 가져왔으므로 첫 원소가 가장 높은 점수 즉 BestScore이다.    
-                foreach (NCMBObject obj in objList)
-                {
-                    _txtBest.text += obj["Score"];
-                    cnt++;
-                    if (cnt >= 1) break;
-                }
-            }
-        });
-    }*/
 }

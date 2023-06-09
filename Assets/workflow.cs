@@ -37,6 +37,19 @@ public class workflow : MonoBehaviour
     바로 직후 InitNCMBBoard() 함수에 의해 데이터베이스에 저장된 모든 데이터들을 "Score"로 정렬해 가져와서 보드에 출력함.
 
 
+    -------------------------------- Manage 상속관련 
+    Title Scene은 
+    TitleManager 프리팹으로 관리.
+
+    Game Scene은 
+    Manage 클래스를 상속받는 GameManager 클래스로 관리 
+
+    Result.cs의 SetButton() 함수 때문에 
+    모든 타이틀씬은 게임이름_Title, 
+    모든 게임씬은 게임이름_Game 으로 통일해야함 
+
+    MainMenu, Title Scene들에서 버튼들은 SceneControl을 통해.
+    (ManageApp 관련때문에)
 
     */
 }
