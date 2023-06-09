@@ -273,7 +273,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2021  db  project
+  m_Text: manygames
 --- !u!222 &192545023
 CanvasRenderer:
   m_ObjectHideFlags: 0
