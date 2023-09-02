@@ -8,6 +8,39 @@
 
 <br> <br>
 
+### DB 
+
+https://mbaas.nifcloud.com/about.htm
+
+db 는 NCMB mbaas (mobile backend as service) 서비스를 사용했습니다.
+
+NCMB 에서 제공하는 application key 와 Client key 로 유니티와 ncmb 를 연결해서 데이터를 보관할수 있습니다.
+
+<img src="https://github.com/LSH3333/Unity_ManyGames/assets/62237852/4e7bb8b2-3b8b-42f5-b101-edd82fa6ed7d.png" width="60%" height="60%"/>
+
+
+https://github.com/LSH3333/Unity_ManyGames/blob/c79bf3f0f0e651308ca3da77280a224a1aaad34c/Assets/PublicResources/RankingSystem/Result.cs#L78-L95
+
+이런 baas 서비스를 이용하면 간단하게 이런 식으로 클라이언트의 데이터를 서버로 보내 저장 할 수 있습니다. 
+
+<br> <br>
+
+### 여러가지 미니 게임들 
+
+기존에 만들어 놓은 미니게임들을 통합하면서 가장 신경 썼던 부분은 점수 저장, 결과창 등 모든 미니게임들에서 공통으로 쓰이는 부분을 추상적으로 구현해 각각의 게임에서 사용할수 있도록 하는 것이었습니다.
+
+Manage 클래스에 공통으로 쓰이는 랭킹 보드 띄우는 기능, 점수 저장 등을 정의하고, 각 미니게임들에서 상속받아 사용합니다.
+
+Manager 클래스 : 
+https://github.com/LSH3333/Unity_ManyGames/blob/master/Assets/PublicResources/Manage/Manage.cs
+
+Manager 클래스를 상속받아 사용하는 JumperManagerGame 클래스 : 
+https://github.com/LSH3333/Unity_ManyGames/blob/master/Assets/Jumper/Scripts/JumperManagerGame.cs
+
+
+<br> <br>
+
+
 ### 가입 
 
 <img src="https://github.com/LSH3333/Unity_ManyGames/assets/62237852/1ed6c533-9d60-43cc-975e-dc40ceb9956c.png" width="60%" height="60%"/>
