@@ -7,7 +7,7 @@ public class FlappyBird_ManagerGame : Manage
     public static FlappyBird_ManagerGame inst;
     [HideInInspector] public bool isGameOver = false;
 
-    // 0: intro, 1: game play, 2: game result
+    // 0: intro, 1: game play, 2: game result, 3: pause 
     [HideInInspector] public int gameMode = 0;
 
     private Text _txtScore, _txtLife;
@@ -71,6 +71,12 @@ public class FlappyBird_ManagerGame : Manage
         FlappyBird_ManagerGame.inst.gameMode = 2; // 결과창모드로 전환
         isGameOver = true;        
         InstantiateUI("boardResult", "Canvas", false);
+    }
+
+    public void SetGamePause()
+    {
+        print("SetGamePause");
+        FlappyBird_ManagerGame.inst.gameMode = 3;
     }
 
     private void SetIntro()
