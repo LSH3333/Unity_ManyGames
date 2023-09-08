@@ -44,7 +44,7 @@ public class PlayerHealth_NM : MonoBehaviour
 
     private void Update()
     {
-        print("hp = " + currentHealth);
+        //print("hp = " + currentHealth);
         if (GameManager_NM.singleton.gameMode != 1) return;
 
         if (damaged)
@@ -60,6 +60,7 @@ public class PlayerHealth_NM : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        print("TakeDamage");
         damaged = true; // '번쩍' 효과를 위해
         currentHealth -= amount; // 현재 HP값을 감소시킨다
         healthSlider.value = currentHealth; // 슬라이더 UI에 반영
