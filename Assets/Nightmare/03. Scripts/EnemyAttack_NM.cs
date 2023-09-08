@@ -46,6 +46,8 @@ public class EnemyAttack_NM : MonoBehaviour
 
     void Attack()
     {
+        if (GameManager_NM.singleton.gameMode != 1) return;
+
         timer = 0f;
         if(!playerHP.isDead)
             playerHP.TakeDamage(attackDamage);

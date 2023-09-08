@@ -20,6 +20,15 @@ public class EnemyMovement_NM : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager_NM.singleton.gameMode != 1)
+        {
+            _nav.speed = 0f;
+        }
+        else
+        {
+            _nav.speed = 3f;
+        }
+
         if (!_playerHealth.isDead && !_enemyHealth.isDead)
             _nav.SetDestination(_player.position);
         else

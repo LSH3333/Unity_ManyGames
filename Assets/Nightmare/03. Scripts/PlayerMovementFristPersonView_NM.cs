@@ -30,6 +30,8 @@ public class PlayerMovementFristPersonView_NM : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManager_NM.singleton.gameMode != 1) return;
+
         // Moving
         float hor = Input.GetAxisRaw("Horizontal");
         float ver = Input.GetAxisRaw("Vertical");

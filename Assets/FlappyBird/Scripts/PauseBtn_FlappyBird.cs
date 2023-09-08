@@ -13,6 +13,7 @@ public class PauseBtn_FlappyBird : PauseBtn
         {
             FlappyBird_ManagerGame.inst.gameMode = 1;
             GameObject.Find("Bird").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+
             image.sprite = pause;
             goBackBtn.SetActive(false);
         }
@@ -21,6 +22,7 @@ public class PauseBtn_FlappyBird : PauseBtn
         {
             FlappyBird_ManagerGame.inst.gameMode = 3;
             GameObject.Find("Bird").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+
             image.sprite = play;
             goBackBtn.SetActive(true);
         }

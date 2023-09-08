@@ -44,6 +44,9 @@ public class PlayerHealth_NM : MonoBehaviour
 
     private void Update()
     {
+        print("hp = " + currentHealth);
+        if (GameManager_NM.singleton.gameMode != 1) return;
+
         if (damaged)
             damageImage.color = flashColor;
         else

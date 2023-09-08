@@ -10,7 +10,7 @@ public class GameManager_NM : Manage
     [HideInInspector]
     public bool isGameOver = false;
 
-    // 0: intro, 1: game play, 2: game result
+    // 0: intro, 1: game play, 2: game result, 3: pause 
     [HideInInspector] public int gameMode = 0;
 
     protected override void Awake()
@@ -37,6 +37,7 @@ public class GameManager_NM : Manage
         GameManager_NM.singleton.gameMode = 2;
         InstantiateUI("boardResult", "Canvas", false);
     }
+    
    
     private void SetIntro()
     {

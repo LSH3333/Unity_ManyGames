@@ -24,8 +24,8 @@ public class SpawnMoster_NM : MonoBehaviour
 
     private void Update()
     {
-        // 게임오버 상태면 몬스터 소환 멈춤 
-        if (GameManager_NM.singleton.isGameOver)
+        // 게임오버 상태면 or game pause 상태면 몬스터 소환 멈춤 
+        if (GameManager_NM.singleton.isGameOver || GameManager_NM.singleton.gameMode == 3)
             return;
 
         // 시간흐른다 
