@@ -76,7 +76,16 @@ public class FlappyBird_ManagerGame : Manage
     public void SetGamePause()
     {
         print("SetGamePause");
-        FlappyBird_ManagerGame.inst.gameMode = 3;
+        if (FlappyBird_ManagerGame.inst.gameMode == 3)
+        {
+            FlappyBird_ManagerGame.inst.gameMode = 1;
+            GameObject.Find("Bird").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        }
+        else
+        {
+            FlappyBird_ManagerGame.inst.gameMode = 3;
+            GameObject.Find("Bird").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        }
     }
 
     private void SetIntro()

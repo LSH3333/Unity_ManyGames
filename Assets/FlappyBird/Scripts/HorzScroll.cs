@@ -12,8 +12,14 @@ public class HorzScroll : HScroll
 
     private void Update()
     {
-        if (FlappyBird_ManagerGame.inst.isGameOver)
-            setStop(); 
+        if (FlappyBird_ManagerGame.inst.isGameOver || FlappyBird_ManagerGame.inst.gameMode == 3)
+        {
+            setStop();
+        }
+        else if(FlappyBird_ManagerGame.inst.gameMode == 1)
+        {
+            GameStart();
+        }
     }
 
     void GameStart()
