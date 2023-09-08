@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 enum FireballDirection
 {
     Downward,
@@ -39,6 +39,10 @@ public class ObstaclsGenerator : MonoBehaviour
     private float hor_time;
     private float hor_spawnTime;
 
+    // 소환된 파이어볼들 
+    private List<GameObject> spawned_fireballs = new List<GameObject>();
+
+
     private void Start()
     {
         SetRandomTime(FireballDirection.Downward);
@@ -68,8 +72,23 @@ public class ObstaclsGenerator : MonoBehaviour
 
             SetRandomTime(FireballDirection.Downward); // 다음 spawnTime 다시 랜덤으로 설정
         }
+    }
 
 
+    public void StopAllFireballs()
+    {
+        foreach(var fireball in spawned_fireballs)
+        {
+            fireball.GetComponent<Firball>().StopMoving();
+        }
+    }
+
+    public void MoveAllFireballs()
+    {
+        foreach (var fireball in spawned_fireballs)
+        {
+            fireball.GetComponent<Firball>().StartMoving();
+        }
     }
 
 
@@ -134,14 +153,13 @@ public class ObstaclsGenerator : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        Instantiate(pre_fireball_downward, spawnPosition, Quaternion.identity);
+        spawned_fireballs.Add(Instantiate(pre_fireball_downward, spawnPosition, Quaternion.identity));
         yield return null;
     }
 
     IEnumerator hor_Spawn()
     {
-        Debug.Log("hor spawned!!");
-        Instantiate(pre_fireball_RightToLeft, hor_spawnPosition, pre_fireball_RightToLeft.transform.rotation);
+        spawned_fireballs.Add(Instantiate(pre_fireball_RightToLeft, hor_spawnPosition, pre_fireball_RightToLeft.transform.rotation));
         yield return null;
     }
 

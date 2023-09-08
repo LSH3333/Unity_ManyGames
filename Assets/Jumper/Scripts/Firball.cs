@@ -15,14 +15,20 @@ public class Firball : MonoBehaviour
 
     private void Start()
     {
-        _rb2d.velocity = new Vector2(fireball_speed_x, fireball_speed_y);
+        //_rb2d.velocity = new Vector2(fireball_speed_x, fireball_speed_y);
+        StartMoving();
         _ani = GameObject.Find("Player").GetComponent<Animator>();
         Destroy(gameObject, 10f); // Fireball 소환 후 일정시간 후 제거
     }
 
-    private void Update()
+    public void StartMoving()
     {
+        _rb2d.velocity = new Vector2(fireball_speed_x, fireball_speed_y);
+    }
 
+    public void StopMoving()
+    {
+        _rb2d.velocity = new Vector2(0, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

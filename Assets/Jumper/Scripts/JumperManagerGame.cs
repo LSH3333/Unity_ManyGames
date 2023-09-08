@@ -13,7 +13,7 @@ public class JumperManagerGame : Manage
 
     [SerializeField]
     public GameObject ResultBoard;
-    private Rigidbody2D PlayerRB; // Player의 RIgidbody
+    public Rigidbody2D PlayerRB; // Player의 RIgidbody
 
     // RESULTBOARD SCORE
     [SerializeField]

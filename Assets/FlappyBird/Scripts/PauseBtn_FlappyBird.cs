@@ -6,6 +6,8 @@ public class PauseBtn_FlappyBird : PauseBtn
 {
     public override void SetGamePause()
     {
+        if (FlappyBird_ManagerGame.inst.gameMode == 0) return;
+
         // pause -> play 
         if (FlappyBird_ManagerGame.inst.gameMode == 3)
         {

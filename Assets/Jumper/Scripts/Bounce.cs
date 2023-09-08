@@ -21,6 +21,8 @@ public class Bounce : MonoBehaviour
     private Rigidbody2D _rb2d;
     private int dir = 1; // Moving direction
     public int MovingPercentage;
+    // 이 오브젝트가 랜덤으로 선출한 움직이는 플랫폼이면 true 
+    private bool isMovingPlatform;
 
     private void Awake()
     {
@@ -51,7 +53,8 @@ public class Bounce : MonoBehaviour
         // 확률로 인해 어떤 발판들은 움직이도록
         if (MovingPercentage == 1)
         {
-            MovingPlatforms();            
+            MovingPlatforms();
+            isMovingPlatform = true;
         }
     }
 
@@ -103,8 +106,19 @@ public class Bounce : MonoBehaviour
     {
         // 화면 양쪽 끝 도달시 방향 반대
         if (transform.position.x >= 10f || transform.position.x <= -10f) dir *= -1;
-        _rb2d.velocity = new Vector2(dir, 0); // 발판 우측으로 이동.
-        
+        _rb2d.velocity = new Vector2(dir, 0); // 발판 우측으로 이동.        
+    }
+
+    public void StopMoving()
+    {
+        if (!isMovingPlatform) return;
+        _rb2d.velocity = new Vector2(0, 0);
+    }
+
+    public void RestartMoving()
+    {
+        if (!isMovingPlatform) return;
+        _rb2d.velocity = new Vector2(dir, 0);
     }
 
     // 잠시 대기

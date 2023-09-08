@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -13,6 +15,9 @@ public class LevelGenerator : MonoBehaviour
     private int PlatColorIndex;
 
     Vector3 spawnPosition = new Vector3();
+
+
+    public GameObject platforms;
 
     private void Start()
     {  
@@ -29,31 +34,59 @@ public class LevelGenerator : MonoBehaviour
             spawnPosition.y += Random.Range(minY, maxY);
             spawnPosition.x = Random.Range(-levelWidth, levelWidth);
 
+            GameObject spawned = null;
             switch (PlatColorIndex)
             {
                 case 0: // black
-                    Instantiate(Plat_black, spawnPosition, Quaternion.identity);
+                    spawned = Instantiate(Plat_black, spawnPosition, Quaternion.identity);                    
                     break;
 
                 case 1: // black
-                    Instantiate(Plat_black, spawnPosition, Quaternion.identity);
+                    spawned = Instantiate(Plat_black, spawnPosition, Quaternion.identity);
                     break;
 
                 case 2: // red
-                    Instantiate(Plat_red, spawnPosition, Quaternion.identity);
+                    spawned = Instantiate(Plat_red, spawnPosition, Quaternion.identity);
                     break;
 
                 case 3: // blue
-                    Instantiate(Plat_blue, spawnPosition, Quaternion.identity);
+                    spawned = Instantiate(Plat_blue, spawnPosition, Quaternion.identity);
                     break;
 
-                  
+                default:
+                    break;
             }
+            spawned.transform.SetParent(platforms.transform);
         }
     }
 
-    private void GenerateItem()
+
+    private List<GameObject> GetAllSpawnedPlatforms()
     {
-        
+        List<GameObject> spawned = new List<GameObject>();
+        for(int i = 0; i < platforms.transform.childCount; i++)
+        {
+            GameObject child = platforms.transform.GetChild(i).gameObject;
+            spawned.Add(child);
+        }
+        return spawned;
+    }
+
+    public void StopAllPlatforms()
+    {
+        List<GameObject> spawned = GetAllSpawnedPlatforms();
+        foreach(var platform in spawned)
+        {
+            platform.GetComponent<Bounce>().StopMoving();
+        }
+    }
+
+    public void RestartAllPlatforms()
+    {
+        List<GameObject> spawned = GetAllSpawnedPlatforms();
+        foreach (var platform in spawned)
+        {
+            platform.GetComponent<Bounce>().RestartMoving();
+        }
     }
 }
