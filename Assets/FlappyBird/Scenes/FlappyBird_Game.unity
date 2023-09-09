@@ -1043,6 +1043,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7513679069635192624, guid: 9db2a46f148b84f42909476364f9b311,
         type: 3}
+      propertyPath: play
+      value: 
+      objectReference: {fileID: 21300000, guid: a2f31c578b2fbc1469b71626553cc735,
+        type: 3}
+    - target: {fileID: 7513679069635192624, guid: 9db2a46f148b84f42909476364f9b311,
+        type: 3}
       propertyPath: goBackBtn
       value: 
       objectReference: {fileID: 3610890407426179369}
