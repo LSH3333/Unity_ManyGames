@@ -36,12 +36,9 @@ public class LogInSystem : MonoBehaviour
         //cvSignUp.SetActive(false);
 
         //Testncmb();
-    }
 
-    private void Start()
-    {
         // 메뉴씬 진입시 로그인이 되있는 상황이라면  (다른 게임에서 back으로 메뉴씬으로 넘어온경우) 
-        if(NCMBUser.CurrentUser != null)
+        if (NCMBUser.CurrentUser != null)
         {
             // logout canvas 활성화 
             cvLogOut.SetActive(true);
@@ -51,12 +48,16 @@ public class LogInSystem : MonoBehaviour
         else
         {
             // 최초에는 login canvas가 활성화되어야함 
-            cvLogIn.SetActive(true);        
+            cvLogIn.SetActive(true);
             cvLogOut.SetActive(false);
             cvSignUp.SetActive(false);
         }
+    }
 
-        
+    private void Start()
+    {
+
+
     }
 
     
