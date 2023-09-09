@@ -13,7 +13,7 @@ public class MouseEventManager : MonoBehaviour
     public Vector2 hotSpot = Vector2.zero;
 
     public void HoverSnd()
-    {
+    {        
         hoverSnd.Play();
     }
 

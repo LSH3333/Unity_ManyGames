@@ -46,13 +46,14 @@ public class ManageApp : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+
+        NCMBLogOutWhenGameStart();
     }
 
     private void Start()
     {
 
-        NCMBLogOutWhenGameStart();
+        //NCMBLogOutWhenGameStart();
     }
 
     // 게임 시작시 로그아웃 

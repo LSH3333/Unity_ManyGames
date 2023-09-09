@@ -58,6 +58,12 @@ public class Bird : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col) // Collider가 겹처칠때 호출
     {
+        // 바닥과 충돌시 바로 게임오버 처리 
+        if(col.gameObject.tag == "HorzScroll")
+        {
+            FlappyBird_ManagerGame.inst.SetGameOver();
+            return;
+        }
         if (isBlink) return; // 껌뻑거리는 상태면 그냥 종료
         if (col.gameObject.tag != "Column") return; // 충돌 오브젝트가 Column인지 확인
 

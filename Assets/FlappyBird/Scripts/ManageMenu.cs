@@ -22,6 +22,7 @@ public class ManageMenu : Manage
 
     private void Start()
     {
+        AudioListener.volume = 0.4f;
         /*  랭킹시스템 메인메뉴씬으로 빼는경우 필요없음.
         // 로드된 값들을 바탕으로 UI상의 문자열을 변경한다
         textName.text = string.Format(
