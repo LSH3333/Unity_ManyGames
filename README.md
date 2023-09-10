@@ -114,4 +114,44 @@ https://github.com/LSH3333/Unity_ManyGames/blob/3bfa5d440acc4491a8f7ab5eeaa0ca4c
   
 </details>
 
+<br>
+
+### 게임 : Jumper 
+
+<details>
+<summary>접기/펼치기</summary>
+
+Jumper 게임 구현의 중점은 캐릭터가 타고 올라가는 발판의 랜덤 생성이었습니다.
+
+캐릭터가 계속 위로 올라가기 때문에 발판들은 플레이어가 보는 화면에서는 보이지 않는 위쪽에 미리 소환하도록 했습니다.
+
+<img src="https://github.com/LSH3333/Unity_ManyGames/assets/62237852/3b1486b5-ed78-4adf-ad58-46c9efbc92d1.png" width="60%" height="60%"/>
+
+https://github.com/LSH3333/Unity_ManyGames/blob/4e359047afa77ec15fee49381b57bb495ce4aed1/Assets/Jumper/Scripts/LevelGenerator.cs#L27-L61
+
+</details>
+
+
+<br>
+
+### 게임 : Nightmare 
+
+<details>
+<summary>접기/펼치기</summary>
+
+Nightmare 게임 구현의 중점은 총을 쏘고 맞는 로직의 구현이었습니다.
+
+이는 Ray (빛) 을 이용했는데, 빛이 쏘아지는 시작지점과 길이를 설정해서 빛이 충돌한 오브젝트를 구할수 있습니다.
+
+즉 플레이어가 쏘는 총구에서 부터 빛을 쏴서 해당 빛에 맞는 오브젝트 (적 오브젝트) 는 총에 맞았다고 볼 수 있습니다.
+
+<img width="60%" height="60%" alt="image" src="https://github.com/LSH3333/Unity_ManyGames/assets/62237852/2c5edfc7-68c5-42b2-b841-3c720a3bffdf">
+
+https://github.com/LSH3333/Unity_ManyGames/blob/4e359047afa77ec15fee49381b57bb495ce4aed1/Assets/Nightmare/03.%20Scripts/PlayerShooting_NM.cs#L55-L91
+
+
+
+</details>
+
+
 
