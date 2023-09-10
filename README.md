@@ -27,9 +27,16 @@ https://github.com/LSH3333/Unity_ManyGames/blob/c79bf3f0f0e651308ca3da77280a224a
 
 ### 여러가지 미니 게임들 
 
-기존에 만들어 놓은 미니게임들을 통합하면서 가장 신경 썼던 부분은 점수 저장, 결과창 등 모든 미니게임들에서 공통으로 쓰이는 부분을 추상적으로 구현해 각각의 게임에서 사용할수 있도록 하는 것이었습니다.
+<img src="https://github.com/LSH3333/Unity_ManyGames/assets/62237852/3a569069-fcb8-446d-9c71-e428129d3aff.png" width="60%" height="60%"/>
 
-Manage 클래스에 공통으로 쓰이는 랭킹 보드 띄우는 기능, 점수 저장 등을 정의하고, 각 미니게임들에서 상속받아 사용합니다.
+
+기존에 만들어 놓은 미니게임들을 통합하면서 가장 신경 썼던 부분은 게임 시작 로직, 점수 저장, 결과창 등 모든 미니게임들에서 공통으로 쓰이는 부분을 추상적으로 구현해 각각의 게임에서 사용할수 있도록 하는 것이었습니다.
+
+Manage 클래스에 공통으로 쓰이는 Canvas에 UI 띄우는 기능, 점수 등을 정의해놓고 각 미니게임들에서 상속받아 사용합니다.
+
+예를들어 각 게임에는 점수들이 존재하기 때문에 무조건 Manage 에 저장하도록 하고, 
+
+SetStart() 같은 게임 시작 로직은 모든 게임에 필요하지만 각 게임마다 로직이 살짝 다르기 때문에 abstract 로 만들었습니다. 
 
 Manager 클래스 : 
 https://github.com/LSH3333/Unity_ManyGames/blob/master/Assets/PublicResources/Manage/Manage.cs
