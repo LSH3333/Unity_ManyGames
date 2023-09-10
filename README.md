@@ -76,6 +76,15 @@ https://github.com/LSH3333/Unity_ManyGames/blob/master/Assets/Jumper/Scripts/Jum
 <details>
 <summary>접기/펼치기</summary>
 
+<img  alt="image" src="https://github.com/LSH3333/Unity_ManyGames/assets/62237852/071dae83-e7da-4aa8-b559-9b704f43c6a0" width="60%" height="60%">
+
+FlappyBird 게임 구현의 중점은 중 Rigidbody 와 Collider 의 사용이었습니다.
+
+Rigidbody 를 통해 오브젝트에 적용되는 모든 '힘' 을 관리할수 있습니다. 
+
+Collider 는 오브젝트와 다른 오브젝트의 접촉, 충돌을 관리 합니다.
+
+Rigidbody 를 통해 Bird 의 움직임을, Collider 를 통해 Bird 와 장애물의 충돌을 관리할수 있습니다.
 
   
 </details>
@@ -88,7 +97,7 @@ https://github.com/LSH3333/Unity_ManyGames/blob/master/Assets/Jumper/Scripts/Jum
 <details>
 <summary>접기/펼치기</summary>
 
-앵그리버드 게임 구현의 중점은 랜덤 구조물 생성이었습니다.
+AngryBird 게임 구현의 중점은 랜덤 구조물 생성이었습니다.
 
 랜덤으로 구조물 소환시 문제점은 유니티에서 오브젝트가 강체(Rigidbody) 를 갖는 경우 오브젝트들이 게임에 소환되는 순간 서로 간섭을 받아 무너져 내릴수 있습니다.
 
