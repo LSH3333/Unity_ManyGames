@@ -25,7 +25,7 @@ https://github.com/LSH3333/Unity_ManyGames/blob/c79bf3f0f0e651308ca3da77280a224a
 
 <br> <br>
 
-### 여러가지 미니 게임들 
+### 여러가지 미니 게임들 통합 관리 
 
 <img src="https://github.com/LSH3333/Unity_ManyGames/assets/62237852/3a569069-fcb8-446d-9c71-e428129d3aff.png" width="60%" height="60%"/>
 
