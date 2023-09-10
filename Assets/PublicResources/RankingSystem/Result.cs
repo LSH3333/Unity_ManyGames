@@ -6,11 +6,6 @@ using UnityEngine;
 using Management;
 
 /*
-    기존과 다르게
-    ManagerParent.cs 라는 부모 클래스를 선언.
-    각각의 게임의 Manager들은 (Angry_Manager 등) ManagerParent를 상속받음.
-    
-    실행될때 Awake()에서 ManagerParent manager에 현재 게임의 Manager가 담긴다.
     
     각 게임들의 씬에서 Manager 스크립트를 갖고있는 게임오브젝트는 "GameManager" 태그를 달아야한다. 
     manager에 현재 게임의 Manager를 찾을때 태그로 게임오브젝트를 찾기 때문이다.
