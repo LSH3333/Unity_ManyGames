@@ -57,7 +57,6 @@ public class LogInSystem : MonoBehaviour
     private void Start()
     {
 
-
     }
 
     

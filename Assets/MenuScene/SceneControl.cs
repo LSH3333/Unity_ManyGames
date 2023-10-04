@@ -10,9 +10,11 @@ public class SceneControl : MonoBehaviour
     // 해당 버튼의 OnClick에 저장된 string (씬이름)에 따라 씬 변경  
     public void ChangeScene(string _scenename)
     {
+        print("----ChangeScene----");
         // login안된 상태라면 
         if(NCMBUser.CurrentUser == null)
         {
+            print("login 안된 상태라면");
             //print("CurrentUser: " + NCMBUser.CurrentUser.UserName);
             // Please enter nickname panel   
             GameObject.Find("NoNicknamePanel").GetComponent<CanvasFadeOut>().PanelFadeOut();           
