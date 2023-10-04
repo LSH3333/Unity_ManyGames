@@ -10,7 +10,7 @@ public class SeperateGameBuild : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ChangeSceneToGame("FlappyBird");
+        ChangeSceneToGame("AngryBird");
     }
 
     public void ChangeSceneToGame(string gameName)
