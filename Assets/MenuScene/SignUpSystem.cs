@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.Networking;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SignUpSystem : MonoBehaviour
 {
@@ -27,13 +30,15 @@ public class SignUpSystem : MonoBehaviour
         if (ifID.text != "" && ifPW.text != "")
         {
             // sign up 
-            NCMBSignUp(ifID.text, ifPW.text);
+            //NCMBSignUp(ifID.text, ifPW.text);
+            HttpSignUp(ifID.text, ifPW.text);
             ifID.GetComponentInParent<InputField>().text = "";
             ifID.text = "";
             ifPW.text = "";
         }
     }
 
+    ///////////////// NCMB 
     void NCMBSignUp(string name, string pw)
     {
         NCMBUser user = new NCMBUser();        
@@ -46,15 +51,12 @@ public class SignUpSystem : MonoBehaviour
             if (e != null) // signup 실패 
             {
                 print("NCMB SignUp Failed, " + e.ErrorMessage);
-                signUpFailPannel.GetComponent<CanvasFadeOut>().PanelFadeOut();
+                SignUpFail();
             }                
             else // signup 성공 
             {
                 print("NCMB SignUp Success" + '\n' + "UserName: " + name + '\n' + "PW: " + pw);
-                // signup 성공 알리는 panel 
-                SignUpSuccessPanel.GetComponent<CanvasFadeOut>().PanelFadeOut();
-                // signup 성공했으니 다시 login canvas로 이동 
-                _loginSys.ActivateLogInCanvas();
+                SignUpSuccessful();
 
                 SendUserPrivateData(name, pw);
             }
@@ -78,6 +80,47 @@ public class SignUpSystem : MonoBehaviour
         });
     }
 
+    ///////////////// HTTP 
+    public void HttpSignUp(string name, string pw)
+    {
+        StartCoroutine(HttpSignUpIE(name, pw));
+    }
+
+    IEnumerator HttpSignUpIE(string name, string pw)
+    {
+        string url = ManageApp.singleton.Url + "member/register";
+
+        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
+        formData.Add(new MultipartFormDataSection("name", name));
+        formData.Add(new MultipartFormDataSection("password", pw));
+
+        UnityWebRequest unityWebRequest = UnityWebRequest.Post(url, formData);
+        yield return unityWebRequest.SendWebRequest();
+
+        if (unityWebRequest.isNetworkError || unityWebRequest.isHttpError)
+        {
+            Debug.Log(unityWebRequest.error);
+        }
+        else
+        {
+            Debug.Log("Form upload complete");
+            string response = unityWebRequest.downloadHandler.text;
+            Debug.Log("response = " + response);
+            // 가입 성공 
+            if(response == "SUCCESS")
+            {
+                SignUpSuccessful();
+            }
+            else
+            {
+                SignUpFail();
+            }
+            
+        }
+    }
+
+
+
     // SignUp canvas에서 back 버튼 눌렀을시 LogIn canvas로 되돌아감 
     public void OnClickBackButton()
     {
@@ -85,4 +128,16 @@ public class SignUpSystem : MonoBehaviour
         cvLogIn.SetActive(true);
     }
 
+    private void SignUpSuccessful()
+    {
+        // signup 성공 알리는 panel 
+        SignUpSuccessPanel.GetComponent<CanvasFadeOut>().PanelFadeOut();
+        // signup 성공했으니 다시 login canvas로 이동 
+        _loginSys.ActivateLogInCanvas();
+    }
+
+    private void SignUpFail()
+    {
+        signUpFailPannel.GetComponent<CanvasFadeOut>().PanelFadeOut();
+    }
 }

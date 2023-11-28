@@ -24,7 +24,14 @@ public class LogOutSystem : MonoBehaviour
 
     private void Start()
     {
-        welcome.text = "Welcome " + NCMBUser.CurrentUser.UserName;
+        if(ManageApp.singleton.HttpLogin)
+        {
+            welcome.text = "Welcome " + ManageApp.singleton.loginNickName;
+        }
+        else
+        {
+            welcome.text = "Welcome " + NCMBUser.CurrentUser.UserName;
+        }
     }
 
     // 게임에서 메인메뉴씬으로 돌아왔을때 slider가 active되있도록 

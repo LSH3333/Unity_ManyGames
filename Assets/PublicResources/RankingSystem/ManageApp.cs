@@ -6,8 +6,7 @@ public class ManageApp : MonoBehaviour
 {
     public static ManageApp singleton;
 
-    private string nickName;
-    public string loginNickName;
+    private string nickName;        
 
     private int bestScore;
 
@@ -21,6 +20,22 @@ public class ManageApp : MonoBehaviour
     public string player_BestScore, player_Nickname, player_Scores, player_Names;
 
     public LogOutSystem scriptLogOutSystem;
+
+    public string loginNickName = null;
+    private string url = "http://localhost:8080/";
+    private bool httpLogin; // http 연결 여부, false 시 NCMB 
+
+    public bool HttpLogin
+    {
+        get { return httpLogin; }
+        set { httpLogin = value; }
+    }
+
+    public string Url
+    {
+        get { return url; }
+        set { url = value; }
+    }
 
     public int BestScore // property
     {
@@ -47,7 +62,7 @@ public class ManageApp : MonoBehaviour
             Destroy(gameObject);
         }
 
-
+        loginNickName = null;
     }
 
     private void Start()

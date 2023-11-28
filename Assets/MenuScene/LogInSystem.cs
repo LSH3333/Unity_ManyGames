@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using NCMB;
+using UnityEngine.Networking;
 
 public class LogInSystem : MonoBehaviour
 {
@@ -37,8 +38,9 @@ public class LogInSystem : MonoBehaviour
 
         //Testncmb();
 
+        
         // 메뉴씬 진입시 로그인이 되있는 상황이라면  (다른 게임에서 back으로 메뉴씬으로 넘어온경우) 
-        if (NCMBUser.CurrentUser != null)
+        if (NCMBUser.CurrentUser != null || ManageApp.singleton.loginNickName != null)
         {
             // logout canvas 활성화 
             cvLogOut.SetActive(true);
@@ -68,7 +70,9 @@ public class LogInSystem : MonoBehaviour
         if (ifID.text != "" && ifPW.text != "")
         {            
             // NCMB LogIn 
-            NCMBLogIn(ifID.text, ifPW.text);
+            //NCMBLogIn(ifID.text, ifPW.text);
+            // Http Login
+            HttpLogin(ifID.text, ifPW.text);
 
             ifID.GetComponentInParent<InputField>().text = "";
             ifPW.text = "";
@@ -118,4 +122,65 @@ public class LogInSystem : MonoBehaviour
         });
     }
 
+    /// HTTP 
+    public void HttpLogin(string name, string password)
+    {
+        StartCoroutine(HttpLoginIE(name, password));
+    }
+
+    IEnumerator HttpLoginIE(string name, string password)
+    {
+        string url = ManageApp.singleton.Url + "member/login";
+
+        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
+        formData.Add(new MultipartFormDataSection("name", name));
+        formData.Add(new MultipartFormDataSection("password", password));
+
+        UnityWebRequest unityWebRequest = UnityWebRequest.Post(url, formData);
+        yield return unityWebRequest.SendWebRequest();
+
+        if (unityWebRequest.isNetworkError || unityWebRequest.isHttpError)
+        {
+            Debug.Log(unityWebRequest.error);
+        }
+        else
+        {
+            Debug.Log("Form upload complete");
+            string response = unityWebRequest.downloadHandler.text;
+            Debug.Log("response = " + response);
+            // 가입 성공 
+            if (response == "SUCCESS")
+            {
+                LoginSuccess();
+                // ManageApp 에 로그인한 유저 name 저장 
+                ManageApp.singleton.loginNickName = name;
+                ManageApp.singleton.HttpLogin = true;
+            }
+            else
+            {
+                LoginFail();
+            }
+
+        }
+    }
+
+
+    //////////
+    private void LoginSuccess()
+    {
+        // login한 계정이 운영자라면 
+        if (name == "Admin")
+        {
+            AdminObj.SetActive(true);
+        }
+
+        cvLogIn.SetActive(false); // login canvas 비활성화
+        cvLogOut.SetActive(true); // logout canvas 활성화
+        slideGameObject.SetActive(true); // slide 활성화
+    }
+
+    private void LoginFail()
+    {
+        logInFailPannel.GetComponent<CanvasFadeOut>().PanelFadeOut();
+    }
 }
