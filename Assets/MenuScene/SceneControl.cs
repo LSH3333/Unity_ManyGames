@@ -10,24 +10,37 @@ public class SceneControl : MonoBehaviour
     // 해당 버튼의 OnClick에 저장된 string (씬이름)에 따라 씬 변경  
     public void ChangeScene(string _scenename)
     {
-        // login안된 상태라면 
-        if(NCMBUser.CurrentUser == null)
+        // NCMB
+        if(ManageApp.singleton.DBtype == ManageApp.DB.NCMB)
         {
-            //print("CurrentUser: " + NCMBUser.CurrentUser.UserName);
-            // Please enter nickname panel   
-            GameObject.Find("NoNicknamePanel").GetComponent<CanvasFadeOut>().PanelFadeOut();           
+            // login안된 상태라면 
+            if (NCMBUser.CurrentUser == null)
+            {
+                // Please enter nickname panel   
+                GameObject.Find("NoNicknamePanel").GetComponent<CanvasFadeOut>().PanelFadeOut();
+            }
+            else
+            {
+                // 게임버튼 클릭할때 현재 로그인된 유저정보 ManageApp에 전달됨 
+                ManageApp.singleton.NickName = NCMBUser.CurrentUser.UserName;
+                ManageApp.singleton.loginNickName = NCMBUser.CurrentUser.UserName;
+                GameObject.FindGameObjectWithTag("GameManager").SendMessage("SetFadeout", _scenename);
+            }
         }
+        // PostgreSQL
         else
         {
-            print("CurrentUser: " + NCMBUser.CurrentUser.UserName);
-
-            //sceneFadeSys.FadeToScene(_scenename);
-            GameObject.FindGameObjectWithTag("GameManager").SendMessage("SetFadeout", _scenename);
-
-            // 게임버튼 클릭할때 현재 로그인된 유저정보 ManageApp에 전달됨 
-            ManageApp.singleton.NickName = NCMBUser.CurrentUser.UserName;
-            ManageApp.singleton.loginNickName = NCMBUser.CurrentUser.UserName;
+            if(ManageApp.singleton.loginNickName == null)
+            {
+                GameObject.Find("NoNicknamePanel").GetComponent<CanvasFadeOut>().PanelFadeOut();
+            }
+            else
+            {
+                ManageApp.singleton.NickName = ManageApp.singleton.loginNickName;
+                GameObject.FindGameObjectWithTag("GameManager").SendMessage("SetFadeout", _scenename);
+            }
         }
+
 
         
     }

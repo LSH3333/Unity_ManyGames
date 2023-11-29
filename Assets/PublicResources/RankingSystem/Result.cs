@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using NCMB;
 using UnityEngine;
+using UnityEngine.Networking;
 using Management;
 
 /*
@@ -64,7 +65,8 @@ public class Result : Manage
     // 따라서 데이터베이스로 데이터를 보내고 1초 대기후 데이터베이스에서 랭킹 정보 가져오도록함. 
     IEnumerator getRank()
     {
-        SendPlayerDataToNCMB();
+        //SendPlayerDataToNCMB();
+        SendPlayerDataToPostgreSQL();
         yield return new WaitForSeconds(1f);
         InitNCMBBoardVar();
         InitNCMBBoard();
@@ -127,6 +129,37 @@ public class Result : Manage
         });
     }
 
+    //////////// HTTP
+    public void SendPlayerDataToPostgreSQL()
+    {
+        Debug.Log("SendPlayerDataToPostgreSQL()");
+        StartCoroutine(SendPlayerDataToPostgreSQLIE());
+    }
+
+    IEnumerator SendPlayerDataToPostgreSQLIE()
+    {
+        string url = ManageApp.singleton.Url + "rank/uploadRank";
+
+        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
+        formData.Add(new MultipartFormDataSection("name", ManageApp.singleton.NickName));
+        formData.Add(new MultipartFormDataSection("score", gameManagerObj.GetComponent<Manage>().score.ToString()));        
+        formData.Add(new MultipartFormDataSection("gameName", ManageApp.singleton.gameName));
+
+        UnityWebRequest unityWebRequest = UnityWebRequest.Post(url, formData);
+        yield return unityWebRequest.SendWebRequest();
+
+        if (unityWebRequest.isNetworkError || unityWebRequest.isHttpError)
+        {
+            Debug.Log(unityWebRequest.error);
+        }
+        else
+        {
+            Debug.Log("Form upload complete");
+            string response = unityWebRequest.downloadHandler.text;
+            Debug.Log("response = " + response);
+        }
+    }
+
 
     //// NCMB Database에서 랭킹정보 가져와서 10위까지 띄움  
     //void InitNCMBBoard()
@@ -152,7 +185,7 @@ public class Result : Manage
     //                res += "          ";
     //                res += obj["Name"] + ", ";
     //                res += obj["Score"];
-                    
+
     //                _NCMBRank.text += res + "\n";                    
     //                cnt++;
     //                if (cnt >= 10) break;
