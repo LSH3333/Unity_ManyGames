@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using NCMB;
 using System.Collections.Generic;
+using UnityEngine.Networking;
+using System.Collections;
 
 namespace Management
 {
@@ -67,30 +69,81 @@ namespace Management
         // 현재 게임의 "Score"를 정렬해서 가져와서 가장 높은 점수인 BestScore를 찾는다 
         public void GetBestScore(string gameName)
         {
-
-            NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>(gameName);
-            query.AddDescendingOrder("Score");
-
-            query.FindAsync((List<NCMBObject> objList, NCMBException e) =>
+            if(ManageApp.singleton.DBtype == ManageApp.DB.NCMB)
             {
-                if (e != null)
-                {
-                    Debug.Log("NCMB get BestScore Failed");
-                }
-                else
-                {
-                    _txtBest.text = "BestScore: ";
-                    int cnt = 0;
-                    // "Score"를 정렬해서 가져왔으므로 첫 원소가 가장 높은 점수 즉 BestScore이다.    
-                    foreach (NCMBObject obj in objList)
-                    {
-                        _txtBest.text += obj["Score"].ToString();
-                        cnt++;
+                NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject>(gameName);
+                query.AddDescendingOrder("Score");
 
-                        if (cnt >= 1) break;
+                query.FindAsync((List<NCMBObject> objList, NCMBException e) =>
+                {
+                    if (e != null)
+                    {
+                        Debug.Log("NCMB get BestScore Failed");
                     }
-                }
-            });
+                    else
+                    {
+                        _txtBest.text = "BestScore: ";
+                        int cnt = 0;
+                        // "Score"를 정렬해서 가져왔으므로 첫 원소가 가장 높은 점수 즉 BestScore이다.    
+                        foreach (NCMBObject obj in objList)
+                        {
+                            _txtBest.text += obj["Score"].ToString();
+                            cnt++;
+
+                            if (cnt >= 1) break;
+                        }
+                    }
+                });
+            }
+            else
+            {
+                HttpGetBestScore(gameName);
+            }
+            
+        }
+
+
+
+        // db 에서 10등까지 랭킹 가져옴 
+        private void HttpGetBestScore(string gameName)
+        {
+            StartCoroutine(HttpGetBestScoreIE(gameName));
+        }
+
+        IEnumerator HttpGetBestScoreIE(string gameName)
+        {
+            Debug.Log("InitPostgreSQLBoardIE()");
+            string url = ManageApp.singleton.Url + "rank/getRank";
+            url += "?gameName=" + gameName;
+
+            UnityWebRequest unityWebRequest = UnityWebRequest.Get(url);
+            yield return unityWebRequest.SendWebRequest();
+
+            if (unityWebRequest.isNetworkError || unityWebRequest.isHttpError)
+            {
+                Debug.Log(unityWebRequest.error);
+            }
+            else // 성공 
+            {
+                Debug.Log("Http InitPostgreSQLBoard Success");
+                string jsonString = unityWebRequest.downloadHandler.text;
+                RankListResponse rankListResponse = JsonUtility.FromJson<RankListResponse>("{\"rankList\":" + jsonString + "}");
+
+                _txtBest.text = "BestScore: " + rankListResponse.rankList[0].score;                
+            }
+        }
+
+        [System.Serializable]
+        public class RankDto
+        {
+            public string name;
+            public int score;
+            public string gameName;
+        }
+
+        public class RankListResponse
+        {
+            public List<RankDto> rankList;
         }
     }
 }
