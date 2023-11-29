@@ -50,7 +50,7 @@ public class Result : Manage
     }
 
     // InitNCMBBoard를 위한 변수들의 레퍼런스 설정 
-    private void InitNCMBBoardVar()
+    private void InitResultBoard()
     {
         GameObject NCMBRankObj = transform.GetChild(1).gameObject;
         noTxt = NCMBRankObj.transform.GetChild(0).GetChild(0).GetComponent<Text>();
@@ -65,11 +65,25 @@ public class Result : Manage
     // 따라서 데이터베이스로 데이터를 보내고 1초 대기후 데이터베이스에서 랭킹 정보 가져오도록함. 
     IEnumerator getRank()
     {
-        //SendPlayerDataToNCMB();
-        SendPlayerDataToPostgreSQL();
-        yield return new WaitForSeconds(1f);
-        InitNCMBBoardVar();
-        InitNCMBBoard();
+        // NCMB 
+        if(ManageApp.singleton.DBtype == ManageApp.DB.NCMB)
+        {
+            Debug.Log("ManageApp.singleton.DBtype == ManageApp.DB.NCMB");
+            SendPlayerDataToNCMB();
+            yield return new WaitForSeconds(1f);
+            InitNCMBBoard();
+        }
+        // PostgreSQL 
+        else
+        {
+            Debug.Log("ManageApp.singleton.DBtype == ManageApp.DB.Postgre");
+            SendPlayerDataToPostgreSQL();
+            yield return new WaitForSeconds(1f);
+            InitPostgreSQLBoard();
+        }
+                
+        InitResultBoard();
+        
     }
 
     // 현재 게임의, 현재 유저 정보를 NCMB Database로 보냄 
@@ -130,9 +144,9 @@ public class Result : Manage
     }
 
     //////////// HTTP
+    // db 로 결과 데이터 전송 
     public void SendPlayerDataToPostgreSQL()
     {
-        Debug.Log("SendPlayerDataToPostgreSQL()");
         StartCoroutine(SendPlayerDataToPostgreSQLIE());
     }
 
@@ -159,6 +173,55 @@ public class Result : Manage
             Debug.Log("response = " + response);
         }
     }
+    // db 에서 10등까지 랭킹 가져옴 
+    private void InitPostgreSQLBoard()
+    {
+        StartCoroutine(InitPostgreSQLBoardIE());
+    }
+
+    IEnumerator InitPostgreSQLBoardIE() {
+        Debug.Log("InitPostgreSQLBoardIE()");
+        string url = ManageApp.singleton.Url + "rank/getRank";
+        url += "?gameName=" + ManageApp.singleton.gameName;
+
+        UnityWebRequest unityWebRequest = UnityWebRequest.Get(url);
+        yield return unityWebRequest.SendWebRequest();
+
+        if (unityWebRequest.isNetworkError || unityWebRequest.isHttpError)
+        {
+            Debug.Log(unityWebRequest.error);
+        }
+        else // 성공 
+        {
+            Debug.Log("Http InitPostgreSQLBoard Success");
+            string jsonString = unityWebRequest.downloadHandler.text;
+            RankListResponse rankListResponse = JsonUtility.FromJson<RankListResponse>("{\"rankList\":" + jsonString + "}");
+
+            int rank = 0;
+            foreach (RankDto rankDto in rankListResponse.rankList)
+            {
+                noTxt.text += string.Format("{0:D2}. ", (++rank)) + "\n";
+                usernameTxt.text += rankDto.name + "\n";
+                scoreTxt.text += rankDto.score + "\n";
+            }
+
+            
+        }
+    }
+
+    [System.Serializable]
+    public class RankDto
+    {
+        public string name;
+        public int score;
+        public string gameName;
+    }
+
+    public class RankListResponse
+    {
+        public List<RankDto> rankList;
+    }
+
 
 
     //// NCMB Database에서 랭킹정보 가져와서 10위까지 띄움  
