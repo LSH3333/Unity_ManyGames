@@ -65,8 +65,10 @@ public class Result : Manage
     // 따라서 데이터베이스로 데이터를 보내고 1초 대기후 데이터베이스에서 랭킹 정보 가져오도록함. 
     IEnumerator getRank()
     {
+        InitResultBoard();
+
         // NCMB 
-        if(ManageApp.singleton.DBtype == ManageApp.DB.NCMB)
+        if (ManageApp.singleton.DBtype == ManageApp.DB.NCMB)
         {
             Debug.Log("ManageApp.singleton.DBtype == ManageApp.DB.NCMB");
             SendPlayerDataToNCMB();
@@ -82,7 +84,6 @@ public class Result : Manage
             InitPostgreSQLBoard();
         }
                 
-        InitResultBoard();
         
     }
 

@@ -23,9 +23,10 @@ public class ManageApp : MonoBehaviour
 
     // HTTP 
     public string loginNickName = null; // 로그인 닉네임 
-    private string url = "http://localhost:8080/"; 
+    private string url = "http://localhost:8080/";
     // DB가 NCMB 인지 PostgreSQL 인지 
-    private DB dbType; 
+    // ManageApp.Awake() 에서 선택하면 해당 DB 로 진행되도록 설계 
+    private DB dbType;
     public enum DB
     {
         NCMB,
@@ -80,6 +81,8 @@ public class ManageApp : MonoBehaviour
         }
 
         loginNickName = null;
+        // DB 타입 여기서 선택 
+        DBtype = DB.PostgreSQL;
     }
 
     private void Start()

@@ -30,8 +30,15 @@ public class SignUpSystem : MonoBehaviour
         if (ifID.text != "" && ifPW.text != "")
         {
             // sign up 
-            //NCMBSignUp(ifID.text, ifPW.text);
-            HttpSignUp(ifID.text, ifPW.text);
+            if(ManageApp.singleton.DBtype == ManageApp.DB.NCMB)
+            {
+                NCMBSignUp(ifID.text, ifPW.text);
+            }
+            else if(ManageApp.singleton.DBtype == ManageApp.DB.PostgreSQL)
+            {
+                HttpSignUp(ifID.text, ifPW.text);
+            }
+                        
             ifID.GetComponentInParent<InputField>().text = "";
             ifID.text = "";
             ifPW.text = "";

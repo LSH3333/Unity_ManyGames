@@ -69,10 +69,18 @@ public class LogInSystem : MonoBehaviour
         // 아이디와 비밀번호가 입력이 됐다면 
         if (ifID.text != "" && ifPW.text != "")
         {            
-            // NCMB LogIn 
-            //NCMBLogIn(ifID.text, ifPW.text);
-            // Http Login
-            HttpLogin(ifID.text, ifPW.text);
+            if(ManageApp.singleton.DBtype == ManageApp.DB.NCMB)
+            {
+                // NCMB LogIn 
+                NCMBLogIn(ifID.text, ifPW.text);
+            }
+            else
+            {
+                // Http Login
+                HttpLogin(ifID.text, ifPW.text);
+            }
+
+          
 
             ifID.GetComponentInParent<InputField>().text = "";
             ifPW.text = "";
@@ -155,7 +163,7 @@ public class LogInSystem : MonoBehaviour
                 LoginSuccess();
                 // ManageApp 에 로그인한 유저 name 저장 
                 ManageApp.singleton.loginNickName = name;
-                ManageApp.singleton.DBtype = ManageApp.DB.PostgreSQL;
+                //ManageApp.singleton.DBtype = ManageApp.DB.PostgreSQL;
                 // 서버에서 받은 jsessionid 저장 
                 ManageApp.singleton.Jsessionid = GetJsessionId(unityWebRequest);
             }
