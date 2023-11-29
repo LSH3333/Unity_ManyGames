@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using NCMB;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class ShowRank : MonoBehaviour
 {
@@ -16,7 +17,14 @@ public class ShowRank : MonoBehaviour
     {
         gamename = _gameName;
         InstaniateRankingPanel();
-        InitNCMBBoard();        
+        if(ManageApp.singleton.DBtype == ManageApp.DB.NCMB)
+        {
+            InitNCMBBoard();
+        }
+        else
+        {
+            InitPostgreSQLBoard(gamename);
+        }
     }
 
     private void InstaniateRankingPanel()
@@ -74,5 +82,53 @@ public class ShowRank : MonoBehaviour
     }
 
 
+    // db 에서 10등까지 랭킹 가져옴 
+    private void InitPostgreSQLBoard(string gameName)
+    {
+        StartCoroutine(InitPostgreSQLBoardIE(gameName));
+    }
 
+    IEnumerator InitPostgreSQLBoardIE(string gameName)
+    {
+        Debug.Log("InitPostgreSQLBoardIE()");
+        string url = ManageApp.singleton.Url + "rank/getRank";
+        url += "?gameName=" + gameName;
+
+        UnityWebRequest unityWebRequest = UnityWebRequest.Get(url);
+        yield return unityWebRequest.SendWebRequest();
+
+        if (unityWebRequest.isNetworkError || unityWebRequest.isHttpError)
+        {
+            Debug.Log(unityWebRequest.error);
+        }
+        else // 성공 
+        {
+            Debug.Log("Http InitPostgreSQLBoard Success");
+            string jsonString = unityWebRequest.downloadHandler.text;
+            RankListResponse rankListResponse = JsonUtility.FromJson<RankListResponse>("{\"rankList\":" + jsonString + "}");
+
+            int rank = 0;
+            foreach (RankDto rankDto in rankListResponse.rankList)
+            {
+                noTxt.text += string.Format("{0:D2}. ", (++rank)) + "\n";
+                usernameTxt.text += rankDto.name + "\n";
+                scoreTxt.text += rankDto.score + "\n";
+            }
+
+
+        }
+    }
+
+    [System.Serializable]
+    public class RankDto
+    {
+        public string name;
+        public int score;
+        public string gameName;
+    }
+
+    public class RankListResponse
+    {
+        public List<RankDto> rankList;
+    }
 }
