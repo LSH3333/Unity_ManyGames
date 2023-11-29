@@ -23,7 +23,9 @@ public class ManageApp : MonoBehaviour
 
     // HTTP 
     public string loginNickName = null; // 로그인 닉네임 
-    private string url = "http://localhost:8080/";
+    // http 요청 보낼 경로 
+    //private string url = "http://localhost:8080/";
+    private string url = "https://manygames-server-e9116ac27150.herokuapp.com/";
     // DB가 NCMB 인지 PostgreSQL 인지 
     // ManageApp.Awake() 에서 선택하면 해당 DB 로 진행되도록 설계 
     private DB dbType;
