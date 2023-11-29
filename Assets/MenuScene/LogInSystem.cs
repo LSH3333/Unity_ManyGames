@@ -138,23 +138,26 @@ public class LogInSystem : MonoBehaviour
 
         UnityWebRequest unityWebRequest = UnityWebRequest.Post(url, formData);
         yield return unityWebRequest.SendWebRequest();
-
+        
         if (unityWebRequest.isNetworkError || unityWebRequest.isHttpError)
         {
             Debug.Log(unityWebRequest.error);
         }
-        else
+        else // 성공 
         {
             Debug.Log("Form upload complete");
             string response = unityWebRequest.downloadHandler.text;
-            Debug.Log("response = " + response);
+            Debug.Log("response = " + response);            
+
             // 가입 성공 
             if (response == "SUCCESS")
             {
                 LoginSuccess();
                 // ManageApp 에 로그인한 유저 name 저장 
                 ManageApp.singleton.loginNickName = name;
-                ManageApp.singleton.HttpLogin = true;
+                ManageApp.singleton.DBtype = ManageApp.DB.PostgreSQL;
+                // 서버에서 받은 jsessionid 저장 
+                ManageApp.singleton.Jsessionid = GetJsessionId(unityWebRequest);
             }
             else
             {
@@ -164,6 +167,30 @@ public class LogInSystem : MonoBehaviour
         }
     }
 
+    // header에서 key=Set-Cookie 에 jsessionid 담겨있다 
+    private string GetJsessionId(UnityWebRequest unityWebRequest)
+    {
+  /*      Dictionary<string, string> header = unityWebRequest.GetResponseHeaders();
+        foreach (var x in header)
+        {
+            Debug.Log("key,val = " + x.Key + ',' + x.Value);
+        }*/
+
+        string cookie = unityWebRequest.GetResponseHeader("Set-Cookie");
+
+        string[] cookieParts = cookie.Split(';');
+
+        string jsessionId = null;
+        foreach (string part in cookieParts)
+        {
+            if (part.Trim().StartsWith("jsessionid="))
+            {
+                jsessionId = part.Trim().Substring("jsessionid=".Length);
+                break;
+            }
+        }
+        return jsessionId;
+    }
 
     //////////
     private void LoginSuccess()

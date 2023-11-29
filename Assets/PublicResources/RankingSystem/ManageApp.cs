@@ -21,14 +21,31 @@ public class ManageApp : MonoBehaviour
 
     public LogOutSystem scriptLogOutSystem;
 
-    public string loginNickName = null;
-    private string url = "http://localhost:8080/";
-    private bool httpLogin; // http 연결 여부, false 시 NCMB 
-
-    public bool HttpLogin
+    // HTTP 
+    public string loginNickName = null; // 로그인 닉네임 
+    private string url = "http://localhost:8080/"; 
+    // DB가 NCMB 인지 PostgreSQL 인지 
+    private DB dbType; 
+    public enum DB
     {
-        get { return httpLogin; }
-        set { httpLogin = value; }
+        NCMB,
+        PostgreSQL
+    }
+    // 유저 로그인 세션 
+    private string jsessionid;
+
+
+
+    public string Jsessionid
+    {
+        get { return jsessionid; }
+        set { jsessionid = value; }
+    }
+
+    public DB DBtype
+    {
+        get { return dbType; }
+        set { dbType = value; }
     }
 
     public string Url

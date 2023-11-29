@@ -1,6 +1,9 @@
 ﻿using NCMB;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
+using System.Collections;
+using System.Collections.Generic;
 
 public class LogOutSystem : MonoBehaviour
 {
@@ -24,7 +27,7 @@ public class LogOutSystem : MonoBehaviour
 
     private void Start()
     {
-        if(ManageApp.singleton.HttpLogin)
+        if (ManageApp.singleton.DBtype == ManageApp.DB.PostgreSQL)
         {
             welcome.text = "Welcome " + ManageApp.singleton.loginNickName;
         }
@@ -38,7 +41,7 @@ public class LogOutSystem : MonoBehaviour
     void SetSlideActive()
     {
         // NCMB login 상태라면 
-        if(NCMBUser.CurrentUser != null)
+        if(NCMBUser.CurrentUser != null || ManageApp.singleton.loginNickName != null)
         {
             slideGameObject.SetActive(true);
         }
@@ -47,7 +50,15 @@ public class LogOutSystem : MonoBehaviour
     // Logout canvas에서 LogOut 버튼 눌렀을시 
     public void OnClickLogOutButton()
     {
-        NCMBLogOut();
+        if(ManageApp.singleton.DBtype == ManageApp.DB.NCMB)
+        {
+            NCMBLogOut();
+        }
+        else
+        {
+            HttpLogout();
+        }
+
         // Admin obj unactive 
         AdminObj.SetActive(false);
     }
@@ -62,16 +73,46 @@ public class LogOutSystem : MonoBehaviour
             else
             {
                 print("Logout successed");
-
-                // Logout success pannel
-                _logoutSuccessPannel.GetComponent<CanvasFadeOut>().PanelFadeOut();
-
-                // Login canvas로 되돌아감 
-                cvLogOut.SetActive(false);
-                cvLogIn.SetActive(true);
-                slideGameObject.SetActive(false); // slide 사라짐 
+                LogoutSuccess();
             }
                 
         });
+    }
+
+
+    private void HttpLogout()
+    {
+        StartCoroutine(HttpLogoutIE());
+    }
+
+    IEnumerator HttpLogoutIE()
+    {
+        string url = ManageApp.singleton.Url + "member/logout";
+
+        UnityWebRequest unityWebRequest = UnityWebRequest.Get(url);
+        yield return unityWebRequest.SendWebRequest();
+
+        if (unityWebRequest.isNetworkError || unityWebRequest.isHttpError)
+        {
+            Debug.Log(unityWebRequest.error);
+        }
+        else // 성공 
+        {
+            Debug.Log("Http Logout Success");
+            ManageApp.singleton.Jsessionid = null; // session 파기 
+            LogoutSuccess();
+        }
+    }
+
+
+    private void LogoutSuccess()
+    {
+        // Logout success pannel
+        _logoutSuccessPannel.GetComponent<CanvasFadeOut>().PanelFadeOut();
+
+        // Login canvas로 되돌아감 
+        cvLogOut.SetActive(false);
+        cvLogIn.SetActive(true);
+        slideGameObject.SetActive(false); // slide 사라짐 
     }
 }
